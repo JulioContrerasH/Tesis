@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'build/TESIS_IG.blg'
-[128] biber-MSWIN64:340> INFO - === 
-[169] Biber.pm:419> INFO - Reading 'build/TESIS_IG.bcf'
-[330] Biber.pm:979> INFO - Found 37 citekeys in bib section 0
-[354] Biber.pm:4419> INFO - Processing section 0
-[368] Biber.pm:4610> INFO - Looking for bibtex file '3_3_BIBLIOGRAFIA/library.bib' for section 0
-[425] bibtex.pm:1713> INFO - LaTeX decoding ...
-[494] bibtex.pm:1519> INFO - Found BibTeX data source '3_3_BIBLIOGRAFIA/library.bib'
-[858] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[859] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[859] Biber.pm:4239> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'es-ES'
-[961] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[961] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[962] Biber.pm:4239> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'es-ES'
-[1021] bbl.pm:660> INFO - Writing 'build/TESIS_IG.bbl' with encoding 'UTF-8'
-[1191] bbl.pm:763> INFO - Output to build/TESIS_IG.bbl
-[1192] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\Contreras\AppData\Local\Temp\biber_tmp_R45D\7f56027f9015dc497dc7645faffbdd71_25800.utf8, line 7, warning: 172 characters of junk seen at toplevel
-[1192] Biber.pm:133> INFO - WARNINGS: 1
+[0] Config.pm:310> INFO - Logfile is 'build/TESIS_IG.blg'
+[138] biber-MSWIN64:340> INFO - === 
+[179] Biber.pm:419> INFO - Reading 'build/TESIS_IG.bcf'
+[356] Biber.pm:979> INFO - Found 37 citekeys in bib section 0
+[388] Biber.pm:4419> INFO - Processing section 0
+[406] Biber.pm:4610> INFO - Looking for bibtex file '3_3_BIBLIOGRAFIA/library.bib' for section 0
+[477] bibtex.pm:1713> INFO - LaTeX decoding ...
+[573] bibtex.pm:1519> INFO - Found BibTeX data source '3_3_BIBLIOGRAFIA/library.bib'
+[1038] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1038] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1038] Biber.pm:4239> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[1166] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1167] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1167] Biber.pm:4239> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[1232] bbl.pm:660> INFO - Writing 'build/TESIS_IG.bbl' with encoding 'UTF-8'
+[1349] bbl.pm:763> INFO - Output to build/TESIS_IG.bbl
+[1356] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\Contreras\AppData\Local\Temp\biber_tmp_HkCk\7f56027f9015dc497dc7645faffbdd71_15716.utf8, line 7, warning: 172 characters of junk seen at toplevel
+[1356] Biber.pm:133> INFO - WARNINGS: 1

@@ -100,21 +100,68 @@ INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\en\babel-english.tex
 INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\en\babel-english.tex
 INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\en\babel-en.ini
 INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\en\babel-en.ini
+INPUT C:\Program Files\MiKTeX\tex\latex\newtx\newtxtext.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\newtx\newtxtext.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xpatch\xpatch.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xpatch\xpatch.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-luatex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-luatex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-luatex.lua
+INPUT C:\Program Files\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\luatex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\luatex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkeyval.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkeyval.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkvutils.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkvutils.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\keyval.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\keyval.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\base\textcomp.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\base\textcomp.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xstring\xstring.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xstring\xstring.sty
+INPUT C:\Program Files\MiKTeX\tex\generic\xstring\xstring.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\xstring\xstring.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\carlisle\scalefnt.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\carlisle\scalefnt.sty
+INPUT C:\Program Files\MiKTeX\tex\generic\binhex\binhex.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\binhex\binhex.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.lua
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec-luatex.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec-luatex.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.cfg
+INPUT C:\Users\Contreras\AppData\Local\MiKTeX\luatex-cache\generic\fonts\otl\lmroman12-bold.luc
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\biblatex.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\biblatex.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\infwarerr\infwarerr.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.lua
-INPUT C:\Program Files\MiKTeX\tex\latex\etoolbox\etoolbox.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\etoolbox\etoolbox.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\kvoptions\kvoptions.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\kvoptions\kvoptions.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\kvsetkeys\kvsetkeys.sty
@@ -123,8 +170,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\logreq\logreq.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\logreq\logreq.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\logreq\logreq.def
 INPUT C:\Program Files\MiKTeX\tex\latex\logreq\logreq.def
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\url\url.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\url\url.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\blx-dm.def
@@ -148,73 +193,16 @@ INPUT C:\Program Files\MiKTeX\tex\latex\biblatex-apa\apa.cbx
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex-apa\apa.lua
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\biblatex.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\biblatex.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\l3kernel\expl3.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\l3kernel\expl3.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-luatex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-luatex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-luatex.lua
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\blx-case-expl3.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\blx-case-expl3.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\csquotes\csquotes.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\csquotes\csquotes.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\csquotes\csquotes.def
 INPUT C:\Program Files\MiKTeX\tex\latex\csquotes\csquotes.def
 INPUT C:\Program Files\MiKTeX\tex\latex\csquotes\csquotes.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\csquotes\csquotes.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\layouts\layouts.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\layouts\layouts.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\luatex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\luatex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\changepage\changepage.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\changepage\changepage.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\newtx\newtxtext.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\newtx\newtxtext.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xpatch\xpatch.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xpatch\xpatch.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Program Files\MiKTeX\tex\latex\xkeyval\xkeyval.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xkeyval\xkeyval.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkeyval.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkeyval.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkvutils.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\xkeyval\xkvutils.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\base\textcomp.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\textcomp.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xstring\xstring.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xstring\xstring.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\xstring\xstring.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\xstring\xstring.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\carlisle\scalefnt.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\carlisle\scalefnt.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\binhex\binhex.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\binhex\binhex.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.lua
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec-luatex.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec-luatex.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\fontspec\fontspec.cfg
-INPUT C:\Users\Contreras\AppData\Local\MiKTeX\luatex-cache\generic\fonts\otl\lmroman12-bold.luc
 INPUT C:\Program Files\MiKTeX\tex\latex\setspace\setspace.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\setspace\setspace.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.sty
@@ -223,6 +211,16 @@ INPUT C:\Program Files\MiKTeX\tex\generic\iftex\ifvtex.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\iftex\ifvtex.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\changepage\changepage.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\changepage\changepage.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\tools\tabularx.sty
@@ -302,14 +300,6 @@ INPUT C:\Program Files\MiKTeX\tex\lualatex\lualatex-math\lualatex-math.sty
 INPUT C:\Program Files\MiKTeX\tex\lualatex\lualatex-math\lualatex-math.lua
 INPUT C:\Program Files\MiKTeX\tex\latex\unicode-math\unicode-math-table.tex
 INPUT C:\Program Files\MiKTeX\tex\latex\unicode-math\unicode-math-table.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\multirow\multirow.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\multirow\multirow.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\caption\subcaption.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\caption\subcaption.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
@@ -478,8 +468,6 @@ INPUT C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.
 INPUT C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.misc.code.tex
 INPUT C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.misc.code.tex
 INPUT C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.misc.code.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\chngcntr\chngcntr.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\chngcntr\chngcntr.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\listings.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\listings.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
@@ -490,6 +478,16 @@ INPUT C:\Program Files\MiKTeX\tex\latex\ragged2e\ragged2e.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\ragged2e\ragged2e.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\caption\subcaption.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\caption\subcaption.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\chngcntr\chngcntr.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\chngcntr\chngcntr.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\newtx\TeXGyreTermesX.fontspec
@@ -518,6 +516,12 @@ INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
 OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.aux
 OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.aux
+INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex-apa\spanish-apa.lbx
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex-apa\spanish-apa.lbx
 INPUT C:\Program Files\MiKTeX\tex\latex\biblatex\lbx\spanish.lbx
@@ -541,12 +545,6 @@ INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.bbl
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.bbl
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.bbl
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.bbl
-INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.out
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.out
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.out
@@ -597,10 +595,10 @@ OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
 OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
 INPUT .\2_CAPITULO0\Capitulo1.tex
 INPUT .\2_CAPITULO0\Capitulo1.tex
-INPUT .\2_CAPITULO0\Secciones\1_introduccion.tex
-INPUT .\2_CAPITULO0\Secciones\1_introduccion.tex
-INPUT .\2_CAPITULO0\Secciones\2_Marco_teorico.tex
-INPUT .\2_CAPITULO0\Secciones\2_Marco_teorico.tex
+INPUT .\2_CAPITULO1\Introduccion.tex
+INPUT .\2_CAPITULO1\Introduccion.tex
+INPUT .\2_CAPITULO2\MarcoTeorico.tex
+INPUT .\2_CAPITULO2\MarcoTeorico.tex
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
@@ -650,10 +648,10 @@ INPUT .\2_CAPITULO0\\IMG\max_pooling.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
 INPUT .\2_CAPITULO0\\IMG\relu.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
-INPUT .\2_CAPITULO0\Secciones\3_Hipotesis_variables.tex
-INPUT .\2_CAPITULO0\Secciones\3_Hipotesis_variables.tex
-INPUT .\2_CAPITULO0\Secciones\4_Materiales_metodos.tex
-INPUT .\2_CAPITULO0\Secciones\4_Materiales_metodos.tex
+INPUT .\2_CAPITULO3\HipotesisVariables.tex
+INPUT .\2_CAPITULO3\HipotesisVariables.tex
+INPUT .\2_CAPITULO4\MaterialesMetodos.tex
+INPUT .\2_CAPITULO4\MaterialesMetodos.tex
 INPUT .\2_CAPITULO0\IMG\1000points.png
 INPUT .\2_CAPITULO0\IMG\1000points.png
 INPUT .\2_CAPITULO0\IMG\1000points.png
