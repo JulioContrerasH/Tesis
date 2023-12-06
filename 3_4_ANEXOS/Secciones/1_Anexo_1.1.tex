@@ -1,0 +1,159 @@
+% \subsection*{Respuesta Sísmica de una Edificación con AS}
+%\phantomsubsection
+% \addcontentsline{toc}{subsection}{Respuesta Sísmica de una Edificación con AS}
+
+
+\begin{lstlisting}[language=python]
+# Instalación de las bibliotecas pydantic, opensr_test y rasterio con sus últimas versiones
+!pip install pydantic opensr_test rasterio --upgrade
+
+### **1. Leer imágenes**
+
+# Importamos las bibliotecas necesarias
+import rasterio as rio
+import torch
+
+# Definimos las URL de las imágenes de entrada y objetivo
+input = "https://storage.googleapis.com/andesdatacube/demo/mss.tif"
+target = "https://storage.googleapis.com/andesdatacube/demo/tm.tif"
+
+# Abrimos la imagen de entrada y leemos los datos
+with rio.open(input) as src:
+    input_data = src.read()  # Leer los datos de la imagen
+    profile = src.profile  # Guardar el perfil de la imagen
+    input_tensor = torch.from_numpy(input_data).float() / 10000  # Convertir los datos a tensor y escalar
+    # Seleccionamos solo 3 bandas correspondientes
+    input_tensor = input_tensor[0:3, 0:1024, 0:1024]
+
+# Abrimos la imagen objetivo y leemos los datos
+with rio.open(target) as src:
+    target_data = src.read()  # Leer los datos de la imagen
+    target_tensor = torch.from_numpy(target_data).float() / 10000  # Convertir los datos a tensor y escalar
+    # Voltear la imagen verticalmente (aquí no se sabe qué está pasando)
+    target_tensor = torch.flip(target_tensor, dims=[1])[0:3, 0:1024, 0:1024]
+
+# Importamos la biblioteca para graficar
+import matplotlib.pyplot as plt
+
+# Creamos figuras y ejes para mostrar las imágenes
+fig, ax = plt.subplots(1, 2, figsize=(15, 5))
+# Mostrar imagen de entrada
+ax[0].imshow(input_tensor[0:3].permute(1, 2, 0).numpy()*2)
+ax[0].set_title("MSS")
+# Mostrar imagen objetivo
+ax[1].imshow(target_tensor[0:3].permute(1, 2, 0).numpy()*2)
+ax[1].set_title("TM")
+# Mostrar las figuras
+plt.show()
+
+### **2. Cargar funciones**
+
+# Importamos las bibliotecas y funciones necesarias
+import warnings
+from typing import Dict, Optional, Union, List, Literal
+
+import numpy as np
+import torch
+from opensr_test.lightglue import DISK, LightGlue, SuperPoint
+from opensr_test.lightglue.utils import rbd
+from opensr_test.utils import Value, spectral_reducer
+from scipy.spatial.distance import cdist
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.preprocessing import PolynomialFeatures
+from opensr_test.utils import hq_histogram_matching
+from skimage.registration import phase_cross_correlation
+
+# Definimos una función para reducir el número de canales de un tensor
+def spectral_reducer(
+    X: torch.Tensor,
+    method: Literal["mean", "median", "max", "min", "luminosity"] = "luminosity",
+    rgb_bands: Optional[List[int]] = [0, 1, 2],
+) -> torch.Tensor:
+    """ Reduce el número de canales de un tensor de (C, H, W) a (H, W) utilizando un método dado.
+
+    Args:
+        X (torch.Tensor): El tensor a reducir.
+
+        method (str, opcional): El método utilizado para reducir el número de
+            canales. Debe ser uno de "mean", "median", "max", "min",
+            "luminosity". Por defecto es "mean".
+
+    Raises:
+        ValueError: Si el método no es válido.
+
+    Returns:
+        torch.Tensor: El tensor reducido.
+    """
+    # Implementación de los diferentes métodos
+    if method == "mean":
+        return X.mean(dim=0)
+    elif method == "median":
+        return X.median(dim=0).values
+    elif method == "max":
+        return X.max(dim=0).values
+    elif method == "min":
+        return X.min(dim=0).values
+    elif method == "luminosity":
+        return (
+            0.2126*X[rgb_bands[0]] +
+            0.7152*X[rgb_bands[1]] +
+            0.0722*X[rgb_bands[2]]
+        )
+    else:
+        raise ValueError(
+            "Método inválido. Debe ser uno de 'mean', 'median', 'max', 'min', 'luminosity'.")
+
+# Definimos una función para corregir la distorsión radial
+def rbd(
+    img: np.ndarray,
+    dist_coeffs: np.ndarray,
+    cam_matrix: np.ndarray,
+) -> np.ndarray:
+    """ Corrige la distorsión radial en una imagen.
+
+    Args:
+        img (np.ndarray): La imagen a corregir.
+        dist_coeffs (np.ndarray): Los coeficientes de distorsión radial.
+        cam_matrix (np.ndarray): La matriz de la cámara.
+
+    Returns:
+        np.ndarray: La imagen corregida.
+    """
+    # Implementación de la corrección de distorsión radial (se asume conocimiento previo)
+    # Esta es una simplificación y no contiene la implementación real
+
+    # Simulamos una corrección para ilustrar, en la práctica, se necesitarían
+    # más detalles sobre la geometría de la cámara y las operaciones exactas
+    corrected_img = img  # Este sería el resultado de la corrección real
+
+    return corrected_img
+
+### **3. Proceso de corrección de distorsión radial**
+
+# Especificamos los coeficientes de distorsión radial
+dist_coeffs = np.array([0.1, 0.05])
+
+# Especificamos una matriz de cámara simulada
+cam_matrix = np.eye(3)
+
+# Corregimos la distorsión radial en la imagen objetivo
+corrected_target = rbd(target_tensor.numpy(), dist_coeffs, cam_matrix)
+
+# Mostramos la imagen corregida
+plt.imshow(corrected_target[0:3].transpose(1, 2, 0))
+plt.title("Imagen objetivo corregida")
+plt.show()
+
+### **4. Corrección de correlación de fase**
+
+# Obtenemos el desplazamiento mediante correlación de fase
+shift, error, diffphase = phase_cross_correlation(
+    spectral_reducer(input_tensor, method="luminosity").numpy(),
+    spectral_reducer(corrected_target, method="luminosity").numpy()
+)
+
+# Imprimimos el desplazamiento encontrado
+print(f"Desplazamiento: {shift}")
+
+\end{lstlisting}
