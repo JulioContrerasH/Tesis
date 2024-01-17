@@ -502,14 +502,6 @@ INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_0_CARATULA\Caratula.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_0_CARATULA\Caratula.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_1_PERMISOS\Permisos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_1_PERMISOS\Permisos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_2_DEDICATORIA\Dedicatoria.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_2_DEDICATORIA\Dedicatoria.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_3_AGRADECIMIENTOS\Agradecimientos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_3_AGRADECIMIENTOS\Agradecimientos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
@@ -571,30 +563,10 @@ INPUT .\E_IMAGENES\0_Caratula\UNMSM_LOGO.png
 INPUT .\E_IMAGENES\0_Caratula\UNMSM_LOGO.png
 INPUT C:\Users\Contreras\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\E_IMAGENES\0_Caratula\UNMSM_LOGO.png
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_1_PERMISOS\Permisos.aux
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_1_PERMISOS\Permisos.aux
-INPUT .\1_1_PERMISOS\Permisos.tex
-INPUT .\1_1_PERMISOS\Permisos.tex
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_2_DEDICATORIA\Dedicatoria.aux
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_2_DEDICATORIA\Dedicatoria.aux
-INPUT .\1_2_DEDICATORIA\Dedicatoria.tex
-INPUT .\1_2_DEDICATORIA\Dedicatoria.tex
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_3_AGRADECIMIENTOS\Agradecimientos.aux
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_3_AGRADECIMIENTOS\Agradecimientos.aux
-INPUT .\1_3_AGRADECIMIENTOS\Agradecimientos.tex
-INPUT .\1_3_AGRADECIMIENTOS\Agradecimientos.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-la.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-la.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-la.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-la.tex
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.toc
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.toc
 OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.toc
 OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.toc
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
-INPUT .\2_CAPITULO0\Capitulo1.tex
-INPUT .\2_CAPITULO0\Capitulo1.tex
 INPUT .\2_CAPITULO1\Introduccion.tex
 INPUT .\2_CAPITULO1\Introduccion.tex
 INPUT .\2_CAPITULO2\MarcoTeorico.tex
@@ -603,11 +575,11 @@ INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi5.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi5.tfm
 INPUT .\2_CAPITULO0\IMG\linea_tiempo_landsat.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi5.tfm
 INPUT .\2_CAPITULO0\IMG\convolucion.png
 INPUT .\2_CAPITULO0\IMG\convolucion.png
 INPUT .\2_CAPITULO0\IMG\convolucion.png
@@ -627,31 +599,36 @@ INPUT .\2_CAPITULO0\IMG\padding3.png
 INPUT .\2_CAPITULO0\IMG\padding3.png
 INPUT .\2_CAPITULO0\IMG\padding3.png
 INPUT .\2_CAPITULO0\IMG\padding2.png
-INPUT .\2_CAPITULO0\IMG\stride.png
-INPUT .\2_CAPITULO0\IMG\stride.png
-INPUT .\2_CAPITULO0\IMG\stride.png
-INPUT .\2_CAPITULO0\IMG\stride.png
 INPUT .\2_CAPITULO0\IMG\padding3.png
+INPUT .\2_CAPITULO0\IMG\stride.png
+INPUT .\2_CAPITULO0\IMG\stride.png
+INPUT .\2_CAPITULO0\IMG\stride.png
+INPUT .\2_CAPITULO0\IMG\stride.png
 INPUT .\2_CAPITULO0\\IMG\tipos_capas.png
 INPUT .\2_CAPITULO0\\IMG\tipos_capas.png
 INPUT .\2_CAPITULO0\\IMG\tipos_capas.png
 INPUT .\2_CAPITULO0\\IMG\tipos_capas.png
 INPUT .\2_CAPITULO0\IMG\stride.png
-INPUT .\2_CAPITULO0\\IMG\tipos_capas.png
 INPUT .\2_CAPITULO0\\IMG\relu.png
 INPUT .\2_CAPITULO0\\IMG\relu.png
 INPUT .\2_CAPITULO0\\IMG\relu.png
+INPUT .\2_CAPITULO0\\IMG\relu.png
+INPUT .\2_CAPITULO0\\IMG\tipos_capas.png
 INPUT .\2_CAPITULO0\\IMG\relu.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
-INPUT .\2_CAPITULO0\\IMG\relu.png
 INPUT .\2_CAPITULO0\\IMG\max_pooling.png
 INPUT .\2_CAPITULO3\HipotesisVariables.tex
 INPUT .\2_CAPITULO3\HipotesisVariables.tex
 INPUT .\2_CAPITULO4\MaterialesMetodos.tex
 INPUT .\2_CAPITULO4\MaterialesMetodos.tex
+INPUT .\E_IMAGENES\area_estudio.jpg
+INPUT .\E_IMAGENES\area_estudio.jpg
+INPUT .\E_IMAGENES\area_estudio.jpg
+INPUT .\E_IMAGENES\area_estudio.jpg
+INPUT .\E_IMAGENES\area_estudio.jpg
 INPUT .\2_CAPITULO0\IMG\1000points.png
 INPUT .\2_CAPITULO0\IMG\1000points.png
 INPUT .\2_CAPITULO0\IMG\1000points.png
@@ -666,52 +643,53 @@ INPUT .\2_CAPITULO0\IMG\hr_to_lr.png
 INPUT .\2_CAPITULO0\IMG\hr_to_lr.png
 INPUT .\2_CAPITULO0\IMG\hr_to_lr.png
 INPUT .\2_CAPITULO0\IMG\cvg.png
-INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
-INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
-INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
-INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
 INPUT .\2_CAPITULO0\IMG\hr_to_lr.png
 INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
-INPUT .\2_CAPITULO0\IMG\modelo.png
-INPUT .\2_CAPITULO0\IMG\modelo.png
-INPUT .\2_CAPITULO0\IMG\modelo.png
-INPUT .\2_CAPITULO0\IMG\modelo.png
-INPUT .\2_CAPITULO0\IMG\modelo.png
-INPUT .\2_CAPITULO0\Secciones\5_Presupuesto.tex
-INPUT .\2_CAPITULO0\Secciones\5_Presupuesto.tex
-INPUT .\2_CAPITULO0\Secciones\6_Cronograma.tex
-INPUT .\2_CAPITULO0\Secciones\6_Cronograma.tex
-INPUT .\2_CAPITULO0\IMG\cronograma.png
-INPUT .\2_CAPITULO0\IMG\cronograma.png
-INPUT .\2_CAPITULO0\IMG\cronograma.png
-INPUT .\2_CAPITULO0\IMG\cronograma.png
-INPUT .\2_CAPITULO0\IMG\cronograma.png
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
-INPUT .\3_3_BIBLIOGRAFIA\Bibliografia.tex
-INPUT .\3_3_BIBLIOGRAFIA\Bibliografia.tex
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
-OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
-INPUT .\3_4_ANEXOS\Anexos.tex
-INPUT .\3_4_ANEXOS\Anexos.tex
-INPUT .\3_4_ANEXOS\Secciones\1_Anexo1.tex
-INPUT .\3_4_ANEXOS\Secciones\1_Anexo1.tex
+INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
+INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
+INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
+INPUT .\2_CAPITULO0\IMG\tm_mss_rmse.png
+INPUT .\2_CAPITULO4\IMG\dataloader.png
+INPUT .\2_CAPITULO4\IMG\dataloader.png
+INPUT .\2_CAPITULO4\IMG\dataloader.png
+INPUT .\2_CAPITULO4\IMG\dataloader.png
+INPUT .\2_CAPITULO4\IMG\dataloader.png
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Contreras\AppData\Local\MiKTeX\luatex-cache\generic\fonts\otl\lmmono12-regular.luc
-INPUT .\3_4_ANEXOS\Secciones\1_Anexo_1.1.tex
-INPUT .\3_4_ANEXOS\Secciones\1_Anexo_1.1.tex
 INPUT C:\Users\Contreras\AppData\Local\MiKTeX\luatex-cache\generic\fonts\otl\lmmono10-regular.luc
+INPUT .\E_IMAGENES\modelo_esgr.jpg
+INPUT .\E_IMAGENES\modelo_esgr.jpg
+INPUT .\E_IMAGENES\modelo_esgr.jpg
+INPUT .\E_IMAGENES\modelo_esgr.jpg
+INPUT .\E_IMAGENES\modelo_esgr.jpg
+INPUT .\2_CAPITULO0\IMG\modelo.png
+INPUT .\2_CAPITULO0\IMG\modelo.png
+INPUT .\2_CAPITULO0\IMG\modelo.png
+INPUT .\2_CAPITULO0\IMG\modelo.png
+INPUT .\2_CAPITULO0\IMG\modelo.png
+INPUT .\2_CAPITULO5\Secciones\Resultados.tex
+INPUT .\2_CAPITULO5\Secciones\Resultados.tex
+INPUT .\2_CAPITULO5\Secciones\Discusion.tex
+INPUT .\2_CAPITULO5\Secciones\Discusion.tex
+INPUT .\2_CAPITULO5\Secciones\ConclusionesRecomendaciones.tex
+INPUT .\2_CAPITULO5\Secciones\ConclusionesRecomendaciones.tex
+OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
+OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
+INPUT .\3_3_BIBLIOGRAFIA\Bibliografia.tex
+INPUT .\3_3_BIBLIOGRAFIA\Bibliografia.tex
+OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
+OUTPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux
+INPUT .\3_4_ANEXOS\Anexos.tex
+INPUT .\3_4_ANEXOS\Anexos.tex
+INPUT .\3_4_ANEXOS\Secciones\1_Anexo_1.1.tex
+INPUT .\3_4_ANEXOS\Secciones\1_Anexo_1.1.tex
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\TESIS_IG.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_0_CARATULA\Caratula.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_0_CARATULA\Caratula.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_1_PERMISOS\Permisos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_1_PERMISOS\Permisos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_2_DEDICATORIA\Dedicatoria.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_2_DEDICATORIA\Dedicatoria.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_3_AGRADECIMIENTOS\Agradecimientos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\1_3_AGRADECIMIENTOS\Agradecimientos.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
-INPUT d:\CURSOS_2022\Repos\TesisLatex\build\2_CAPITULO0\Capitulo1.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_3_BIBLIOGRAFIA\Bibliografia.aux
 INPUT d:\CURSOS_2022\Repos\TesisLatex\build\3_4_ANEXOS\Anexos.aux

@@ -139,6 +139,7 @@
 % ------------------------------------
 \setlength{\parindent}{1.27cm} % Configura la sangría
 \doublespacing % Aplica doble espaciado en todo el documento
+% \usepackage[section]{placeins}
 
 
 % ------------------------------------
@@ -272,19 +273,35 @@
 \titlespacing*{\chapter}{0pt}{12pt}{5pt} % Espaciado para \chapter
 
 % Nivel 2 (\section)
-\titleformat{\section}[block]{\normalfont\normalsize\bfseries\raggedright}{\thesection}{0.5em}{}
+\titleformat{\section}[block]
+  {\normalfont\normalsize\bfseries\raggedright}
+  {\thesection}
+  {0.5em}
+  {}
 \titlespacing*{\section}{0pt}{12pt}{5pt} % Espaciado para \section
 
 % Nivel 3 (\subsection)
-\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries\itshape\raggedright}{\thesubsection}{0.5em}{}
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\bfseries\itshape\raggedright}
+  {\thesubsection}
+  {0.5em}
+  {}
 \titlespacing*{\subsection}{0pt}{12pt}{5pt} % Espaciado para \subsection
 
 % Nivel 4 (\subsubsection)
-\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries\raggedright}{\thesubsubsection}{0.5em}{}[. \quad]
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries\raggedright}
+  {\thesubsubsection}
+  {0.5em}
+  {}[. \quad]
 \titlespacing*{\subsubsection}{1.27cm}{12pt}{0pt} % Espaciado para \subsubsection
 
 % Nivel 5 (\paragraph)
-\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\itshape\raggedright}{\theparagraph}{0.5em}{}[. \quad]
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries\itshape\raggedright}
+  {\theparagraph}
+  {0.5em}
+  {}[. \quad]
 \titlespacing*{\paragraph}{1.27cm}{12pt}{0pt} % Espaciado para \paragraph
 
 
@@ -297,19 +314,6 @@
 \definecolor{arena}{RGB}{230,217,170} % Define el color arena
 \definecolor{azul}{rgb}{0.03, 0.15, 0.4} % Define el color azul
 \definecolor{negro}{rgb}{0, 0, 0} % Define el color negro
-
-
-% -------------------------------------
-% Información Personal y del Trabajo
-% -------------------------------------
-\author{Nombre1 Nombre2 Apellido1 Apellido2} % Autor para el pie de página
-\authorcaratula{NOMBRE1 NOMBRE2 APELLIDO1 APELLIDO2} % Autor para la carátula (mayúsculas)
-\title{Xxxxxxxxxxx Título de la Tesis Xxxxxxxxxxx} % Título para el pie de página
-\titlecaratula{XXXXXXXXXXXX TÍTULO DE LA TESIS XXXXXXXXXXXXXX} % Título para la carátula (mayúsculas)
-\facultad{FACULTAD DE INGENIERÍA CIVIL} % Nombre de la facultad (mayúsculas)
-\grado{INGENIERO CIVIL} % Título profesional (mayúsculas)
-\asesor{DR. NOMBRE DEL ASESOR} % Asesor para la carátula (mayúsculas)
-\yyearr{2024} % Año para la carátula
 
 
 % -------------------------------------

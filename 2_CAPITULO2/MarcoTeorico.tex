@@ -9,366 +9,397 @@
         
         Por último en una investigación llevada a cabo por \textcite{saunier2022sen2like} exploró la armonización y fusión de datos de sensores satelitales Landsat 8, Landsat 9 y Sentinel-2 utilizando técnicas avanzadas de inteligencia artificial. Mediante el software S2L, desarrollado en Python 3.7 e incorporando librerías como Numpy, Pandas y Scikit-Learn, se generaron conjuntos de datos armonizados (L2H) y fusionados (L2F). Estos conjuntos, tras meticulosos ajustes espectrales, se presentaron en mosaicos de 110 km × 110 km utilizando el Sistema de Referencia UTM-MGRS. Se aplicaron correcciones geométricas, apoyadas en herramientas como OpenCV, y se implementaron correcciones atmosféricas con la ayuda de SMAC y Sen2Cor 3.0. Uno de los avances más significativos fue la corrección BRDF, que logró reducir coeficientes hasta un 0.01◦. Además, se puso de manifiesto la variabilidad en respuestas espectrales entre diferentes instrumentos, llevando a la introducción del Factor de Ajuste de Banda Espectral (SBAF). La innovación de este estudio sirve como pilar para futuros esfuerzos enfocados en la integración y optimización de imágenes de diferentes sensores, estableciendo un precedente clave para trabajos que buscan la armonización en el monitoreo satelital.
     \section{Bases teóricas}
-        \subsection{Landsat: Satélites de Observación Terrestre}
-            Desde 1972, los satélites Landsat han adquirido de manera continua imágenes basadas en el espacio de la superficie terrestre de la Tierra. Estos datos son esenciales para investigaciones relacionadas con el uso y cambio del suelo, con aplicaciones en áreas como la silvicultura, agricultura, geología, planificación regional y educación.
-            
-            \subsubsection{Historia y Misión de Landsat}
-                Landsat es una colaboración entre el U.S. Geological Survey (USGS) y la National Aeronautics and Space Administration (NASA). Mientras NASA se encarga del desarrollo de los instrumentos y satélites, así como de su lanzamiento y validación, el USGS toma control sobre la operación de los satélites, la recepción de datos, archivo, generación de productos y distribución \autocite{USGS2023}.
+        \subsection{Armonización de imágenes satelitales}
+            \subsubsection{Landsat: Satélites de Observación Terrestre}
+                Desde 1972, los satélites Landsat han adquirido de manera continua imágenes basadas en el espacio de la superficie terrestre de la Tierra. Estos datos son esenciales para investigaciones relacionadas con el uso y cambio del suelo, con aplicaciones en áreas como la silvicultura, agricultura, geología, planificación regional y educación.
                 
-                \insertfigure
-                    {Línea de tiempo e historia de las Misiones Landsat, iniciadas en 1972.}
-                    {2_CAPITULO0/IMG/linea_tiempo_landsat.png}
-                    {La línea de tiempo destaca que, desde su inicio en 1972, las misiones Landsat han brindado una secuencia constante de datos que revelan las transformaciones de la Tierra, apoyando así diversas investigaciones y evidenciando su desarrollo en la vigilancia ambiental global. Tomado de \textcite{USGS2023}.} 
-                La idea de crear un satélite de observación civil surgió en la década de 1960, lográndose el 23 de julio de 1972 con el lanzamiento de ERTS-1, luego renombrado Landsat 1. A este le siguieron varias versiones, siendo Landsat 5 el que estableció un récord por ser el satélite de observación terrestre en funcionamiento más longevo.
-            
-            \subsubsection{Adquisiciones Satelitales}
-                Tanto Landsat 8 como Landsat 9 orbitan la Tierra a una altitud de 705 km, completando una órbita en 99 minutos y pasando por cualquier punto de la Tierra cada 16 días. Entre los dos satélites, se agregan más de 1,500 escenas al archivo USGS diariamente. Landsats 4, 5 y 7 siguieron la misma órbita, mientras que Landsats 1, 2 y 3 tenían una altitud de 920 km \autocite{USGS2023}.
-            
-            \subsubsection{Sensores y Designaciones de Bandas}
-                Los sensores han variado a lo largo de las versiones de Landsat. Desde el Multispectral Scanner (MSS) en los primeros Landsats hasta el Operational Land Imager (OLI) y el Thermal Infrared Sensor (TIRS) en los Landsats más recientes.
-            
-                \begin{table}[H]
-                    \caption{\doublespacing \\ \textit{Comparación y visualización de bandas y longitudes de onda de sensores Landsat mediante Spectral Viewer del U.S. Geological Survey.}}
-                    \begin{spacing}{8}
-                        \fontsize{8pt}{2pt}\selectfont  
-                        \begin{tabularx}{\linewidth}{P{3cm}*{10}{c}} 
-                            \toprule
-                            \textbf{Designaciones de banda} & \multicolumn{2}{c}{\textbf{L8-9 OLI/TIRS}} & \multicolumn{2}{c}{\textbf{L7 ETM+}} & \multicolumn{2}{c}{\textbf{L4-5 TM}} & \multicolumn{2}{c}{\textbf{L4-5 MSS*}} & \multicolumn{2}{c}{\textbf{L1-3 MSS*}} \\
-                            \midrule
-                            & B & Longitud & B & Longitud & B & Longitud & B & Longitud & B & Longitud \\
-                            \midrule
-                            Costera/Aerosol & 1 & 0.43–0.45 & -- & -- & -- & -- & -- & -- & -- & -- \\
-                            Azul & 2 & 0.45–0.51 & 1 & 0.45–0.52 & 1 & 0.45–0.52 & -- & -- & -- & -- \\
-                            Verde & 3 & 0.53–0.59 & 2 & 0.52–0.60 & 2 & 0.52–0.60 & 1 & 0.5–0.6 & 4 & 0.5–0.6 \\
-                            Pancromática** & 8  & 0.50–0.68 & 8 & 0.52–0.90 & -- & -- & -- & -- & -- & -- \\
-                            Rojo & 4 & 0.64–0.67 & 3 & 0.63–0.69 & 3 & 0.63–0.69 & 2 & 0.6–0.7 & 5 & 0.6–0.7 \\
-                            Infrarrojo cercano & 5 & 0.85–0.88 & 4 & 0.77–0.90 & 4 & 0.76–0.90 & 3 & 0.7–0.8 & 6 & 0.7–0.8 \\
-                            Infrarrojo cercano & -- & -- & -- & -- & -- & -- & 4 & 0.8–1.1 & 7 & 0.8–1.1 \\
-                            Cirrus & 9 & 1.36–1.38 & -- & -- & -- & -- & -- & -- & -- & -- \\
-                            Infrarrojo corto-1 & 6 & 1.57–1.65 & 5 & 1.55–1.75 & 5 & 1.55–1.75 & -- & -- & -- & -- \\
-                            Infrarrojo corto-2 & 7 & 2.11–2.29 & 7 & 2.09–2.35 & 7 & 2.08–2.35 & -- & -- & -- & -- \\
-                            Térmico & 10 T1 & 10.60–11.19 & 6 T2 & 10.40–12.50 & 6 T2 & 10.40–12.50 & -- & -- & -- & -- \\
-                            Térmico & 11 T1 & 11.50–12.51 & -- & -- & -- & -- & -- & -- & -- & -- \\
-                            \bottomrule
-                        \end{tabularx}
-                    \end{spacing}
-                    \vspace{1\baselineskip}
-                    \textit{Nota.} Hay observaciones que se debe tener en cuenta. Adapatado de \textcite{Landsat2023}. \\
-                        * Adquirido a 80 metros, remuestreado a 60 metros. \\
-                        ** 15 metros (pancromático). \\
-                        T1 = Térmico (adquirido a 100 metros, remuestreado a 30 metros). \\
-                        T2 = Térmico (adquirido a 120 metros, remuestreado a 30 metros). 
-                    \label{BandasLandsat}
-                \end{table}
-            
-                \begin{table}[H]
-                    \caption{\doublespacing \\ \textit{Comparación de sensores Landsat}}
-                    \begin{spacing}{8}
-                        \fontsize{8pt}{2pt}\selectfont  
-                        \begin{tabularx}{\linewidth}{*{6}{c}P{3.5cm}} 
-                            \toprule
-                            \textbf{Banda} & \textbf{L8–9 OLI/TIRS} & \textbf{L7 ETM+} & \textbf{L4–5 TM} & \textbf{L4–5 MSS} & \textbf{L1–3 MSS} & \multicolumn{1}{c}{\textbf{Uso}} \\
-                            \midrule
-                            Costero/Aerosol & Banda 1 & -- & -- & -- & -- & Observaciones costeras y detección de aerosoles. \\
-                            Azul & Banda 2 & Banda 1 & Banda 1 & -- & -- & Mapeo batimétrico y discriminación suelo/vegetación. \\
-                            Verde & Banda 3 & Banda 2 & Banda 2 & Banda 1 & Banda 4 & Evaluación de la vegetación. \\
-                            Rojo & Banda 4 & Banda 3 & Banda 3 & Banda 2 & Banda 5 & Identificación de vegetación y suelos. \\
-                            Infrarrojo Cercano & Banda 5 & Banda 4 & Banda 4 & Banda 3 & Banda 6 & Análisis y detección de vegetación. \\
-                             & -- & -- & -- & Banda 4 & Banda 7 &  \\
-                            Infrarrojo Onda Corta-1 & Banda 6 & Banda 5 & Banda 5 & -- & -- & Análisis de humedad y detección de incendios. \\
-                            Infrarrojo Onda Corta-2 & Banda 7 & Banda 7 & Banda 7 & -- & -- & Detección de incendios y análisis de humedad. \\
-                            Panchromático & Banda 8 & Banda 8 & -- & -- & -- & Mejora de resolución en imágenes multiespectrales. \\
-                            Cirrus & Banda 9 & -- & -- & -- & -- & Detección de nubes cirrus. \\
-                            Térmico & Banda 10 & Banda 6 & Banda 6 & -- & -- & Mapeo de temperatura y estimación de humedad.
-                            \\
-                            \bottomrule
-                        \end{tabularx}
-                    \end{spacing}
-                    \vspace{1\baselineskip}
-                    \textit{Nota.} Se observa una tendencia en el uso de diferentes bandas para monitorear vegetación, analizar humedad, clima y mejorar la resolución de imágenes. Adapatado de \textcite{Landsat2023}
-                    \label{UsoLandsat}
-                \end{table}
-            
-            \subsubsection{Aplicaciones de los Datos Landsat}
-                Los datos de Landsat respaldan una amplia gama de aplicaciones, desde investigación del cambio global hasta seguimiento de derrames de petróleo y monitoreo de contaminación por residuos mineros.
+                \paragraph{Historia y Misión de Landsat}
+                    Landsat es una colaboración entre el U.S. Geological Survey (USGS) y la National Aeronautics and Space Administration (NASA). Mientras NASA se encarga del desarrollo de los instrumentos y satélites, así como de su lanzamiento y validación, el USGS toma control sobre la operación de los satélites, la recepción de datos, archivo, generación de productos y distribución \autocite{USGS2023}.
+                    
+                    \insertfigure
+                        {Línea de tiempo e historia de las Misiones Landsat, iniciadas en 1972.}
+                        {2_CAPITULO0/IMG/linea_tiempo_landsat.png}
+                        {La línea de tiempo destaca que, desde su inicio en 1972, las misiones Landsat han brindado una secuencia constante de datos que revelan las transformaciones de la Tierra, apoyando así diversas investigaciones y evidenciando su desarrollo en la vigilancia ambiental global. Tomado de \textcite{USGS2023}.} 
+                    La idea de crear un satélite de observación civil surgió en la década de 1960, lográndose el 23 de julio de 1972 con el lanzamiento de ERTS-1, luego renombrado Landsat 1. A este le siguieron varias versiones, siendo Landsat 5 el que estableció un récord por ser el satélite de observación terrestre en funcionamiento más longevo.
                 
-            \subsubsection{Productos y Procesamiento de Datos Landsat}
-                El USGS proporciona datos sistemáticos, geométricos, radiométricos y corregidos por terreno de alta calidad a usuarios en todo el mundo.
-            
-            \subsubsection{Equipos Científicos de Landsat}
-                Los Equipos Científicos de Landsat brindan entrada técnica y científica a USGS y NASA para garantizar el éxito del programa Landsat.
+                \paragraph{Adquisiciones Satelitales}
+                    Tanto Landsat 8 como Landsat 9 orbitan la Tierra a una altitud de 705 km, completando una órbita en 99 minutos y pasando por cualquier punto de la Tierra cada 16 días. Entre los dos satélites, se agregan más de 1,500 escenas al archivo USGS diariamente. Landsats 4, 5 y 7 siguieron la misma órbita, mientras que Landsats 1, 2 y 3 tenían una altitud de 920 km \autocite{USGS2023}.
                 
-            \subsubsection{Información Adicional}
-                Para obtener más detalles sobre las operaciones de Landsat, productos de datos y acceso a datos, puede dirigirse a:
-    
-        \subsection{Armonización de imágenes en teledetección}
-            La armonización se refiere al ajuste radiométrico y geométrico de imágenes de múltiples sensores para garantizar la confiabilidad en teledetección \autocite{ichikawa2022development}. A medida que aumenta la disponibilidad de datos de teledetección, es esencial normalizar imágenes con propiedades radiométricas variables para mosaicos coherentes \autocite{langheinrich2017enhanced}. Además, implica alinear datos de diferentes fuentes para interpretaciones uniformes, utilizando modelos específicos como Fiware \autocite{vosinakis2022data}. Sin embargo, al estudiar la temperatura de la superficie terrestre, la armonización enfrenta desafíos debido a sesgos entre diferentes satélites \autocite{adeniran2022cross}.
-            
-        \subsection{Armonización Geométrica de Datos de Teledetección}
-            Los datos de teledetección a menudo presentan desafíos inherentes. Uno de los principales es la falta de alineación perfecta entre imágenes, lo que da lugar a lo que se conoce como desajustes espaciales o misregistrations \autocite{storey2016note, wolfe2002achieving, yan2018sentinel}. Estos desajustes pueden oscilar desde sub-píxeles hasta unos pocos píxeles.
-            
-            \subsubsection{Causas de Misregistrations}
-                Estos desajustes pueden ser atribuidos a diversas causas, desde la densidad desigual de puntos de control en tierra, el uso de conjuntos de datos de referencia desiguales, hasta problemas en el software de preprocesamiento de los proveedores o movimientos no modelados del sensor \autocite{storey2016note}. Estos desajustes, si no se corrigen, pueden afectar gravemente productos derivados, como clasificaciones de imágenes y detección de cambios.
+                \paragraph{Sensores y Designaciones de Bandas}
+                    Los sensores han variado a lo largo de las versiones de Landsat. Desde el Multispectral Scanner (MSS) en los primeros Landsats hasta el Operational Land Imager (OLI) y el Thermal Infrared Sensor (TIRS) en los Landsats más recientes.
                 
-            \subsubsection{Proceso de Armonización}
-                La armonización geométrica tiene como objetivo abordar y corregir estas heterogeneidades espaciales. Se compone de dos fases principales: (1) la corrección de misregistrations, y (2) el remuestreo y reproyección de los datos \autocite{roy2000impact}. Sin embargo, corregir estos desajustes no es una tarea sencilla. Las imágenes pueden haber sido adquiridas en diferentes ángulos, fechas, y horarios, lo que complica aún más el proceso de armonización.
+                    \begin{table}[H]
+                        \caption{\doublespacing \\ \textit{Comparación y visualización de bandas y longitudes de onda de sensores Landsat mediante Spectral Viewer del U.S. Geological Survey.}}
+                        \begin{spacing}{8}
+                            \fontsize{8pt}{2pt}\selectfont  
+                            \begin{tabularx}{\linewidth}{P{3cm}*{10}{c}} 
+                                \toprule
+                                \textbf{Designaciones de banda} & \multicolumn{2}{c}{\textbf{L8-9 OLI/TIRS}} & \multicolumn{2}{c}{\textbf{L7 ETM+}} & \multicolumn{2}{c}{\textbf{L4-5 TM}} & \multicolumn{2}{c}{\textbf{L4-5 MSS*}} & \multicolumn{2}{c}{\textbf{L1-3 MSS*}} \\
+                                \midrule
+                                & B & Longitud & B & Longitud & B & Longitud & B & Longitud & B & Longitud \\
+                                \midrule
+                                Costera/Aerosol & 1 & 0.43–0.45 & -- & -- & -- & -- & -- & -- & -- & -- \\
+                                Azul & 2 & 0.45–0.51 & 1 & 0.45–0.52 & 1 & 0.45–0.52 & -- & -- & -- & -- \\
+                                Verde & 3 & 0.53–0.59 & 2 & 0.52–0.60 & 2 & 0.52–0.60 & 1 & 0.5–0.6 & 4 & 0.5–0.6 \\
+                                Pancromática** & 8  & 0.50–0.68 & 8 & 0.52–0.90 & -- & -- & -- & -- & -- & -- \\
+                                Rojo & 4 & 0.64–0.67 & 3 & 0.63–0.69 & 3 & 0.63–0.69 & 2 & 0.6–0.7 & 5 & 0.6–0.7 \\
+                                Infrarrojo cercano & 5 & 0.85–0.88 & 4 & 0.77–0.90 & 4 & 0.76–0.90 & 3 & 0.7–0.8 & 6 & 0.7–0.8 \\
+                                Infrarrojo cercano & -- & -- & -- & -- & -- & -- & 4 & 0.8–1.1 & 7 & 0.8–1.1 \\
+                                Cirrus & 9 & 1.36–1.38 & -- & -- & -- & -- & -- & -- & -- & -- \\
+                                Infrarrojo corto-1 & 6 & 1.57–1.65 & 5 & 1.55–1.75 & 5 & 1.55–1.75 & -- & -- & -- & -- \\
+                                Infrarrojo corto-2 & 7 & 2.11–2.29 & 7 & 2.09–2.35 & 7 & 2.08–2.35 & -- & -- & -- & -- \\
+                                Térmico & 10 T1 & 10.60–11.19 & 6 T2 & 10.40–12.50 & 6 T2 & 10.40–12.50 & -- & -- & -- & -- \\
+                                Térmico & 11 T1 & 11.50–12.51 & -- & -- & -- & -- & -- & -- & -- & -- \\
+                                \bottomrule
+                            \end{tabularx}
+                        \end{spacing}
+                        \vspace{1\baselineskip}
+                        \textit{Nota.} Hay observaciones que se debe tener en cuenta. Adapatado de \textcite{Landsat2023}. \\
+                            * Adquirido a 80 metros, remuestreado a 60 metros. \\
+                            ** 15 metros (pancromático). \\
+                            T1 = Térmico (adquirido a 100 metros, remuestreado a 30 metros). \\
+                            T2 = Térmico (adquirido a 120 metros, remuestreado a 30 metros). 
+                        \label{BandasLandsat}
+                    \end{table}
                 
-            \subsubsection{Resampling y Pan-sharpening}
-                A pesar de los desafíos, se han desarrollado técnicas para adaptar diferentes cuadrículas de píxeles mediante remuestreo espacial o pan-sharpening \autocite{ghassemian2016review, javan2021review, li2017pixel}. Estas técnicas están implementadas en varios paquetes de software de código abierto.
+                    \begin{table}[H]
+                        \caption{\doublespacing \\ \textit{Comparación de sensores Landsat}}
+                        \begin{spacing}{8}
+                            \fontsize{8pt}{2pt}\selectfont  
+                            \begin{tabularx}{\linewidth}{*{6}{c}P{3.5cm}} 
+                                \toprule
+                                \textbf{Banda} & \textbf{L8–9 OLI/TIRS} & \textbf{L7 ETM+} & \textbf{L4–5 TM} & \textbf{L4–5 MSS} & \textbf{L1–3 MSS} & \multicolumn{1}{c}{\textbf{Uso}} \\
+                                \midrule
+                                Costero/Aerosol & Banda 1 & -- & -- & -- & -- & Observaciones costeras y detección de aerosoles. \\
+                                Azul & Banda 2 & Banda 1 & Banda 1 & -- & -- & Mapeo batimétrico y discriminación suelo/vegetación. \\
+                                Verde & Banda 3 & Banda 2 & Banda 2 & Banda 1 & Banda 4 & Evaluación de la vegetación. \\
+                                Rojo & Banda 4 & Banda 3 & Banda 3 & Banda 2 & Banda 5 & Identificación de vegetación y suelos. \\
+                                Infrarrojo Cercano & Banda 5 & Banda 4 & Banda 4 & Banda 3 & Banda 6 & Análisis y detección de vegetación. \\
+                                & -- & -- & -- & Banda 4 & Banda 7 &  \\
+                                Infrarrojo Onda Corta-1 & Banda 6 & Banda 5 & Banda 5 & -- & -- & Análisis de humedad y detección de incendios. \\
+                                Infrarrojo Onda Corta-2 & Banda 7 & Banda 7 & Banda 7 & -- & -- & Detección de incendios y análisis de humedad. \\
+                                Panchromático & Banda 8 & Banda 8 & -- & -- & -- & Mejora de resolución en imágenes multiespectrales. \\
+                                Cirrus & Banda 9 & -- & -- & -- & -- & Detección de nubes cirrus. \\
+                                Térmico & Banda 10 & Banda 6 & Banda 6 & -- & -- & Mapeo de temperatura y estimación de humedad.
+                                \\
+                                \bottomrule
+                            \end{tabularx}
+                        \end{spacing}
+                        \vspace{1\baselineskip}
+                        \textit{Nota.} Se observa una tendencia en el uso de diferentes bandas para monitorear vegetación, analizar humedad, clima y mejorar la resolución de imágenes. Adapatado de \textcite{Landsat2023}
+                        \label{UsoLandsat}
+                    \end{table}
                 
-            \subsubsection{Técnicas de Co-registración}
-                Las técnicas de co-registración son esenciales para alinear correctamente las imágenes. Estas técnicas se pueden clasificar en dos categorías principales: basadas en características y basadas en intensidad \autocite{zitova2003image}. Mientras que las primeras se centran en características notables en las imágenes, como edificios o carreteras, las segundas se basan en patrones de valores de grises. Ambas técnicas ofrecen sus propios beneficios y desafíos. 
+                \paragraph{Aplicaciones de los Datos Landsat}
+                    Los datos de Landsat respaldan una amplia gama de aplicaciones, desde investigación del cambio global hasta seguimiento de derrames de petróleo y monitoreo de contaminación por residuos mineros.
+                    
+                \paragraph{Productos y Procesamiento de Datos Landsat}
+                    El USGS proporciona datos sistemáticos, geométricos, radiométricos y corregidos por terreno de alta calidad a usuarios en todo el mundo.
                 
-            \subsubsection{Necesidad de un Método Universal}
-                Dada la diversidad y complejidad de los datos de teledetección, es esencial contar con un método de co-registración que sea universalmente aplicable \autocite{chen2003mutual}. Este método debería ser capaz de manejar desajustes técnicos entre múltiples sensores y desafíos presentados por paisajes y atmósferas cambiantes.
-
-        \subsection{Armonización Espectral de Datos de Teledetección}
-            Los sensores de teledetección óptica se caracterizan por presentar diversos bandas espectrales, abarcando no solo el espectro electromagnético visible (VIS, ~400 – 700 nm), sino también el infrarrojo cercano (NIR, ~750 – 1000 nm) y el infrarrojo de onda corta (SWIR, ~1000 – 2500 nm). Estos sensores facilitan la diferenciación de materiales superficiales y permiten identificar ciertas propiedades del cobertura terrestre o composiciones atmosféricas.
-            
-            \subsubsection{Discrepancias Espectrales entre Sensores}
-                Aunque satélites de Observación de la Tierra (EO) como Landsat (NASA) o Sentinel-2 (ESA) suelen diseñarse con características espectrales similares para garantizar la comparabilidad a largo plazo, aún existen discrepancias en el número de bandas y las respuestas espectrales de cada sensor \autocite{drusch2012sentinel}.
-                
-            \subsubsection{Objetivo de la Armonización Espectral}
-                La armonización espectral busca transformar la información espectral de un sensor al dominio espectral de otro, con el fin de estandarizar el número de bandas y reducir inconsistencias entre imágenes de múltiples sensores, facilitando así análisis y flujos de trabajo posteriores.
-                
-            \subsubsection{Técnicas Existentes}
-                Existen técnicas basadas en relaciones estadísticas de bandas equivalentes de múltiples sensores para lograr una transformación espectral \autocite{chastain2019empirical, claverie2018harmonized, flood2014continuity, roy2016characterization}. Sin embargo, estas técnicas están limitadas a bandas con equivalentes directos entre sensores, lo que deja un potencial no aprovechado en regiones espectrales como el borde rojo \autocite{filella1994red}.
-                
-            \subsubsection{Necesidad de Avances Metodológicos}
-                Es fundamental avanzar en las técnicas existentes de armonización espectral para estimar con precisión la información espectral faltante y reducir los errores de armonización que varían espacialmente. Además, es esencial evaluar el rendimiento de diferentes técnicas de armonización y cuantificar los errores de estimación según los materiales superficiales y las longitudes de onda de las bandas estimadas.
-                
-        \subsection{Deep Learning en el Procesamiento de Imágenes de Teledetección}
-            El deep learning, especialmente en el ámbito de la teledetección, ha emergido como una técnica central y de vanguardia para diversas aplicaciones de visión por computadora. Los investigadores están en constante búsqueda de mejorar el rendimiento de los métodos de deep learning mediante el desarrollo de nuevos diseños arquitectónicos de redes y/o la implementación de técnicas innovadoras, como los mecanismos de atención \autocite{ghaffarian2021effect}. Estos avances han demostrado ser esenciales para mejorar la precisión y eficiencia en el procesamiento de imágenes de teledetección \autocite{wang2022review}.
-            
-        \subsection{Redes Neuronales Convolucionales (CNN)}
-            Las Redes Neuronales Convolucionales, o CNN, son una subcategoría de redes neuronales diseñadas específicamente para manejar datos con una estructura topológica definida. Estas redes son esenciales para el análisis de datos estructurados en series temporales, que se pueden visualizar como una línea continua con intervalos de tiempo uniformes, o imágenes, que se representan como una matriz bidimensional de píxeles. Lo que distingue a las CNN de otras redes neuronales es su uso de la convolución, una operación matemática lineal específica. En lugar de depender únicamente de las multiplicaciones matriciales, las CNN incorporan la operación de convolución en al menos una de sus capas 
-            \autocite{Goodfellow2016}.
-
-            \subsubsection{Convolución y su Aplicación en Aprendizaje Profundo}
-                La convolución es una operación matemática esencial en el procesamiento de señales, especialmente en el análisis de imágenes dentro del aprendizaje profundo. Es particularmente relevante en las Redes Neuronales Convolucionales (CNNs) \autocite{Goodfellow2016}. En términos generales, la convolución evalúa cómo se superpone una función con otra cuando una de ellas se desplaza sobre la otra.
-                
-                La operación matemática de la convolución entre dos funciones, $x(a)$ y $w(a)$, se representa como:
-                
-                \begin{equation}
-                s(t) = \int x(a)w(t-a)da
-                \end{equation}
-                
-                Donde $x(a)$ es conocida como la función de entrada y $w(a)$ es el kernel o filtro. El resultado, $s(t)$, es a menudo denominado mapa de características o "feature map". En aprendizaje automático, tanto la función de entrada como el kernel suelen ser matrices multidimensionales o tensores.
-                
-                Para visualizarlo en el contexto de imágenes, consideremos una imagen bidimensional $I$ y un kernel bidimensional $K$:
-                
-                \begin{equation}
-                S(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)
-                \end{equation}
-                
-                Donde $I(m,n)$ representa el valor del píxel en la posición $(m,n)$ de la imagen y $K(i-m,j-n)$ es el valor correspondiente del kernel. Dada la propiedad conmutativa de la convolución, esta ecuación también puede expresarse como:
-                
-                \begin{equation}
-                S(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)
-                \end{equation}
-                
-                Es importante señalar que, en el ámbito del aprendizaje profundo, a menudo se utiliza una operación similar llamada \textit{correlación cruzada}:
-                
-                \begin{equation}
-                S(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)
-                \end{equation}
-                
-                A diferencia de la convolución, en la correlación cruzada no se invierte el kernel.
-
-                \insertfigure
-                    {Una convolución 2-D sin invertir el núcleo}
-                    {2_CAPITULO0/IMG/convolucion.png}
-                    {En la convolución 2-D un núcleo de 2x2 se desplaza sobre una matriz 4x4, multiplicando y sumando correspondencias sin invertir el núcleo, formando así la matriz de salida, un proceso clave en procesamiento de imágenes y redes neuronales convolucionales. Tomado de \textcite{USGS2023}.} 
-            
-
-            \subsubsection{Padding}
-                En el contexto de las Redes Neuronales Convolucionales (CNN), el \textit{padding} es un mecanismo crucial que permite mantener la dimensionalidad de una imagen de entrada durante el proceso de convolución. La idea principal detrás del \textit{padding} es añadir ciertos valores alrededor de una matriz de entrada, y estos valores adicionales son comúnmente representados por el símbolo \( p \) \autocite{Goodfellow2016}.
-
-                Considere una imagen de entrada representada por una matriz \( I \) de dimensiones \( n \times n \). Si aplicamos un kernel (o filtro) de tamaño \( f \times f \) a esta imagen, la matriz resultante (sin aplicar \textit{padding}) tendrá un tamaño de \( n - f + 1 \times n - f + 1 \). Esto se debe a que, durante la operación de convolución, el kernel se desliza sobre la imagen de entrada, y, dependiendo del tamaño del kernel, algunas partes de la imagen no son cubiertas.
-                
-                En la \autoref{padding1}, se ilustra un proceso de convolución donde la matriz de entrada \( I \), de dimensiones \( 5 \times 5 \), se convoluciona con un kernel \( K \) de dimensiones \( 3 \times 3 \). Se utiliza un \textit{padding} \( p \) de valor 0 y un \textit{stride} \( s \) de valor 1, que es el valor comúnmente asumido. A través de esta operación, obtenemos una matriz de salida \( S \) con dimensiones \( 3 \times 3 \), calculadas mediante la fórmula \( 5 - 3 + 1 \times 5 - 3 + 1 \). Específicamente, para la posición \( S(0, 0) \) de la matriz de salida, el valor es 155, determinado por la operación de convolución especificada en la figura. Notamos que, debido a que no hay \textit{padding} (es decir, \( p = 0 \)), la matriz de salida es dos unidades menor en dimensiones que la matriz original.
-
-                De manera similar, en la \autoref{padding2}, se presenta un cálculo para la posición \( S(0, 1) \) con un resultado de 85.
-
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Cálculo de la convolución de una matriz de entrada \( 5 \times 5 \) con un kernel \( 3 \times 3 \) con \( p = 0 \) y \( s = 1 \)}} 
-                    \centering
-                    \includegraphics[width=0.6\linewidth]{2_CAPITULO0/IMG/padding1.png}
-                    \begin{justify}
-                        \textit{Nota.} La operación genera una matriz de salida de 3x3 donde, por ejemplo, S(0,0) tiene un valor de 155 después de la convolución; la matriz resultante es dos unidades menor que la original por no usar padding. Adaptado de \textcite{Goodfellow2016}.
-                    \end{justify}                    
-                    \label{padding1}
-                \end{figure}
-                
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{ Cálculo de la convolución para la posición \( S(0, 1) \) en la matriz de salida.}} 
-                    \centering
-                    \includegraphics[width=0.6\linewidth]{2_CAPITULO0/IMG/padding2.png}
-                    \begin{justify}
-                        \textit{Nota.} La convolución involucra una matriz \(5 \times 5\) y un kernel \(3 \times 3\), resultando en \(S(0,1) = 85\), con líneas azules que representan la transformación. Adaptado de \textcite{Goodfellow2016}.
-                    \end{justify}                    
-                    \label{padding2}
-                \end{figure}
-                
-
-               En la mayoría de los casos, \( p = 0 \), pero si \( p > 0 \), la dimensión de la matriz de salida se calcula como:
-                
-                \begin{equation}
-                    \text{Dimensión de Salida} = n + 2 \cdot p - f + 1 \times n + 2 \cdot p - f + 1
-                \end{equation}
-                
-                donde \( n \) es la dimensión de la matriz de entrada y \( f \) es la dimensión del filtro.
-                
-                Por ejemplo, en la \autoref{padding3}, considerando un padding \( p = 1 \), una matriz de entrada \( I \) de dimensiones \( 5 \times 5 \), y un filtro de dimensiones \( 3 \times 3 \), la matriz de salida resultante tendrá dimensiones \( 5 \times 5 \), manteniendo así la dimensión espacial de la matriz de entrada.
-
-   
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Cálculo de la convolución de una matriz de entrada \( 5 \times 5 \) con un kernel \( 3 \times 3 \) con \( p = 1 \) y \( s = 1 \)}} 
-                    \centering
-                    \includegraphics[width=0.6\linewidth]{2_CAPITULO0/IMG/padding3.png}
-                    \begin{justify}
-                        \textit{Nota.} \textit{Padding} de \( p=1 \) mantiene dimensiones de la imagen original, esencial para que redes neuronales aprendan patrones locales eficientemente. Adaptado de \textcite{Goodfellow2016}.
-                    \end{justify}                    
-                    \label{padding3}
-                \end{figure}
-
-                Las convoluciones pueden clasificarse en:
-                
-                \begin{itemize}
-                    \item[-] \textbf{Convoluciones Válidas:} No utilizan padding, resultando en una matriz de salida de dimensiones menores.
-                    \item[-] \textbf{Convoluciones Iguales:} Utilizan padding para asegurar que la matriz de salida tenga las mismas dimensiones que la matriz de entrada.
-                \end{itemize}
-                
-            \subsubsection{Stride}
-                Anteriormente ha sido denotado como \( s \), representa la cantidad de píxeles que el filtro se moverá durante la operación de convolución. Actualizando la fórmula de la dimensión de salida para incluir el stride, tenemos:
-                
-                \begin{equation}
-                    \text{Dimensión de Salida} = \left\lfloor \frac{n + 2 \cdot p - f}{s} + 1 \right\rfloor \times \left\lfloor \frac{n + 2 \cdot p - f}{s} + 1 \right\rfloor
-                \end{equation}
-                
-                Por ejemplo, en la \autoref{stride}, con un stride \( s = 2 \), un padding \( p = 1 \), una matriz de entrada \( I \) de dimensiones \( 5 \times 5 \), y un filtro de dimensiones \( 3 \times 3 \), la matriz de salida resultante tendrá dimensiones \( 3 \times 3 \).
-                
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Convolución 2D con Padding de 1 y Stride de 2 en la Posición S(1, 1).}} 
-                    \centering
-                    \includegraphics[width=0.4\linewidth]{2_CAPITULO0/IMG/stride.png}
-                    \begin{justify}
-                        \textit{Nota.} Convolución con stride de 2 y filtro de \(3 \times 3\), desplazando dos píxeles a la vez y padding que preserva información en bordes. Adaptado de \textcite{Goodfellow2016}.
-                    \end{justify}                    
-                    \label{stride}
-                \end{figure}
-                
-
-        \subsection{Tipos de capas en una Red Neuronal Convolucional}
-            Las Redes Neuronales Convolucionales emplean una serie de capas específicas que incluyen: Capa de Entrada, Capa Convolucional, Capa de Agrupación, Capa Totalmente Conectada y Capa de Salida. Cada capa tiene funciones específicas y contribuye al rendimiento general de la red.
-            \begin{figure}[H] 
-                \caption{\doublespacing \\ \textit{Representación esquemática de una Red Neuronal Convolucional.}} 
-                \centering
-                \includegraphics[width=0.6\linewidth]{2_CAPITULO0//IMG/tipos_capas.png}
-                \begin{justify}
-                    \textit{Nota.} La estructura CNN: capas convolucionales detectan patrones y reducen tamaño; una capa conectada integra rasgos para la clasificación final, crucial en procesamiento visual. Adaptado de \textcite{Goodfellow2016}.
-                \end{justify}                    
-                \label{tipos_capas}
-            \end{figure}
-          
-            
-            \subsubsection{Capa de Convolución}
-                Esta capa realiza operaciones de convolución en la entrada utilizando varios \textit{kernels}. Posteriormente, se agrega un sesgo al resultado y se pasa por una función de activación no lineal como ReLU. Esta función introduce no linealidad tras realizar operaciones lineales en las capas convolucionales. Aunque en el pasado se usaron funciones como tanh y sigmoid, ReLU ha demostrado ser más eficiente en términos de tiempo de entrenamiento y precisión.
-                
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Función de activación ReLU.}} 
-                    \centering
-                    \includegraphics[width=0.7\linewidth]{2_CAPITULO0//IMG/relu.png}
-                    \begin{justify}
-                        \textit{Nota.} La función ReLU introduce no linealidad, ayudando a la red a capturar patrones complejos y optimizando el entrenamiento y precisión, evidenciando su ventaja sobre funciones previas como tanh o sigmoid. Tomado de \textcite{Kalita2022}.
-                    \end{justify}                    
-                    \label{relu}
-                \end{figure}
-            
-            \subsubsection{Capa de Agrupación}
-                Destinada a reducir las dimensiones de la entrada, la Capa de Agrupación mejora la eficiencia y robustez de la red. Una técnica popular aquí es el \textit{Max Pooling}, que selecciona el valor máximo de un conjunto específico, en la \autoref{max_pooling} se muestra un ejemplo donde una matriz I de tamaño 6 x 6, con un s igual a 3 y p igual a 0 . Esto es especialmente útil porque no introduce parámetros adicionales y es computacionalmente eficiente.
-                
-                Diversas técnicas de agrupación incluyen:
-                
-                \begin{itemize}
-                    \item[-] Agrupación Máxima: \( s_j = \max_{i \in R_j} a_i \)
-                    \item[-] Agrupación Promedio: \( s_j = \frac{1}{|R_j|} \sum_{i \in R_j} a_i \)
-                    \item[-] Agrupación Estocástica: \( p_j = \frac{a_i}{\sum_{k \in R_j} a_k} \)
-                \end{itemize}
-
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Max-Pooling con padding de 0 y stride de 3 en posición S(0, 0).}} 
-                    \centering
-                    \includegraphics[width=0.6\linewidth]{2_CAPITULO0//IMG/max_pooling.png}
-                    \begin{justify}
-                        \textit{Nota.} Max-Pooling con kernel de \(3 \times 3\) y stride de 3 sobre una matriz \(6 \times 6\) extrae máximos locales, resultando en una matriz \(2 \times 2\), compactando información y resaltando características prominentes sin pérdida significativa. Adaptado de \textcite{Goodfellow2016}.
-                    \end{justify}                    
-                    \label{max_pooling}
-                \end{figure}
-            
-
-            \subsubsection{Capa Totalmente Conectada}
-                Después de la agrupación, la entrada se pasa a una capa totalmente conectada que la conecta con la capa de salida, estableciendo conexiones entre todas las unidades \autocite{Goodfellow2016}.
-            
-            \subsubsection{Hiperparámetros}
-                Los hiperparámetros, a diferencia de los parámetros, son valores preestablecidos que determinan cómo se comporta un algoritmo durante el entrenamiento. Estos se definen antes del proceso de aprendizaje y no se adaptan automáticamente durante el mismo \autocite{Goodfellow2016}.
-                
-                Al diseñar arquitecturas de Redes Neuronales Convolucionales (CNN), se consideran diversos hiperparámetros, entre los cuales se encuentran:
-                
-                \begin{itemize}
-                    \item[-] \textbf{Tamaño del kernel:} Definido por la dimensión \( f \times f \), se utiliza en la capa convolucional o de agrupación.
-                    \item[-] \textbf{Padding:} Indica cuántos píxeles se añaden alrededor de la imagen, normalmente rellenos con cero, para ajustar las dimensiones durante las convoluciones.
-                    \item[-] \textbf{Stride:} Define cuántos píxeles se desplaza el kernel durante la convolución.
-                    \item[-] \textbf{Número de kernels:} La cantidad de filtros en una capa convolucional.
-                    \item[-] \textbf{Número de capas:} El total de capas en una CNN.
-                    \item[-] \textbf{Función de activación:} Función no lineal aplicada tras la convolución, comúnmente ReLU, Sigmoid o Tanh.
-                \end{itemize}
-                
-                También se deben considerar hiperparámetros específicos al definir el conjunto de entrenamiento:
-                
-                \begin{itemize}
-                    \item[-] \textbf{Muestras de entrenamiento:} Total de ejemplos utilizados en el entrenamiento.
-                    \item[-] \textbf{Tamaño del lote (batch size):} Número de ejemplos procesados en una sola iteración de entrenamiento.
-                    \item[-] \textbf{Iteraciones:} Total de lotes necesarios para completar una época.
-                    \item[-] \textbf{Épocas:} Número de veces que se procesa el conjunto completo de entrenamiento.
-                    \item[-] \textbf{Tasa de aprendizaje (\( \varepsilon \)):} Define la magnitud de ajuste de los pesos en función del gradiente de pérdida.
-                \end{itemize}
-                
-                El número de épocas se calcula según la relación:
-                
-                \begin{equation}
-                    \text{epochs} = \frac{\text{batch\_size} \times \text{iterations}}{\text{training\_samples}}
-                \end{equation}
-                
-                Existen otros hiperparámetros que se emplean como métodos de regularización:
-                
-                \begin{itemize}
-                    \item[-] \textbf{Regularización L2:} Penaliza la magnitud de los pesos para evitar sobreajuste.
-                    \item[-] \textbf{Regularización L1:} Similar a L2, pero puede hacer que algunos pesos sean exactamente cero.
-                    \item[-] \textbf{Dropout:} Durante el entrenamiento, desactiva aleatoriamente algunas neuronas para prevenir la dependencia excesiva en cualquier neurona individual.
-                    \item[-] \textbf{Augmentation:} Amplía el conjunto de entrenamiento al introducir variaciones menores, como rotaciones y escalas, para mejorar la generalización del modelo.
-                \end{itemize}
-    \section{Definición de términos}
-        \subsection{Aprendizaje profundo (Deep Learning)}
-            Es una rama del aprendizaje automático basada en algoritmos que modelan abstracciones de alto nivel en datos usando arquitecturas compuestas de múltiples transformaciones no lineales. En el contexto de la teledetección, se utiliza para interpretar y procesar grandes volúmenes de datos de imágenes satelitales, permitiendo la identificación de patrones y la realización de tareas como la clasificación de la cobertura terrestre y la detección de cambios.
-            
-        \subsection{Armonización de datos}
-            Se refiere al proceso de ajustar conjuntos de datos para que sean consistentes entre sí en términos de escala, resolución, calibración y geometría. En la teledetección, la armonización es clave para comparar y analizar imágenes tomadas por diferentes sensores o tecnologías a lo largo del tiempo, como las de las distintas generaciones del sensor Landsat MSS.
-            
-        \subsection{Imágenes Landsat MSS (Multi-Spectral Scanner)}
-            Son imágenes capturadas por el sensor MSS, el cual fue uno de los primeros instrumentos en proporcionar datos multiespectrales de la superficie terrestre desde el espacio. Estas imágenes son fundamentales para el estudio de la Tierra debido a su rica historia temporal, que se extiende desde la década de 1970.
-            
-        \subsection{Cubo de datos}
-            En el contexto de la teledetección y la ciencia de la Tierra, un cubo de datos se refiere a una colección multidimensional de datos que se ha estructurado de tal manera que permite un análisis eficiente y flexible. Los cubos de datos generalmente organizan la información en tres dimensiones: espacial (latitud y longitud), temporal (tiempo) y espectral (bandas de captura del sensor), lo que facilita diversas operaciones analíticas como la comparación temporal y el análisis de cambios.
-            
-        \subsection{Histogram Matching}
-            Es una técnica de procesamiento de imágenes que se utiliza para ajustar la distribución de brillo de una imagen para que coincida con la distribución de otra imagen. Esto se utiliza en la armonización de imágenes de diferentes sensores para que las características similares tengan una apariencia similar en términos de intensidad y contraste.
-            
-        \subsection{Transformadas de Fourier}
-            En el procesamiento de imágenes, la transformada de Fourier es una herramienta matemática que descompone una imagen en sus frecuencias espaciales. Esto es útil para analizar patrones periódicos y filtrar ruido o para operaciones de corrección geométrica y espectral en el dominio de la frecuencia.
-            
-        \subsection{Modelo de super resolución}
-            Se refiere a modelos de aprendizaje profundo diseñados para aumentar la resolución espacial de las imágenes. Puede tomar datos de baja resolución y reconstruir versiones de alta resolución, mejorando la calidad y utilidad de las imágenes de satélite para análisis detallados.
+                \paragraph{Equipos Científicos de Landsat}
+                    Los Equipos Científicos de Landsat brindan entrada técnica y científica a USGS y NASA para garantizar el éxito del programa Landsat.
+                    
+                \paragraph{Información Adicional}
+                    Para obtener más detalles sobre las operaciones de Landsat, productos de datos y acceso a datos, puede dirigirse a:
         
-        \subsection{Generación de banda virtual}
-            En la teledetección, la generación de bandas virtuales implica la creación de nuevas bandas de datos que no se capturan directamente por el sensor, generalmente a través de algoritmos que simulan estas bandas basándose en las bandas existentes y las relaciones conocidas entre ellas. Esto puede ayudar a mejorar la interpretación y análisis de las imágenes, especialmente cuando se combinan datos de diferentes sensores que tienen distintas capacidades espectrales.
+            \subsubsection{Armonización de imágenes en teledetección}
+                La armonización se refiere al ajuste radiométrico y geométrico de imágenes de múltiples sensores para garantizar la confiabilidad en teledetección \autocite{ichikawa2022development}. A medida que aumenta la disponibilidad de datos de teledetección, es esencial normalizar imágenes con propiedades radiométricas variables para mosaicos coherentes \autocite{langheinrich2017enhanced}. Además, implica alinear datos de diferentes fuentes para interpretaciones uniformes, utilizando modelos específicos como Fiware \autocite{vosinakis2022data}. Sin embargo, al estudiar la temperatura de la superficie terrestre, la armonización enfrenta desafíos debido a sesgos entre diferentes satélites \autocite{adeniran2022cross}.
+                
+            \subsubsection{Armonización Geométrica de Datos de Teledetección}
+                Los datos de teledetección a menudo presentan desafíos inherentes. Uno de los principales es la falta de alineación perfecta entre imágenes, lo que da lugar a lo que se conoce como desajustes espaciales o misregistrations \autocite{storey2016note, wolfe2002achieving, yan2018sentinel}. Estos desajustes pueden oscilar desde sub-píxeles hasta unos pocos píxeles.
+                
+                \paragraph{Causas de Misregistrations}
+                    Estos desajustes pueden ser atribuidos a diversas causas, desde la densidad desigual de puntos de control en tierra, el uso de conjuntos de datos de referencia desiguales, hasta problemas en el software de preprocesamiento de los proveedores o movimientos no modelados del sensor \autocite{storey2016note}. Estos desajustes, si no se corrigen, pueden afectar gravemente productos derivados, como clasificaciones de imágenes y detección de cambios.
+                    
+                \paragraph{Proceso de Armonización}
+                    La armonización geométrica tiene como objetivo abordar y corregir estas heterogeneidades espaciales. Se compone de dos fases principales: (1) la corrección de misregistrations, y (2) el remuestreo y reproyección de los datos \autocite{roy2000impact}. Sin embargo, corregir estos desajustes no es una tarea sencilla. Las imágenes pueden haber sido adquiridas en diferentes ángulos, fechas, y horarios, lo que complica aún más el proceso de armonización.
+                    
+                \paragraph{Resampling y Pan-sharpening}
+                    A pesar de los desafíos, se han desarrollado técnicas para adaptar diferentes cuadrículas de píxeles mediante remuestreo espacial o pan-sharpening \autocite{ghassemian2016review, javan2021review, li2017pixel}. Estas técnicas están implementadas en varios paquetes de software de código abierto.
+                    
+                \paragraph{Técnicas de Co-registración}
+                    Las técnicas de co-registración son esenciales para alinear correctamente las imágenes. Estas técnicas se pueden clasificar en dos categorías principales: basadas en características y basadas en intensidad \autocite{zitova2003image}. Mientras que las primeras se centran en características notables en las imágenes, como edificios o carreteras, las segundas se basan en patrones de valores de grises. Ambas técnicas ofrecen sus propios beneficios y desafíos. 
+                    
+                \paragraph{Necesidad de un Método Universal}
+                    Dada la diversidad y complejidad de los datos de teledetección, es esencial contar con un método de co-registración que sea universalmente aplicable \autocite{chen2003mutual}. Este método debería ser capaz de manejar desajustes técnicos entre múltiples sensores y desafíos presentados por paisajes y atmósferas cambiantes.
+
+            \subsubsection{Armonización Espectral de Datos de Teledetección}
+                Los sensores de teledetección óptica se caracterizan por presentar diversos bandas espectrales, abarcando no solo el espectro electromagnético visible (VIS, ~400 – 700 nm), sino también el infrarrojo cercano (NIR, ~750 – 1000 nm) y el infrarrojo de onda corta (SWIR, ~1000 – 2500 nm). Estos sensores facilitan la diferenciación de materiales superficiales y permiten identificar ciertas propiedades del cobertura terrestre o composiciones atmosféricas.
+                
+                \paragraph{Discrepancias Espectrales entre Sensores}
+                    Aunque satélites de Observación de la Tierra (EO) como Landsat (NASA) o Sentinel-2 (ESA) suelen diseñarse con características espectrales similares para garantizar la comparabilidad a largo plazo, aún existen discrepancias en el número de bandas y las respuestas espectrales de cada sensor \autocite{drusch2012sentinel}.
+                    
+                \paragraph{Objetivo de la Armonización Espectral}
+                    La armonización espectral busca transformar la información espectral de un sensor al dominio espectral de otro, con el fin de estandarizar el número de bandas y reducir inconsistencias entre imágenes de múltiples sensores, facilitando así análisis y flujos de trabajo posteriores.
+                    
+                \paragraph{Técnicas Existentes}
+                    Existen técnicas basadas en relaciones estadísticas de bandas equivalentes de múltiples sensores para lograr una transformación espectral \autocite{chastain2019empirical, claverie2018harmonized, flood2014continuity, roy2016characterization}. Sin embargo, estas técnicas están limitadas a bandas con equivalentes directos entre sensores, lo que deja un potencial no aprovechado en regiones espectrales como el borde rojo \autocite{filella1994red}.
+                    
+                \paragraph{Necesidad de Avances Metodológicos}
+                    Es fundamental avanzar en las técnicas existentes de armonización espectral para estimar con precisión la información espectral faltante y reducir los errores de armonización que varían espacialmente. Además, es esencial evaluar el rendimiento de diferentes técnicas de armonización y cuantificar los errores de estimación según los materiales superficiales y las longitudes de onda de las bandas estimadas.
+                    
+            \subsubsection{Normalización y Ajuste de Datos con Aplicación de Parámetros BRDF}      
+                \paragraph{Fundamentos de la Función de Distribución Bidireccional de Reflectancia (BRDF)}
+                    En estudios anteriores, la BRDF se estableció como una función esencial que caracteriza cómo la luz es reflejada por las superficies terrestres en varias direcciones. Se observó que las superficies no son Lambertianas, lo que significa que la reflectancia varía con la geometría solar y de observación. Esto es crucial para corregir y comparar datos de reflectancia obtenidos en diferentes momentos y bajo diversas condiciones de iluminación \autocite{roy2016general}.
+                \paragraph{Aplicación de Parámetros BRDF en la Normalización de Datos}
+                    La práctica de normalizar la reflectancia a través de parámetros BRDF se mostró eficaz para estandarizar las observaciones de Landsat a una vista de nadir. Esto permite mitigar los efectos direccionales y obtener una reflectancia consistente y comparable en el tiempo. Se utilizó un enfoque de c-factor, multiplicando la reflectancia observada por el cociente de la reflectancia modelada, lo que resultó ser poco sensible al tipo de cobertura terrestre y por lo tanto aplicable a todo el registro de Landsat \autocite{roy2016general}.
+                \paragraph{Integración de Datos TM y ETM+ en Modelos BRDF}
+                    La integración de datos de los sensores TM y ETM+ en modelos BRDF se abordó para proporcionar una reflectancia ajustada al nadir más consistente. Se descubrió que los parámetros de BRDF de MODIS podían ser aplicados a estos datos, lo que sugiere que las formas de BRDF de diversas superficies terrestres son lo suficientemente similares como para permitir esta aplicación directa, facilitando la generación de NBAR para una amplia gama de aplicaciones de monitoreo terrestre.
+
+                    \begin{table}[H]
+                        \caption{\doublespacing \\ \textit{Parámetros BRDF MODIS globales fijos para todas las bandas Landsat.}}
+                        \begin{spacing}{8}
+                            \fontsize{8pt}{2pt}\selectfont
+                            \begin{tabularx}{\linewidth}{P{2.5cm}P{2.6cm}P{4cm}P{2.5cm}P{2.5cm}}
+                                \toprule
+                                \multicolumn{1}{c}{\textbf{Banda Landsat}} & \multicolumn{1}{c}{\textbf{n}} & \multicolumn{1}{c}{\textbf{fiso}} & \multicolumn{1}{c}{\textbf{fgeo}} & \multicolumn{1}{c}{\textbf{fvol}} \\
+                                \midrule
+                                1 (azul)               & 15,551,077,545      & 0.0774        & 0.0079        & 0.0372        \\
+                                2 (verde)              & 16,362,112,402      & 0.1306        & 0.0178        & 0.0580        \\
+                                3 (rojo)               & 16,095,103,393      & 0.1690        & 0.0227        & 0.0574        \\
+                                4 (NIR)                & 16,260,280,058      & 0.3093        & 0.0330        & 0.1535        \\
+                                5 (1.6µm)              & 16,176,131,413      & 0.3430        & 0.0453        & 0.1154        \\
+                                7 (2.1µm)              & 16,149,440,059      & 0.2658        & 0.0387        & 0.0639        \\
+                                \bottomrule
+                            \end{tabularx}
+                        \end{spacing}
+                        \vspace{1\baselineskip}
+                        \textit{Nota.} La tabla muestra los parámetros BRDF fijos de MODIS para cada banda de Landsat, utilizados en normalización y comparación con datos satelitales; estos parámetros son constantes y globales durante 12 meses en todas las bandas, reflejando la cantidad 'n' de píxeles de alta calidad y sin nieve a 500 m en los espectrales MODIS BRDF, donde 'n' varía según la banda, lo que corresponde a las variaciones en la calidad de parámetros en el producto MODIS BRDF/Albedo (MCD43A2) \autocite{roy2016general}.
+                        \label{tab:modis_brdf_parameters}
+                    \end{table}
+        \subsection{Inteligencia artificial}            
+            \subsubsection{Deep Learning en el Procesamiento de Imágenes de Teledetección}
+                El deep learning, especialmente en el ámbito de la teledetección, ha emergido como una técnica central y de vanguardia para diversas aplicaciones de visión por computadora. Los investigadores están en constante búsqueda de mejorar el rendimiento de los métodos de deep learning mediante el desarrollo de nuevos diseños arquitectónicos de redes y/o la implementación de técnicas innovadoras, como los mecanismos de atención \autocite{ghaffarian2021effect}. Estos avances han demostrado ser esenciales para mejorar la precisión y eficiencia en el procesamiento de imágenes de teledetección \autocite{wang2022review}.
+                
+            \subsubsection{Redes Neuronales Convolucionales (CNN)}
+                Las Redes Neuronales Convolucionales, o CNN, son una subcategoría de redes neuronales diseñadas específicamente para manejar datos con una estructura topológica definida. Estas redes son esenciales para el análisis de datos estructurados en series temporales, que se pueden visualizar como una línea continua con intervalos de tiempo uniformes, o imágenes, que se representan como una matriz bidimensional de píxeles. Lo que distingue a las CNN de otras redes neuronales es su uso de la convolución, una operación matemática lineal específica. En lugar de depender únicamente de las multiplicaciones matriciales, las CNN incorporan la operación de convolución en al menos una de sus capas 
+                \autocite{Goodfellow2016}.
+
+                \paragraph{Convolución y su Aplicación en Aprendizaje Profundo}
+                    La convolución es una operación matemática esencial en el procesamiento de señales, especialmente en el análisis de imágenes dentro del aprendizaje profundo. Es particularmente relevante en las Redes Neuronales Convolucionales (CNNs) \autocite{Goodfellow2016}. En términos generales, la convolución evalúa cómo se superpone una función con otra cuando una de ellas se desplaza sobre la otra.
+                    
+                    La operación matemática de la convolución entre dos funciones, $x(a)$ y $w(a)$, se representa como:
+                    
+                    \begin{equation}
+                    s(t) = \int x(a)w(t-a)da
+                    \end{equation}
+                    
+                    Donde $x(a)$ es conocida como la función de entrada y $w(a)$ es el kernel o filtro. El resultado, $s(t)$, es a menudo denominado mapa de características o "feature map". En aprendizaje automático, tanto la función de entrada como el kernel suelen ser matrices multidimensionales o tensores.
+                    
+                    Para visualizarlo en el contexto de imágenes, consideremos una imagen bidimensional $I$ y un kernel bidimensional $K$:
+                    
+                    \begin{equation}
+                    S(i,j) = \sum_m \sum_n I(m,n)K(i-m,j-n)
+                    \end{equation}
+                    
+                    Donde $I(m,n)$ representa el valor del píxel en la posición $(m,n)$ de la imagen y $K(i-m,j-n)$ es el valor correspondiente del kernel. Dada la propiedad conmutativa de la convolución, esta ecuación también puede expresarse como:
+                    
+                    \begin{equation}
+                    S(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)
+                    \end{equation}
+                    
+                    Es importante señalar que, en el ámbito del aprendizaje profundo, a menudo se utiliza una operación similar llamada \textit{correlación cruzada}:
+                    
+                    \begin{equation}
+                    S(i,j) = \sum_m \sum_n I(i+m,j+n)K(m,n)
+                    \end{equation}
+                    
+                    A diferencia de la convolución, en la correlación cruzada no se invierte el kernel.
+
+                    \insertfigure
+                        {Una convolución 2-D sin invertir el núcleo}
+                        {2_CAPITULO0/IMG/convolucion.png}
+                        {En la convolución 2-D un núcleo de 2x2 se desplaza sobre una matriz 4x4, multiplicando y sumando correspondencias sin invertir el núcleo, formando así la matriz de salida, un proceso clave en procesamiento de imágenes y redes neuronales convolucionales. Tomado de \textcite{USGS2023}.} 
+                
+
+                \paragraph{Padding}
+                    En el contexto de las Redes Neuronales Convolucionales (CNN), el \textit{padding} es un mecanismo crucial que permite mantener la dimensionalidad de una imagen de entrada durante el proceso de convolución. La idea principal detrás del \textit{padding} es añadir ciertos valores alrededor de una matriz de entrada, y estos valores adicionales son comúnmente representados por el símbolo \( p \) \autocite{Goodfellow2016}.
+
+                    Considere una imagen de entrada representada por una matriz \( I \) de dimensiones \( n \times n \). Si aplicamos un kernel (o filtro) de tamaño \( f \times f \) a esta imagen, la matriz resultante (sin aplicar \textit{padding}) tendrá un tamaño de \( n - f + 1 \times n - f + 1 \). Esto se debe a que, durante la operación de convolución, el kernel se desliza sobre la imagen de entrada, y, dependiendo del tamaño del kernel, algunas partes de la imagen no son cubiertas.
+                    
+                    En la \autoref{padding1}, se ilustra un proceso de convolución donde la matriz de entrada \( I \), de dimensiones \( 5 \times 5 \), se convoluciona con un kernel \( K \) de dimensiones \( 3 \times 3 \). Se utiliza un \textit{padding} \( p \) de valor 0 y un \textit{stride} \( s \) de valor 1, que es el valor comúnmente asumido. A través de esta operación, obtenemos una matriz de salida \( S \) con dimensiones \( 3 \times 3 \), calculadas mediante la fórmula \( 5 - 3 + 1 \times 5 - 3 + 1 \). Específicamente, para la posición \( S(0, 0) \) de la matriz de salida, el valor es 155, determinado por la operación de convolución especificada en la figura. Notamos que, debido a que no hay \textit{padding} (es decir, \( p = 0 \)), la matriz de salida es dos unidades menor en dimensiones que la matriz original.
+
+                    De manera similar, en la \autoref{padding2}, se presenta un cálculo para la posición \( S(0, 1) \) con un resultado de 85.
+
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{Cálculo de la convolución de una matriz de entrada \( 5 \times 5 \) con un kernel \( 3 \times 3 \) con \( p = 0 \) y \( s = 1 \)}} 
+                        \centering
+                        \includegraphics[width=0.6\linewidth]{2_CAPITULO0/IMG/padding1.png}
+                        \begin{justify}
+                            \textit{Nota.} La operación genera una matriz de salida de 3x3 donde, por ejemplo, S(0,0) tiene un valor de 155 después de la convolución; la matriz resultante es dos unidades menor que la original por no usar padding. Adaptado de \textcite{Goodfellow2016}.
+                        \end{justify}                    
+                        \label{padding1}
+                    \end{figure}
+                    
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{ Cálculo de la convolución para la posición \( S(0, 1) \) en la matriz de salida.}} 
+                        \centering
+                        \includegraphics[width=0.6\linewidth]{2_CAPITULO0/IMG/padding2.png}
+                        \begin{justify}
+                            \textit{Nota.} La convolución involucra una matriz \(5 \times 5\) y un kernel \(3 \times 3\), resultando en \(S(0,1) = 85\), con líneas azules que representan la transformación. Adaptado de \textcite{Goodfellow2016}.
+                        \end{justify}                    
+                        \label{padding2}
+                    \end{figure}
+                    
+
+                    En la mayoría de los casos, \( p = 0 \), pero si \( p > 0 \), la dimensión de la matriz de salida se calcula como:
+                    
+                    \begin{equation}
+                        \text{Dimensión de Salida} = n + 2 \cdot p - f + 1 \times n + 2 \cdot p - f + 1
+                    \end{equation}
+                    
+                    donde \( n \) es la dimensión de la matriz de entrada y \( f \) es la dimensión del filtro.
+                    
+                    Por ejemplo, en la \autoref{padding3}, considerando un padding \( p = 1 \), una matriz de entrada \( I \) de dimensiones \( 5 \times 5 \), y un filtro de dimensiones \( 3 \times 3 \), la matriz de salida resultante tendrá dimensiones \( 5 \times 5 \), manteniendo así la dimensión espacial de la matriz de entrada.
+
+    
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{Cálculo de la convolución de una matriz de entrada \( 5 \times 5 \) con un kernel \( 3 \times 3 \) con \( p = 1 \) y \( s = 1 \)}} 
+                        \centering
+                        \includegraphics[width=0.6\linewidth]{2_CAPITULO0/IMG/padding3.png}
+                        \begin{justify}
+                            \textit{Nota.} \textit{Padding} de \( p=1 \) mantiene dimensiones de la imagen original, esencial para que redes neuronales aprendan patrones locales eficientemente. Adaptado de \textcite{Goodfellow2016}.
+                        \end{justify}                    
+                        \label{padding3}
+                    \end{figure}
+
+                    Las convoluciones pueden clasificarse en:
+                    
+                    \begin{itemize}
+                        \item[-] \textbf{Convoluciones Válidas:} No utilizan padding, resultando en una matriz de salida de dimensiones menores.
+                        \item[-] \textbf{Convoluciones Iguales:} Utilizan padding para asegurar que la matriz de salida tenga las mismas dimensiones que la matriz de entrada.
+                    \end{itemize}
+                    
+                \paragraph{Stride}
+                    Anteriormente ha sido denotado como \( s \), representa la cantidad de píxeles que el filtro se moverá durante la operación de convolución. Actualizando la fórmula de la dimensión de salida para incluir el stride, tenemos:
+                    
+                    \begin{equation}
+                        \text{Dimensión de Salida} = \left\lfloor \frac{n + 2 \cdot p - f}{s} + 1 \right\rfloor \times \left\lfloor \frac{n + 2 \cdot p - f}{s} + 1 \right\rfloor
+                    \end{equation}
+                    
+                    Por ejemplo, en la \autoref{stride}, con un stride \( s = 2 \), un padding \( p = 1 \), una matriz de entrada \( I \) de dimensiones \( 5 \times 5 \), y un filtro de dimensiones \( 3 \times 3 \), la matriz de salida resultante tendrá dimensiones \( 3 \times 3 \).
+                    
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{Convolución 2D con Padding de 1 y Stride de 2 en la Posición S(1, 1).}} 
+                        \centering
+                        \includegraphics[width=0.4\linewidth]{2_CAPITULO0/IMG/stride.png}
+                        \begin{justify}
+                            \textit{Nota.} Convolución con stride de 2 y filtro de \(3 \times 3\), desplazando dos píxeles a la vez y padding que preserva información en bordes. Adaptado de \textcite{Goodfellow2016}.
+                        \end{justify}                    
+                        \label{stride}
+                    \end{figure}
+                    
+
+            \subsubsection{Tipos de capas en una Red Neuronal Convolucional}
+                Las Redes Neuronales Convolucionales emplean una serie de capas específicas que incluyen: Capa de Entrada, Capa Convolucional, Capa de Agrupación, Capa Totalmente Conectada y Capa de Salida. Cada capa tiene funciones específicas y contribuye al rendimiento general de la red.
+                \begin{figure}[H] 
+                    \caption{\doublespacing \\ \textit{Representación esquemática de una Red Neuronal Convolucional.}} 
+                    \centering
+                    \includegraphics[width=0.6\linewidth]{2_CAPITULO0//IMG/tipos_capas.png}
+                    \begin{justify}
+                        \textit{Nota.} La estructura CNN: capas convolucionales detectan patrones y reducen tamaño; una capa conectada integra rasgos para la clasificación final, crucial en procesamiento visual. Adaptado de \textcite{Goodfellow2016}.
+                    \end{justify}                    
+                    \label{tipos_capas}
+                \end{figure}
+            
+                
+                \paragraph{Capa de Convolución}
+                    Esta capa realiza operaciones de convolución en la entrada utilizando varios \textit{kernels}. Posteriormente, se agrega un sesgo al resultado y se pasa por una función de activación no lineal como ReLU. Esta función introduce no linealidad tras realizar operaciones lineales en las capas convolucionales. Aunque en el pasado se usaron funciones como tanh y sigmoid, ReLU ha demostrado ser más eficiente en términos de tiempo de entrenamiento y precisión.
+                    
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{Función de activación ReLU.}} 
+                        \centering
+                        \includegraphics[width=0.7\linewidth]{2_CAPITULO0//IMG/relu.png}
+                        \begin{justify}
+                            \textit{Nota.} La función ReLU introduce no linealidad, ayudando a la red a capturar patrones complejos y optimizando el entrenamiento y precisión, evidenciando su ventaja sobre funciones previas como tanh o sigmoid. Tomado de \textcite{Kalita2022}.
+                        \end{justify}                    
+                        \label{relu}
+                    \end{figure}
+                
+                \paragraph{Capa de Agrupación}
+                    Destinada a reducir las dimensiones de la entrada, la Capa de Agrupación mejora la eficiencia y robustez de la red. Una técnica popular aquí es el \textit{Max Pooling}, que selecciona el valor máximo de un conjunto específico, en la \autoref{max_pooling} se muestra un ejemplo donde una matriz I de tamaño 6 x 6, con un s igual a 3 y p igual a 0 . Esto es especialmente útil porque no introduce parámetros adicionales y es computacionalmente eficiente.
+                    
+                    Diversas técnicas de agrupación incluyen:
+                    
+                    \begin{itemize}
+                        \item[-] Agrupación Máxima: \( s_j = \max_{i \in R_j} a_i \)
+                        \item[-] Agrupación Promedio: \( s_j = \frac{1}{|R_j|} \sum_{i \in R_j} a_i \)
+                        \item[-] Agrupación Estocástica: \( p_j = \frac{a_i}{\sum_{k \in R_j} a_k} \)
+                    \end{itemize}
+
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{Max-Pooling con padding de 0 y stride de 3 en posición S(0, 0).}} 
+                        \centering
+                        \includegraphics[width=0.6\linewidth]{2_CAPITULO0//IMG/max_pooling.png}
+                        \begin{justify}
+                            \textit{Nota.} Max-Pooling con kernel de \(3 \times 3\) y stride de 3 sobre una matriz \(6 \times 6\) extrae máximos locales, resultando en una matriz \(2 \times 2\), compactando información y resaltando características prominentes sin pérdida significativa. Adaptado de \textcite{Goodfellow2016}.
+                        \end{justify}                    
+                        \label{max_pooling}
+                    \end{figure}
+                
+
+                \paragraph{Capa Totalmente Conectada}
+                    Después de la agrupación, la entrada se pasa a una capa totalmente conectada que la conecta con la capa de salida, estableciendo conexiones entre todas las unidades \autocite{Goodfellow2016}.
+                
+                \paragraph{Hiperparámetros}
+                    Los hiperparámetros, a diferencia de los parámetros, son valores preestablecidos que determinan cómo se comporta un algoritmo durante el entrenamiento. Estos se definen antes del proceso de aprendizaje y no se adaptan automáticamente durante el mismo \autocite{Goodfellow2016}.
+                    
+                    Al diseñar arquitecturas de Redes Neuronales Convolucionales (CNN), se consideran diversos hiperparámetros, entre los cuales se encuentran:
+                    
+                    \begin{itemize}
+                        \item[-] \textbf{Tamaño del kernel:} Definido por la dimensión \( f \times f \), se utiliza en la capa convolucional o de agrupación.
+                        \item[-] \textbf{Padding:} Indica cuántos píxeles se añaden alrededor de la imagen, normalmente rellenos con cero, para ajustar las dimensiones durante las convoluciones.
+                        \item[-] \textbf{Stride:} Define cuántos píxeles se desplaza el kernel durante la convolución.
+                        \item[-] \textbf{Número de kernels:} La cantidad de filtros en una capa convolucional.
+                        \item[-] \textbf{Número de capas:} El total de capas en una CNN.
+                        \item[-] \textbf{Función de activación:} Función no lineal aplicada tras la convolución, comúnmente ReLU, Sigmoid o Tanh.
+                    \end{itemize}
+                    
+                    También se deben considerar hiperparámetros específicos al definir el conjunto de entrenamiento:
+                    
+                    \begin{itemize}
+                        \item[-] \textbf{Muestras de entrenamiento:} Total de ejemplos utilizados en el entrenamiento.
+                        \item[-] \textbf{Tamaño del lote (batch size):} Número de ejemplos procesados en una sola iteración de entrenamiento.
+                        \item[-] \textbf{Iteraciones:} Total de lotes necesarios para completar una época.
+                        \item[-] \textbf{Épocas:} Número de veces que se procesa el conjunto completo de entrenamiento.
+                        \item[-] \textbf{Tasa de aprendizaje (\( \varepsilon \)):} Define la magnitud de ajuste de los pesos en función del gradiente de pérdida.
+                    \end{itemize}
+                    
+                    El número de épocas se calcula según la relación:
+                    
+                    \begin{equation}
+                        \text{epochs} = \frac{\text{batch\_size} \times \text{iterations}}{\text{training\_samples}}
+                    \end{equation}
+                    
+                    Existen otros hiperparámetros que se emplean como métodos de regularización:
+                    
+                    \begin{itemize}
+                        \item[-] \textbf{Regularización L2:} Penaliza la magnitud de los pesos para evitar sobreajuste.
+                        \item[-] \textbf{Regularización L1:} Similar a L2, pero puede hacer que algunos pesos sean exactamente cero.
+                        \item[-] \textbf{Dropout:} Durante el entrenamiento, desactiva aleatoriamente algunas neuronas para prevenir la dependencia excesiva en cualquier neurona individual.
+                        \item[-] \textbf{Augmentation:} Amplía el conjunto de entrenamiento al introducir variaciones menores, como rotaciones y escalas, para mejorar la generalización del modelo.
+                    \end{itemize}
+        \section{Definición de términos}
+            \subsection{Aprendizaje profundo (Deep Learning)}
+                Es una rama del aprendizaje automático basada en algoritmos que modelan abstracciones de alto nivel en datos usando arquitecturas compuestas de múltiples transformaciones no lineales. En el contexto de la teledetección, se utiliza para interpretar y procesar grandes volúmenes de datos de imágenes satelitales, permitiendo la identificación de patrones y la realización de tareas como la clasificación de la cobertura terrestre y la detección de cambios.
+                
+            \subsection{Armonización de datos}
+                Se refiere al proceso de ajustar conjuntos de datos para que sean consistentes entre sí en términos de escala, resolución, calibración y geometría. En la teledetección, la armonización es clave para comparar y analizar imágenes tomadas por diferentes sensores o tecnologías a lo largo del tiempo, como las de las distintas generaciones del sensor Landsat MSS.
+                
+            \subsection{Imágenes Landsat MSS (Multi-Spectral Scanner)}
+                Son imágenes capturadas por el sensor MSS, el cual fue uno de los primeros instrumentos en proporcionar datos multiespectrales de la superficie terrestre desde el espacio. Estas imágenes son fundamentales para el estudio de la Tierra debido a su rica historia temporal, que se extiende desde la década de 1970.
+                
+            \subsection{Cubo de datos}
+                En el contexto de la teledetección y la ciencia de la Tierra, un cubo de datos se refiere a una colección multidimensional de datos que se ha estructurado de tal manera que permite un análisis eficiente y flexible. Los cubos de datos generalmente organizan la información en tres dimensiones: espacial (latitud y longitud), temporal (tiempo) y espectral (bandas de captura del sensor), lo que facilita diversas operaciones analíticas como la comparación temporal y el análisis de cambios.
+                
+            \subsection{Histogram Matching}
+                Es una técnica de procesamiento de imágenes que se utiliza para ajustar la distribución de brillo de una imagen para que coincida con la distribución de otra imagen. Esto se utiliza en la armonización de imágenes de diferentes sensores para que las características similares tengan una apariencia similar en términos de intensidad y contraste.
+                
+            \subsection{Transformadas de Fourier}
+                En el procesamiento de imágenes, la transformada de Fourier es una herramienta matemática que descompone una imagen en sus frecuencias espaciales. Esto es útil para analizar patrones periódicos y filtrar ruido o para operaciones de corrección geométrica y espectral en el dominio de la frecuencia.
+                
+            \subsection{Modelo de super resolución}
+                Se refiere a modelos de aprendizaje profundo diseñados para aumentar la resolución espacial de las imágenes. Puede tomar datos de baja resolución y reconstruir versiones de alta resolución, mejorando la calidad y utilidad de las imágenes de satélite para análisis detallados.
+            
+            \subsection{Generación de banda virtual}
+                En la teledetección, la generación de bandas virtuales implica la creación de nuevas bandas de datos que no se capturan directamente por el sensor, generalmente a través de algoritmos que simulan estas bandas basándose en las bandas existentes y las relaciones conocidas entre ellas. Esto puede ayudar a mejorar la interpretación y análisis de las imágenes, especialmente cuando se combinan datos de diferentes sensores que tienen distintas capacidades espectrales.
