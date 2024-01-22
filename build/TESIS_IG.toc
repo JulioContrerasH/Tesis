@@ -89,47 +89,33 @@
 \contentsline {subsubsection}{\numberline {4.4.2.3}Determinación del Desplazamiento Espacial}{38}{subsubsection.4.4.2.3}%
 \contentsline {subsubsection}{\numberline {4.4.2.4}Refinamiento Subpíxel y Convolución en 2D}{39}{subsubsection.4.4.2.4}%
 \contentsline {subsubsection}{\numberline {4.4.2.5}Filtro final de los pares de imágenes}{40}{subsubsection.4.4.2.5}%
-\contentsline {subsection}{\numberline {4.4.3}Generación de Dataloader Preparación Final de Datos}{41}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.3}Preparación y Organización de Datos para Deep Learning}{41}{subsection.4.4.3}%
 \contentsline {subsubsection}{\numberline {4.4.3.1}Conversión de formato de datos}{41}{subsubsection.4.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.4.3.2}Estandarización y homogeneización}{41}{subsubsection.4.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.4.3.3}Integración con Hugging Face}{41}{subsubsection.4.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.4}Conversión de formato de datos}{42}{subsubsection.4.4.3.4}%
+\contentsline {paragraph}{Publicación en Hugging Face}{42}{paragraph*.46}%
+\contentsline {paragraph}{Catalogación Efectiva}{42}{paragraph*.47}%
+\contentsline {paragraph}{Acceso y Reproducibilidad}{42}{paragraph*.48}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}Segmentación y Distribución de Datos}{42}{subsubsection.4.4.3.4}%
 \contentsline {subsubsection}{\numberline {4.4.3.5}Procesamiento y Alineación de Imágenes}{42}{subsubsection.4.4.3.5}%
 \contentsline {subsubsection}{\numberline {4.4.3.6}Normalización y Preparación de Datos}{42}{subsubsection.4.4.3.6}%
-\contentsline {subsubsection}{\numberline {4.4.3.7}Optimización y Manejo Eficiente de Datos}{42}{subsubsection.4.4.3.7}%
-\contentsline {subsection}{\numberline {4.4.4}Desarrollo del Modelo MSS2TM para Alineación Espacial y Espectral}{44}{subsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.3.7}Optimización y Manejo Eficiente de Datos}{43}{subsubsection.4.4.3.7}%
+\contentsline {subsection}{\numberline {4.4.4}Desarrollo del Modelo MSS2TM}{44}{subsection.4.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.4.1}Configuración del Entorno de Trabajo}{44}{subsubsection.4.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.4.2}Diseño de la Arquitectura del Modelo}{45}{subsubsection.4.4.4.2}%
-\contentsline {paragraph}{Arquitectura General}{46}{paragraph*.48}%
-\contentsline {paragraph}{Adaptaciones Específicas para MSS y TM}{46}{paragraph*.49}%
-\contentsline {paragraph}{Entrenamiento y Activaciones}{46}{paragraph*.50}%
-\contentsline {subsubsection}{\numberline {4.4.4.3}Configuración de las Funciones de Pérdida}{47}{subsubsection.4.4.4.3}%
-\contentsline {paragraph}{CLIPLoss}{47}{paragraph*.51}%
-\contentsline {subsubsection}{\numberline {4.4.4.4}Creación del Dataset (Diseño y División)}{47}{subsubsection.4.4.4.4}%
-\contentsline {paragraph}{Selección y Alineación de Imágenes MSS-TM}{47}{paragraph*.52}%
-\contentsline {paragraph}{División de Datos}{47}{paragraph*.53}%
-\contentsline {subsubsection}{\numberline {4.4.4.5}Implementación del Dataset y DataLoader}{47}{subsubsection.4.4.4.5}%
-\contentsline {paragraph}{Dataset}{48}{paragraph*.54}%
-\contentsline {paragraph}{DataLoader}{48}{paragraph*.55}%
-\contentsline {subsection}{\numberline {4.4.5}Integración de ML-STAC}{48}{subsection.4.4.5}%
-\contentsline {paragraph}{Estandarización de Datos}{48}{paragraph*.56}%
-\contentsline {paragraph}{Publicación en Hugging Face}{48}{paragraph*.57}%
-\contentsline {paragraph}{Catalogación Efectiva}{48}{paragraph*.58}%
-\contentsline {paragraph}{Acceso y Reproducibilidad}{48}{paragraph*.59}%
-\contentsline {subsubsection}{\numberline {4.4.5.1}Entrenamiento}{48}{subsubsection.4.4.5.1}%
-\contentsline {paragraph}{Inicialización de PyTorch}{48}{paragraph*.60}%
-\contentsline {paragraph}{Configuración de Registro}{49}{paragraph*.61}%
-\contentsline {paragraph}{Uso de ML-STAC para la Carga de Datos}{49}{paragraph*.62}%
-\contentsline {paragraph}{Iteración y Optimización}{49}{paragraph*.63}%
-\contentsline {paragraph}{Cálculo de Métricas}{49}{paragraph*.64}%
-\contentsline {paragraph}{Checkpointing}{49}{paragraph*.65}%
-\contentsline {subsection}{\numberline {4.4.6}Generación de Bandas Virtuales en Imágenes MSS}{50}{subsection.4.4.6}%
-\contentsline {section}{\numberline {4.5}Análisis estadístico}{52}{section.4.5}%
-\contentsline {subparagraph}{Evaluación de Métricas de Rendimiento}{52}{subparagraph*.67}%
-\contentsline {paragraph}{Comparación Visual}{52}{paragraph*.68}%
-\contentsline {chapter}{CAPÍTULO V}{53}{ChapterRoman.5}%
-\contentsline {chapter}{\numberline {5}PRESUPUESTO}{54}{chapter.5}%
-\contentsline {chapter}{REFERENCIAS BIBLIOGRÁFICAS}{55}{chapter*.71}%
-\contentsline {chapter}{\bf ANEXOS}{59}{section*.72}%
-\contentsline {section}{Operacionalización de variables}{59}{chapter*.73}%
-\contentsline {section}{Matriz de consistencia}{60}{table.caption.74}%
+\contentsline {subsubsection}{\numberline {4.4.4.2}Elección de Arquitecturas para el Generador y Discriminador en GANs}{45}{subsubsection.4.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.4.3}Definición de Parámetros y Funciones de Pérdida}{46}{subsubsection.4.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4.4}Proceso de Entrenamiento}{46}{subsubsection.4.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.5}Ajuste y Optimización}{47}{subsubsection.4.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.4.6}Configuración de las Funciones de Pérdida}{48}{subsubsection.4.4.4.6}%
+\contentsline {paragraph}{LPIPSLoss}{48}{paragraph*.51}%
+\contentsline {paragraph}{CLIPHarmLoss}{48}{paragraph*.52}%
+\contentsline {subsection}{\numberline {4.4.5}Generación de Bandas Virtuales en Imágenes MSS}{49}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Análisis estadístico}{51}{section.4.5}%
+\contentsline {subparagraph}{Evaluación de Métricas de Rendimiento}{51}{subparagraph*.54}%
+\contentsline {paragraph}{Comparación Visual}{51}{paragraph*.55}%
+\contentsline {chapter}{CAPÍTULO V}{52}{ChapterRoman.5}%
+\contentsline {chapter}{\numberline {5}PRESUPUESTO}{53}{chapter.5}%
+\contentsline {chapter}{REFERENCIAS BIBLIOGRÁFICAS}{54}{chapter*.58}%
+\contentsline {chapter}{\bf ANEXOS}{58}{section*.59}%
+\contentsline {section}{Operacionalización de variables}{58}{chapter*.60}%
+\contentsline {section}{Matriz de consistencia}{59}{table.caption.61}%
