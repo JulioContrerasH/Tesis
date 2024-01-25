@@ -3068,44 +3068,44 @@
     <bcf:citekey order="7" intorder="1">hoque2022arithfusion</bcf:citekey>
     <bcf:citekey order="8" intorder="1">saunier2022sen2like</bcf:citekey>
     <bcf:citekey order="9" intorder="1">saunier2022sen2like</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">USGS2023</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">wolters2023zooming</bcf:citekey>
     <bcf:citekey order="11" intorder="1">USGS2023</bcf:citekey>
     <bcf:citekey order="12" intorder="1">USGS2023</bcf:citekey>
     <bcf:citekey order="13" intorder="1">USGS2023</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">Landsat2023</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">USGS2023</bcf:citekey>
     <bcf:citekey order="15" intorder="1">Landsat2023</bcf:citekey>
     <bcf:citekey order="16" intorder="1">Landsat2023</bcf:citekey>
     <bcf:citekey order="17" intorder="1">Landsat2023</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">ichikawa2022development</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">langheinrich2017enhanced</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">vosinakis2022data</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">adeniran2022cross</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">storey2016note</bcf:citekey>
-    <bcf:citekey order="22" intorder="2">wolfe2002achieving</bcf:citekey>
-    <bcf:citekey order="22" intorder="3">yan2018sentinel</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">Landsat2023</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">ichikawa2022development</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">langheinrich2017enhanced</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">vosinakis2022data</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">adeniran2022cross</bcf:citekey>
     <bcf:citekey order="23" intorder="1">storey2016note</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">roy2000impact</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">ghassemian2016review</bcf:citekey>
-    <bcf:citekey order="25" intorder="2">javan2021review</bcf:citekey>
-    <bcf:citekey order="25" intorder="3">li2017pixel</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">zitova2003image</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">chen2003mutual</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">drusch2012sentinel</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">chastain2019empirical</bcf:citekey>
-    <bcf:citekey order="29" intorder="2">claverie2018harmonized</bcf:citekey>
-    <bcf:citekey order="29" intorder="3">flood2014continuity</bcf:citekey>
-    <bcf:citekey order="29" intorder="4">roy2016characterization</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">filella1994red</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">roy2016general</bcf:citekey>
+    <bcf:citekey order="23" intorder="2">wolfe2002achieving</bcf:citekey>
+    <bcf:citekey order="23" intorder="3">yan2018sentinel</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">storey2016note</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">roy2000impact</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">ghassemian2016review</bcf:citekey>
+    <bcf:citekey order="26" intorder="2">javan2021review</bcf:citekey>
+    <bcf:citekey order="26" intorder="3">li2017pixel</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">zitova2003image</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">chen2003mutual</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">drusch2012sentinel</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">chastain2019empirical</bcf:citekey>
+    <bcf:citekey order="30" intorder="2">claverie2018harmonized</bcf:citekey>
+    <bcf:citekey order="30" intorder="3">flood2014continuity</bcf:citekey>
+    <bcf:citekey order="30" intorder="4">roy2016characterization</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">filella1994red</bcf:citekey>
     <bcf:citekey order="32" intorder="1">roy2016general</bcf:citekey>
     <bcf:citekey order="33" intorder="1">roy2016general</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">ghaffarian2021effect</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">wang2022review</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">Goodfellow2016</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">roy2016general</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">ghaffarian2021effect</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">wang2022review</bcf:citekey>
     <bcf:citekey order="37" intorder="1">Goodfellow2016</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">USGS2023</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="39" intorder="1">USGS2023</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">Goodfellow2016</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">USGS2023</bcf:citekey>
     <bcf:citekey order="41" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="42" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="43" intorder="1">Goodfellow2016</bcf:citekey>
@@ -3116,24 +3116,23 @@
     <bcf:citekey order="48" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="49" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="50" intorder="1">Goodfellow2016</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">Kalita2022</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="52" intorder="1">Kalita2022</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">Goodfellow2016</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">Kalita2022</bcf:citekey>
     <bcf:citekey order="54" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="55" intorder="1">Goodfellow2016</bcf:citekey>
     <bcf:citekey order="56" intorder="1">Goodfellow2016</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">kokhanovsky2019retrieval</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">estrella2021spectral</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">hernandez2014recoleccion</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">Goodfellow2016</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">kokhanovsky2019retrieval</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">estrella2021spectral</bcf:citekey>
     <bcf:citekey order="60" intorder="1">hernandez2014recoleccion</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">belgiu2016random</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">hernandez2014recoleccion</bcf:citekey>
     <bcf:citekey order="62" intorder="1">belgiu2016random</bcf:citekey>
-    <bcf:citekey order="63" intorder="1">nami2018spatial</bcf:citekey>
-    <bcf:citekey order="64" intorder="1">gigovic2019testing</bcf:citekey>
-    <bcf:citekey order="65" intorder="1">LightGlue2023</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">belgiu2016random</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">nami2018spatial</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">gigovic2019testing</bcf:citekey>
     <bcf:citekey order="66" intorder="1">LightGlue2023</bcf:citekey>
-    <bcf:citekey order="67" intorder="1">wolters2023zooming</bcf:citekey>
-    <bcf:citekey order="68" intorder="1">wolters2023zooming</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">LightGlue2023</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

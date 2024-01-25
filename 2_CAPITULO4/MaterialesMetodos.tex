@@ -27,7 +27,7 @@
         \subsection{Muestra}
             El diseño de muestreo adoptado es de tipo probabilístico. Se seleccionarán unidades de muestreo de manera aleatoria, lo cual es esencial para garantizar la independencia estadística y la representatividad dentro del universo de las imágenes MSS de Landsat. De acuerdo con los principios establecidos por \textcite{hernandez2014recoleccion}, se ha determinado un tamaño de muestra representativo del conjunto total de la población.
 
-            Para la implementación de la superresolución MSS a TM mediante el modelo ESRGAN, se implementaron técnicas de clasificación supervisada, que requieren un conjunto de datos dividido en muestras de entrenamiento y validación.
+            Para la implementación de la superresolución MSS a TM mediante el modelo GAN, se implementaron técnicas de clasificación supervisada, que requieren un conjunto de datos dividido en muestras de entrenamiento y validación.
             Siguiendo las recomendaciones de \textcite{belgiu2016random}, las muestras de entrenamiento deben ser: 1) estadísticamente independientes de las muestras de validación, 2) equilibradas en términos de distribución de clases, 3) representativas de las variabilidades espectrales objetivo, y 4) suficientemente amplias para cubrir la complejidad de los datos. Con base en estos criterios, para este estudio se destinará el 70\% de las imágenes seleccionadas aleatoriamente para el entrenamiento del modelo y el 30\% restante para la validación del mismo \autocite{nami2018spatial}. La asignación de las imágenes a cada uno de estos conjuntos se realizará mediante un algoritmo de selección aleatoria que asegure la aleatoriedad de la división \autocite{gigovic2019testing}.
 
             Además, se incorporó la especificación ML-STAC para estructurar y describir los datos de EO de manera óptima para el entrenamiento de modelos de ML. Se utilizó este estándar para convertir los datos en el formato safetensor y cargarlos en la plataforma Hugging Face, permitiendo un acceso eficiente y reproducible a los datos curados. Este enfoque garantiza una mayor coherencia, transparencia y facilita la verificación independiente de los resultados del estudio.
@@ -125,15 +125,7 @@
                 
                 Las imágenes MSS corregidas se presentan junto con las TM para confirmar visualmente la alineación. A través del proceso de corrección, se observa una mejora notable en la alineación, evidenciada por la reducción del desajuste visual entre las imágenes. Esta mejora se logra mediante correcciones tanto a nivel de píxel como subpíxel, lo que resulta en una superposición más precisa entre las imágenes MSS y TM.
                 
-                \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Comparativa de Alineación: Imágenes MSS, TM y MSS Corregida.}} 
-                    \centering
-                    \includegraphics[width=0.8\linewidth]{2_CAPITULO0/IMG/tm_mss_rmse.png}
-                    \begin{justify}
-                        \textit{Nota.} El contraste entre la imagen MSS original y la corregida resalta con una reducción significativa del error RMSE de 52.6523 a 0.987, evidenciando la eficacia de las correcciones a nivel de píxel y subpíxel para lograr una alineación casi perfecta.
-                    \end{justify}                    
-                    \label{tm_mss_rmse}
-                \end{figure}
+                
                 
             \subsubsection{Filtro final de los pares de imágenes}
                 En complemento a las técnicas previamente descritas, se incorpora un criterio adicional para la exclusión de correspondencias erróneas entre las imágenes. Se establece un umbral de exclusión para desplazamientos que superen los 90 metros, equivalentes a 3 píxeles, con el objetivo de asegurar realismo y precisión en la alineación, descartando así anomalías significativas. Este enfoque resulta esencial debido a discrepancias previamente observadas entre las ubicaciones de las imágenes MSS y la realidad, utilizando como referencia las imágenes TM. Para optimizar el proceso, se implementa un filtro automatizado en lugar de una revisión visual individual.
@@ -209,59 +201,66 @@
             \subsubsection{Configuración del Entorno de Trabajo}
                 Se estableció un entorno de trabajo en Python mediante la creación de un entorno virtual utilizando herramientas como venv. Esto permitió una separación clara y la gestión de dependencias específicas del proyecto. Se instaló PyTorch, seleccionando una versión que correspondiera a la compatibilidad con CUDA del sistema utilizado, para facilitar el entrenamiento acelerado por GPU.
             
-\begin{lstlisting}[language=bash]
-python -m venv mss2tm-env
-# Activar entorno en Windows
-mss2tm-env\Scripts\activate
-# Activar entorno en Unix o MacOS
-source mss2tm-env/bin/activate
-\end{lstlisting}
+% \begin{lstlisting}[language=bash]
+% python -m venv mss2tm-env
+% # Activar entorno en Windows
+% mss2tm-env\Scripts\activate
+% # Activar entorno en Unix o MacOS
+% source mss2tm-env/bin/activate
+% \end{lstlisting}
             
                 Además, se implementaron herramientas de registro y monitoreo para seguir el progreso del entrenamiento y se estableció un sistema de control de versiones para el código y los datos. La automatización y orquestación del flujo de trabajo, junto con la validación del código mediante pruebas unitarias y de integración, formaron parte esencial de este proceso. Todas las dependencias se documentaron en un archivo requirements.txt para facilitar la configuración reproducible del entorno.
 
-\begin{lstlisting}[language=bash]
-# Instalación de PyTorch y bibliotecas para procesamiento de imágenes
-pip install torch torchvision torchaudio
-pip install numpy scipy matplotlib pandas geopandas rasterio fiona
-pip install opencv-python-headless scikit-image scikit-learn
+% \begin{lstlisting}[language=bash]
+% # Instalación de PyTorch y bibliotecas para procesamiento de imágenes
+% pip install torch torchvision torchaudio
+% pip install numpy scipy matplotlib pandas geopandas rasterio fiona
+% pip install opencv-python-headless scikit-image scikit-learn
 
-# Herramientas de desarrollo para código eficiente y limpio
-pip install flake8 black isort mypy
+% # Herramientas de desarrollo para código eficiente y limpio
+% pip install flake8 black isort mypy
 
-# Bibliotecas para la manipulación y aumento de datos geoespaciales
-pip install albumentations pytorch-lightning
+% # Bibliotecas para la manipulación y aumento de datos geoespaciales
+% pip install albumentations pytorch-lightning
 
-# Control de versiones para el código y los datos
-pip install git dvc
+% # Control de versiones para el código y los datos
+% pip install git dvc
 
-# Herramientas de registro y monitoreo
-pip install tensorboard wandb
+% # Herramientas de registro y monitoreo
+% pip install tensorboard wandb
 
-# Pruebas unitarias y de integración
-pip install pytest pytest-cov
+% # Pruebas unitarias y de integración
+% pip install pytest pytest-cov
 
-# Documentación de dependencias
-pip freeze > requirements.txt
-\end{lstlisting}
+% # Documentación de dependencias
+% pip freeze > requirements.txt
+% \end{lstlisting}
 
 
 
 
             \subsubsection{Elección de Arquitecturas para el Generador y Discriminador en GANs}
-                En la fase de desarrollo del modelo se escogió con detenimiento la arquitectura para cada componente de la Red Neuronal Generativa Adversaria (GAN), fundamental para la consecución de nuestros objetivos. El generador, implementado como un Transformer Visual, conocido comúnmente por su acrónimo en inglés VIT (Vision Transformer), fue diseñado para procesar y transformar imágenes de múltiples espectros (MSS) en imágenes de alta resolución (HR) o TM. Esta elección se basó en la capacidad de los Transformers Visuales para manejar secuencias de datos, lo que resulta ideal para comprender y generar representaciones complejas de imágenes. Por otro lado, para el discriminador, se optó por una arquitectura de Perceptrón Multicapa (MLP, por sus siglas en inglés), que debido a su simplicidad y eficacia en tareas de clasificación, resultó ser la más adecuada para evaluar la autenticidad de las imágenes generadas por el VIT, diferenciando entre las reales y las producidas artificialmente. La preparación de los datos, que incluyó la normalización y limpieza de las imágenes de satélite, fue esencial para alimentar correctamente las redes y permitió que el entrenamiento se llevara a cabo con datos de calidad, eliminando cualquier posible sesgo o interferencia que pudiera comprometer la efectividad del modelo.
-           
+                En la fase de desarrollo del modelo se escogió con detenimiento la arquitectura para cada componente de la Red Neuronal Generativa Adversaria (GAN), fundamental para la consecución de nuestros objetivos. El generador, implementado como un Transformer Visual, conocido comúnmente por su acrónimo en inglés VIT (Vision Transformer), fue diseñado para procesar y transformar imágenes de múltiples espectros (MSS) en imágenes de alta resolución (HR) o TM. Esta elección se basó en la capacidad de los Transformers Visuales para manejar secuencias de datos, lo que resulta ideal para comprender y generar representaciones complejas de imágenes. Por otro lado, para el discriminador, se optó por una arquitectura de Perceptrón Multicapa (MLP), que debido a su simplicidad y eficacia en tareas de clasificación, resultó ser la más adecuada para evaluar la autenticidad de las imágenes generadas por el VIT, diferenciando entre las reales y las producidas artificialmente. 
             
                 \begin{figure}[H] 
-                    \caption{\doublespacing \\ \textit{Flujo de un modelo de red neuronal GAN (ESRGAN).}} 
+                    \caption{\doublespacing \\ \textit{Flujo del dicriminador SWINIR - VIT.}} 
                     \centering
-                    \includegraphics[width=0.9\linewidth]{E_IMAGENES/modelo_esgr.jpg}
+                    \includegraphics[width=1\linewidth]{2_CAPITULO5/IMG/swinir_generator.png}
                     \begin{justify}
-                        \textit{Nota.} Se muestra un flujo de trabajo de procesamiento de imagen con bloques RRDB para mejorar resolución, con capas convolucionales, densas, activaciones LeRU y técnicas de upsampling. Obtenido de \textcite{wolters2023zooming}.
+                        \textit{Nota.} Se muestra un flujo de trabajo de procesamiento de imagen con bloques RSTB para mejorar resolución, con capas convolucionales, densas, activaciones LReLU y técnicas de upsampling.
                     \end{justify}                    
-                    \label{red_neuronal}
+                    \label{generador}
                 \end{figure}
 
-
+                \begin{figure}[H] 
+                    \caption{\doublespacing \\ \textit{Flujo del dicriminador MLP.}} 
+                    \centering
+                    \includegraphics[width=0.55\linewidth]{2_CAPITULO5/IMG/mlp_discriminator.png}
+                    \begin{justify}
+                        \textit{Nota.} Se muestra un flujo del discriminador MLP inicia con entrada de imagen, pasa por capas MLP y Leaky ReLU, culmina con probabilidad sigmoide.
+                    \end{justify}                    
+                    \label{discriminador}
+                \end{figure}
 
             \subsubsection{Definición de Parámetros y Funciones de Pérdida}
                 Se definieron las funciones de pérdida para entrenar el modelo. El L1 Loss se utilizó para minimizar la diferencia absoluta píxel por píxel entre las imágenes generadas por el modelo (\(TM_{hat}\)) y las imágenes objetivo (TM), con el fin de asegurar una alta fidelidad visual. Además, se implementó una función de pérdida adicional para el discriminador, donde se estimó la probabilidad de que una imagen sea real o falsa (L2), promoviendo la generación de imágenes que el discriminador no pudiera distinguir de las reales.
@@ -269,19 +268,14 @@ pip freeze > requirements.txt
             \subsubsection{Proceso de Entrenamiento}
                 En la fase de entrenamiento, se ajustaron los parámetros de los modelos generador y discriminador de manera iterativa. Se comenzó con una tasa de aprendizaje adaptativa y un coeficiente \( \alpha \) inicialmente establecido en 0.5 para equilibrar las funciones de pérdida L1 y L2. Tras experimentación empírica, se estableció que un \( \alpha \) de 0.01 proporcionaba un equilibrio más efectivo, reduciendo las distorsiones en las imágenes generadas y mejorando la estabilidad del entrenamiento. La optimización se llevó a cabo utilizando el algoritmo Adam, y se incorporó la técnica de dropout para prevenir el sobreajuste. A lo largo del proceso, la pérdida observada disminuyó de manera sostenida, lo que indicó una mejora continua en la precisión del modelo. Además, se emplearon técnicas de aumento de datos y selección aleatoria de lotes para fortalecer la robustez del entrenamiento.
 
-                Durante esta fase, también se enfatizó la importancia de una inicialización adecuada y un registro detallado del proceso. Se utilizó PyTorch por su eficiencia y flexibilidad, configurando aspectos fundamentales como la semilla aleatoria y el dispositivo de cálculo para asegurar un entrenamiento estable y reproducible. Herramientas de registro como TensorBoard y Weights and Biases (wandb) permitieron monitorear en tiempo real métricas clave como la pérdida y la precisión, facilitando un seguimiento detallado del entrenamiento.
+                Durante esta fase, también se enfatizó la importancia de una inicialización adecuada y un registro detallado del proceso. Se utilizó PyTorch por su eficiencia y flexibilidad, configurando aspectos fundamentales como la semilla aleatoria y el dispositivo de cálculo para asegurar un entrenamiento estable y reproducible. Herramientas de registro como Weights and Biases (wandb) permitieron monitorear en tiempo real métricas clave como la pérdida y la precisión, facilitando un seguimiento detallado del entrenamiento.
 
                 La carga de datos se optimizó mediante la biblioteca ML-STAC, lo que garantizó una gestión eficiente de los grandes conjuntos de datos de imágenes satelitales. Este enfoque uniformó la carga de datos y mejoró la integración de los mismos en el entrenamiento.
-
-\begin{lstlisting}[language=python]
-import mlstac
-train_db = mlstac.load("path_to_safetensor.json",framework="torch", stream=False, device="cpu")
-\end{lstlisting}
 
                 El cálculo de métricas específicas como la pérdida L1, la pérdida perceptual y la pérdida GAN proporcionó información valiosa sobre el rendimiento del modelo, ayudando en la afinación y el ajuste de hiperparámetros. La implementación de un sistema de checkpointing aseguró la recuperación del entrenamiento en caso de interrupciones, facilitando la experimentación con diferentes configuraciones y el almacenamiento periódico de los estados del modelo, la configuración del optimizador y otros hiperparámetros.
 
             \subsubsection{Ajuste y Optimización}
-                El proceso de ajuste fino del modelo, que comprende tanto el generador, implementado con la arquitectura de Transformer Visual (VIT), como el discriminador, basado en un Perceptrón Multicapa (MLP), fue crucial para lograr resultados satisfactorios. Durante esta etapa, se experimentó con variaciones en los hiperparámetros y se aplicó la validación cruzada para asegurar la generalización del modelo. Para el discriminador, se desarrolló una estrategia de entrenamiento que moderaba la actualización de sus parámetros, buscando mantener el equilibrio de Nash y evitar el colapso del modelo. Este cuidadoso ajuste se extendió al generador, donde se aplicaron técnicas como la corrección de máscaras basada en cuantiles y operaciones de división o sustracción, permitiendo refinar la representación de las imágenes generadas. Se emplearon tanto el \(L1\) Loss, para minimizar la diferencia absoluta píxel por píxel entre las imágenes generadas y las de referencia, asegurando así una alta fidelidad visual, como el \(L2\) Loss, para evaluar la capacidad del generador de producir imágenes que el discriminador considere reales. La combinación de estas estrategias resultó en una notable mejora en la precisión, fidelidad y realismo de las imágenes generadas, validando la eficacia de las arquitecturas y metodologías de entrenamiento empleadas.
+                El proceso de ajuste fino del modelo, que comprende tanto el generador, implementado con la arquitectura VIT, como el discriminador, basado en un MLP, fue crucial para lograr resultados satisfactorios. Durante esta etapa, se experimentó con variaciones en los hiperparámetros y se aplicó la validación cruzada para asegurar la generalización del modelo. Para el discriminador, se desarrolló una estrategia de entrenamiento que moderaba la actualización de sus parámetros, buscando mantener el equilibrio de Nash y evitar el colapso del modelo. Este cuidadoso ajuste se extendió al generador, donde se aplicaron técnicas como la corrección de máscaras basada en cuantiles y operaciones de división o sustracción, permitiendo refinar la representación de las imágenes generadas. Se emplearon tanto el \(L1\) Loss, para minimizar la diferencia absoluta píxel por píxel entre las imágenes generadas y las de referencia, asegurando así una alta fidelidad visual, como el \(L2\) Loss, para evaluar la capacidad del generador de producir imágenes que el discriminador considere reales. La combinación de estas estrategias resultó en una notable mejora en la precisión, fidelidad y realismo de las imágenes generadas, validando la eficacia de las arquitecturas y metodologías de entrenamiento empleadas.
 
             
                 \subsubsection{Configuración de las Funciones de Pérdida}
@@ -290,66 +284,59 @@ train_db = mlstac.load("path_to_safetensor.json",framework="torch", stream=False
                     \paragraph{LPIPSLoss}
                         La función de pérdida LPIPS (Learned Perceptual Image Patch Similarity) se utilizó para evaluar la similitud perceptual entre las imágenes generadas y las de alta resolución. LPIPS aprovecha un modelo preentrenado para comparar las características visuales y contextuales de las imágenes. Esta función de pérdida es particularmente efectiva para asegurar que las imágenes superresueltas no solo coincidan en términos de píxeles, sino que también capturen con precisión los elementos y patrones semánticos presentes en las imágenes TM de alta resolución.
                     
-                    \paragraph{CLIPHarmLoss}
-                        La función de pérdida CLIPHarm se diseñó para armonizar aún más la superresolución con las características semánticas de las imágenes. A través de la corrección de máscaras basada en cuantiles y las operaciones de división o sustracción, esta función de pérdida se enfoca en refinar la representación de las imágenes superresueltas, asegurando que estén alineadas con las propiedades semánticas de las imágenes de referencia. La combinación de CLIPHarm con LPIPS y la pérdida L1 proporciona un enfoque integral para la optimización del modelo MSS2TM.
+                    % \paragraph{CLIPHarmLoss}
+                    %     La función de pérdida CLIPHarm se diseñó para armonizar aún más la superresolución con las características semánticas de las imágenes. A través de la corrección de máscaras basada en cuantiles y las operaciones de división o sustracción, esta función de pérdida se enfoca en refinar la representación de las imágenes superresueltas, asegurando que estén alineadas con las propiedades semánticas de las imágenes de referencia. La combinación de CLIPHarm con LPIPS y la pérdida L1 proporciona un enfoque integral para la optimización del modelo MSS2TM.
 
-           
-
-                
-%             \subsubsection{Entrenamiento}
-
-%                 \paragraph{Inicialización de PyTorch}
-%                     Para el entrenamiento del modelo ESRGAN adaptado a MSS-TM, se utilizó PyTorch debido a su eficiencia y flexibilidad. Se configuraron los aspectos fundamentales como la semilla aleatoria, el dispositivo de cálculo (CPU o GPU) y las versiones específicas de CUDA, asegurando un entrenamiento estable y reproducible.
-
-%                 \paragraph{Configuración de Registro}
-%                     Se implementaron herramientas de registro como TensorBoard y Weights and Biases (wandb) para monitorear el progreso del entrenamiento. Estas herramientas facilitaron la visualización en tiempo real de métricas clave como la pérdida y la precisión, y permitieron un seguimiento detallado del entrenamiento.
-
-%                 \paragraph{Uso de ML-STAC para la Carga de Datos}
-%                     En lugar de un DataLoader personalizado, se empleó la biblioteca ML-STAC para cargar los datos ya preparados y convertidos al formato safetensor. Este enfoque garantizó la uniformidad y eficiencia en la carga de datos, facilitando así la integración y el manejo de grandes conjuntos de datos de imágenes satelitales.
-
-% \begin{lstlisting}[language=bash]
-% import mlstac
-% train_db = mlstac.load("path_to_safetensor.json",framework="torch", stream=False, device="cpu") 
-% \end{lstlisting}
-
-%                 \paragraph{Iteración y Optimización}
-%                     Durante el entrenamiento, se iteró sobre el conjunto de datos en lotes. En cada iteración, se actualizaban los parámetros del modelo mediante el cálculo de gradientes y la aplicación de un algoritmo de optimización (como Adam). Este proceso fue clave para la mejora gradual del modelo en términos de fidelidad y calidad de las imágenes superresueltas. 
-                
-%                 \paragraph{Cálculo de Métricas}
-%                     Se calcularon métricas de entrenamiento como la pérdida L1, la pérdida perceptual y la pérdida GAN. Estas métricas proporcionaron información valiosa sobre el rendimiento del modelo y ayudaron en la afinación y el ajuste de hiperparámetros.
-                
-%                 \paragraph{Checkpointing}
-%                     Se implementó un sistema de guardado periódico de los estados del modelo y del proceso de entrenamiento. Esto incluyó el almacenamiento de los pesos del modelo, la configuración del optimizador y otros hiperparámetros. Esta práctica aseguró la recuperación del entrenamiento en caso de interrupciones y facilitó la experimentación con diferentes configuraciones.
+        
+                    \begin{figure}[H] 
+                        \caption{\doublespacing \\ \textit{Flujo  de la arquitectura GAN - MSS2TM para la armonización espectral y espacial.}} 
+                        \centering
+                        \includegraphics[width=1\linewidth]{2_CAPITULO5/IMG/mss2tm.png}
+                        \begin{justify}
+                            \textit{Nota.} El flujo muestra transformación VIT de imagen MSS de 60m a HR de 30m, seguida por evaluación MLP de armonización espectral y espacial.
+                        \end{justify}                    
+                        \label{gan}
+                    \end{figure}
 
         \subsection{Generación de Bandas Virtuales en Imágenes MSS}
             Una vez que las imágenes MSS se alinean espectral y espacialmente con las TM gracias al modelo MSS2TM, el siguiente paso es generar bandas sintéticas o virtuales para las MSS que existen en las TM pero no en las MSS. 
             
-            Para lograr esto, se implementa una técnica de aprendizaje profundo que utiliza las bandas armonizadas previamente como entradas y busca generar bandas faltantes como la banda azul y la banda SWIR. El modelo se entrena utilizando las bandas coincidentes de las imágenes MSS armonizadas como características de entrada y las bandas objetivo de las imágenes TM como salida esperada. 
-            
-            Esta técnica de generación de bandas virtuales no solo permite ampliar la información espectral de las imágenes MSS, sino que también garantiza que esta información sea coherente y comparable con las imágenes TM originales. Esta coherencia es esencial para garantizar que cualquier análisis posterior que se realice utilizando estas imágenes sea preciso y confiable.
+            \subsubsection{Adquisición y Procesamiento Inicial de Datos}
+                Se comenzó con reconocer el sistema multiespectral MSS, que contenían bandas espectrales en el rango del infrarrojo cercano (NIR), rojo y verde, todas con una resolución de 30 metros.
+
+            \subsubsection{Entrenamiento del Perceptrón Multicapa (MLP)}
+                El diseño y entrenamiento de un MLP constituyó el núcleo del enfoque adoptado para predecir las bandas espectrales faltantes en las imágenes MSS. La red neuronal profunda se estructuró mediante la inclusión de capas lineales y una arquitectura que promovió el aprendizaje de patrones complejos por medio de activaciones no lineales y la regulación de conexiones entre neuronas. El propósito fue refinar los parámetros del modelo de manera que este pudiera replicar con exactitud las bandas adicionales necesarias, simulando efectivamente una imagen TM completa.
+
+                La implementación del modelo MLP se realizó extendiendo la clase Module de PyTorch, integrando tres capas lineales (nn.Linear) intercaladas con funciones de activación no lineales (nn.ReLU) y una capa de abandono (nn.Dropout) para la regularización. La configuración de la red permitió la transformación de la entrada a un espacio de características ocultas, seguido por el procesamiento intermedio de estas características, y finalmente, su conversión al espacio de salida deseado mediante la última capa lineal. La inclusión de la función de activación ReLU facilitó el aprendizaje de relaciones complejas entre las entradas y las salidas, mientras que la capa de abandono contribuyó a la prevención del sobreajuste mediante el descarte aleatorio de algunas características durante el entrenamiento.
                 
-        
+                La lógica de procesamiento de datos se definió en la función forward, asegurando el paso secuencial de los datos a través de las capas lineales, la activación ReLU y el abandono, antes de emitir la salida final.
+                
+                El entrenamiento del modelo se organizó a través de la función \texttt{run\_deep\_prior}, que inició con la preparación de los datos de entrada y salida en un formato adecuado. Posteriormente, se instanció el modelo MLP, configurando el optimizador Adam y la función de pérdida L1, esenciales para el proceso de aprendizaje.
+
+            \subsubsection{Proceso de Entrenamiento y Ajuste Fino}
+                El modelo se sometió a un régimen de entrenamiento iterativo y exhaustivo, durante el cual se realizaron actualizaciones graduales y precisas en la configuración interna de la red. Se emplearon lotes de datos pequeños para optimizar los recursos computacionales y mejorar la capacidad del modelo para generalizar a partir de los datos proporcionados. La estrategia de entrenamiento estuvo guiada por un enfoque de minimización de errores, donde se buscaba reducir la diferencia entre las bandas espectrales conocidas y las predicciones del modelo.
+
+
 
             \begin{figure}[H] 
                 \caption{\doublespacing \\ \textit{Modelo de armonización para imágenes Landsat MSS.}} 
                 \centering
-                \includegraphics[width=0.95\linewidth]{2_CAPITULO0/IMG/modelo.png}
+                \includegraphics[width=0.95\linewidth]{2_CAPITULO5/IMG/modelo.png}
                 \begin{justify}
-                    \textit{Nota.} El esquema presenta una metodología de armonización de imágenes de sensores MSS y TM: comienza con imágenes TOA, sigue con correcciones geométricas y transformadas de Fourier via LightGlue, continúa con armonización espectral y espacial mediante modelos CNN y culmina con un cubo de imagen armonizado para la creación de bandas virtuales.
+                    \textit{Nota.} El esquema presenta una metodología de armonización de imágenes de sensores MSS y TM: comienza con imágenes TOA, sigue con correcciones geométricas y transformadas de Fourier via LightGlue, continúa con armonización espectral y espacial mediante una arquitectura GAN y culmina con un cubo de imagen armonizado para la creación de bandas virtuales.
                 \end{justify}                    
-                \label{modelo}
+                \label{modelo2}
             \end{figure}
 
     \section{Análisis estadístico}
 
         En la fase de preparación para la validación de los modelos desarrollados, se diseñó un enfoque de análisis estadístico detallado. Este diseño metodológico fue crucial para asegurar que, una vez aplicados, los modelos pudieran demostrar un ajuste adecuado a los datos de entrenamiento y una generalización efectiva a nuevos conjuntos de datos.
         
-        Se decidió que el RMSE se calcularía para estimar la discrepancia entre las predicciones de los modelos y los valores observados, buscando valores bajos como indicativos de precisión. Además, se preveía el uso del coeficiente de correlación de Pearson para examinar la relación lineal entre las predicciones y los valores reales.
+        Se decidió que el RMSE, MAE y R se calcularían para estimar la discrepancia entre las predicciones de los modelos y los valores observados, buscando valores bajos como indicativos de precisión. Además, se preveía el uso del coeficiente de correlación de Pearson para examinar la relación lineal entre las predicciones y los valores reales.
         
-        En la fase de validación, se llevó a cabo una evaluación exhaustiva del modelo MSS2TM ESRGAN utilizando el conjunto de validación previamente definido. Este conjunto, compuesto por pares de imágenes MSS-TM, permitió una comparativa directa entre las imágenes superresueltas generadas por el modelo y las correspondientes imágenes de alta resolución (TM). Los pasos fundamentales en esta etapa incluyeron:
+        En la fase de validación, se llevó a cabo una evaluación exhaustiva del modelo MSS2TM GAN utilizando el conjunto de validación previamente definido. Este conjunto, compuesto por pares de imágenes MSS-TM, permitió una comparativa directa entre las imágenes superresueltas generadas por el modelo y las correspondientes imágenes de alta resolución (TM). Los pasos fundamentales en esta etapa incluyeron:
 
         \subparagraph{Evaluación de Métricas de Rendimiento}
-            Se aplicaron diversas métricas para cuantificar la eficacia del modelo. Estas métricas incluyeron el Peak Signal-to-Noise Ratio (PSNR) y el Structural Similarity Index (SSIM), que proporcionan una medida cuantitativa del error y la calidad visual, respectivamente. Adicionalmente, se utilizó CLIPScore, una métrica más novedosa y alineada con la percepción visual humana, para evaluar la calidad perceptual de las imágenes superresueltas. Estas métricas son fundamentales para comprender cómo el modelo reproduce detalles y texturas específicas en las imágenes de superresolución.
-
+            LPIPS se empleó para validar la calidad perceptual en la superresolución de imágenes MSS, asegurando que las texturas y patrones semánticos de las imágenes TM fueran fielmente replicados en las imágenes mejoradas.
         \paragraph{Comparación Visual}
             Además de la evaluación cuantitativa, se realizó una comparación visual detallada entre las imágenes generadas por el modelo y las imágenes TM de alta resolución. Esta comparación permitió identificar la efectividad del modelo en la recuperación de detalles finos y en la representación precisa de las características geoespaciales.
