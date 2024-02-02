@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.10) (format=lualatex 2023.11.10)  25 JAN 2024 04:57
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.10) (format=lualatex 2023.11.10)  1 FEB 2024 00:37
  restricted system commands enabled.
  file:line:error style messages enabled.
 **d:/CURSOS_2022/Repos/TesisLatex/TESIS_IG.tex
@@ -1965,15 +1965,10 @@ Capítulo 2.
 [8
 
 
-]
-
-LaTeX Warning: Citation 'wolters2023zooming' on page 9 undefined on input line 
-12.
-
-[9]
+] [9]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
 (Font)              scaled to size 12.0pt on input line 25.
-<2_CAPITULO0/IMG/linea_tiempo_landsat.png, id=423, 853.1875pt x 568.1225pt>
+<2_CAPITULO0/IMG/linea_tiempo_landsat.png, id=424, 853.1875pt x 568.1225pt>
 File: 2_CAPITULO0/IMG/linea_tiempo_landsat.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/linea_tiempo_landsat.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/linea_tiempo_landsat.png  used on inpu
@@ -2003,19 +1998,19 @@ Overfull \hbox (8.2161pt too wide) in alignment at lines 167--167
  []
 
 [17] [18]
-<2_CAPITULO0/IMG/convolucion.png, id=561, 776.9025pt x 776.9025pt>
+<2_CAPITULO0/IMG/convolucion.png, id=563, 776.9025pt x 776.9025pt>
 File: 2_CAPITULO0/IMG/convolucion.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/convolucion.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/convolucion.png  used on input line 21
 5.
 (luatex.def)             Requested size: 317.07614pt x 317.08582pt.
  [19] [20<./2_CAPITULO0/IMG/convolucion.png>]
-<2_CAPITULO0/IMG/padding1.png, id=579, 589.4522pt x 436.63126pt>
+<2_CAPITULO0/IMG/padding1.png, id=581, 589.4522pt x 436.63126pt>
 File: 2_CAPITULO0/IMG/padding1.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/padding1.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/padding1.png  used on input line 230.
 (luatex.def)             Requested size: 271.7835pt x 201.31918pt.
-<2_CAPITULO0/IMG/padding2.png, id=581, 718.93594pt x 536.75531pt>
+<2_CAPITULO0/IMG/padding2.png, id=583, 718.93594pt x 536.75531pt>
 File: 2_CAPITULO0/IMG/padding2.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/padding2.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/padding2.png  used on input line 240.
@@ -2025,25 +2020,25 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 (Font)              scaled to size 8.4pt on input line 251.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 251.
-<2_CAPITULO0/IMG/padding3.png, id=591, 693.34032pt x 609.77812pt>
+<2_CAPITULO0/IMG/padding3.png, id=593, 693.34032pt x 609.77812pt>
 File: 2_CAPITULO0/IMG/padding3.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/padding3.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/padding3.png  used on input line 262.
 (luatex.def)             Requested size: 271.7835pt x 239.03139pt.
  [22<./2_CAPITULO0/IMG/padding2.png>] [23<./2_CAPITULO0/IMG/padding3.png>]
-<2_CAPITULO0/IMG/stride.png, id=608, 365.11406pt x 480.29437pt>
+<2_CAPITULO0/IMG/stride.png, id=610, 365.11406pt x 480.29437pt>
 File: 2_CAPITULO0/IMG/stride.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/stride.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/stride.png  used on input line 288.
 (luatex.def)             Requested size: 181.18439pt x 238.34372pt.
-<2_CAPITULO0//IMG/tipos_capas.png, id=610, 966.61125pt x 335.00156pt>
+<2_CAPITULO0//IMG/tipos_capas.png, id=612, 966.61125pt x 335.00156pt>
 File: 2_CAPITULO0//IMG/tipos_capas.png Graphic file (type png)
 <use 2_CAPITULO0//IMG/tipos_capas.png>
 Package luatex.def Info: 2_CAPITULO0//IMG/tipos_capas.png  used on input line 3
 01.
 (luatex.def)             Requested size: 271.7835pt x 94.19339pt.
  [24<./2_CAPITULO0/IMG/stride.png>]
-<2_CAPITULO0//IMG/relu.png, id=619, 868.24374pt x 353.32pt>
+<2_CAPITULO0//IMG/relu.png, id=621, 868.24374pt x 353.32pt>
 File: 2_CAPITULO0//IMG/relu.png Graphic file (type png)
 <use 2_CAPITULO0//IMG/relu.png>
 Package luatex.def Info: 2_CAPITULO0//IMG/relu.png  used on input line 315.
@@ -2055,7 +2050,7 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(1)/m/n' will be
 (Font)              scaled to size 8.4pt on input line 328.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(1)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 328.
-<2_CAPITULO0//IMG/max_pooling.png, id=632, 680.5425pt x 513.41812pt>
+<2_CAPITULO0//IMG/max_pooling.png, id=634, 680.5425pt x 513.41812pt>
 File: 2_CAPITULO0//IMG/max_pooling.png Graphic file (type png)
 <use 2_CAPITULO0//IMG/max_pooling.png>
 Package luatex.def Info: 2_CAPITULO0//IMG/max_pooling.png  used on input line 3
@@ -2103,7 +2098,7 @@ Overfull \hbox (8.2161pt too wide) in alignment at lines 46--46
 
 ]
 Capítulo 4.
-<E_IMAGENES/area_estudio.jpg, id=684, 460.72125pt x 404.712pt>
+<E_IMAGENES/area_estudio.jpg, id=686, 460.72125pt x 404.712pt>
 File: E_IMAGENES/area_estudio.jpg Graphic file (type jpg)
 <use E_IMAGENES/area_estudio.jpg>
 Package luatex.def Info: E_IMAGENES/area_estudio.jpg  used on input line 8.
@@ -2111,114 +2106,121 @@ Package luatex.def Info: E_IMAGENES/area_estudio.jpg  used on input line 8.
 [35
 
 
-<./E_IMAGENES/area_estudio.jpg>] [36] [37]
+<./E_IMAGENES/area_estudio.jpg>]
+<2_CAPITULO4/IMG/mapa_peru.jpg, id=695, 1927.2pt x 1156.32pt>
+File: 2_CAPITULO4/IMG/mapa_peru.jpg Graphic file (type jpg)
+<use 2_CAPITULO4/IMG/mapa_peru.jpg>
+Package luatex.def Info: 2_CAPITULO4/IMG/mapa_peru.jpg  used on input line 20.
+(luatex.def)             Requested size: 362.37569pt x 217.40936pt.
+ [36<./2_CAPITULO4/IMG/mapa_peru.jpg>]
+[37]
 <2_CAPITULO0/IMG/1000points.png, id=712, 1380.15625pt x 822.07124pt>
 File: 2_CAPITULO0/IMG/1000points.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/1000points.png>
-Package luatex.def Info: 2_CAPITULO0/IMG/1000points.png  used on input line 47.
+Package luatex.def Info: 2_CAPITULO0/IMG/1000points.png  used on input line 60.
 
 (luatex.def)             Requested size: 317.07614pt x 188.85916pt.
- [38<./2_CAPITULO0/IMG/1000points.png>] [39]
-<2_CAPITULO0/IMG/cvg.png, id=734, 1494.58376pt x 1095.09125pt>
+ [38] [39<./2_CAPITULO0/IMG/1000points.png>] [40]
+<2_CAPITULO0/IMG/cvg.png, id=742, 1494.58376pt x 1095.09125pt>
 File: 2_CAPITULO0/IMG/cvg.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/cvg.png>
-Package luatex.def Info: 2_CAPITULO0/IMG/cvg.png  used on input line 93.
+Package luatex.def Info: 2_CAPITULO0/IMG/cvg.png  used on input line 106.
 (luatex.def)             Requested size: 317.07614pt x 232.3153pt.
-<2_CAPITULO0/IMG/hr_to_lr.png, id=736, 896.34875pt x 471.7625pt>
+<2_CAPITULO0/IMG/hr_to_lr.png, id=744, 896.34875pt x 471.7625pt>
 File: 2_CAPITULO0/IMG/hr_to_lr.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/hr_to_lr.png>
-Package luatex.def Info: 2_CAPITULO0/IMG/hr_to_lr.png  used on input line 107.
+Package luatex.def Info: 2_CAPITULO0/IMG/hr_to_lr.png  used on input line 120.
 (luatex.def)             Requested size: 362.37569pt x 190.72443pt.
- [40<./2_CAPITULO0/IMG/cvg.png>] [41<./2_CAPITULO0/IMG/hr_to_lr.png>] [42] [43]
-<2_CAPITULO4/IMG/dataloader.png, id=768, 627.34375pt x 735.74875pt>
+ [41<./2_CAPITULO0/IMG/cvg.png>] [42<./2_CAPITULO0/IMG/hr_to_lr.png>] [43] [44]
+<2_CAPITULO4/IMG/dataloader.png, id=777, 627.34375pt x 735.74875pt>
 File: 2_CAPITULO4/IMG/dataloader.png Graphic file (type png)
 <use 2_CAPITULO4/IMG/dataloader.png>
-Package luatex.def Info: 2_CAPITULO4/IMG/dataloader.png  used on input line 188
+Package luatex.def Info: 2_CAPITULO4/IMG/dataloader.png  used on input line 201
 .
 (luatex.def)             Requested size: 362.37569pt x 425.00568pt.
- [44] [45<./2_CAPITULO4/IMG/dataloader.png>]
-<2_CAPITULO5/IMG/swinir_generator.png, id=784, 922.44624pt x 165.61874pt>
+ [45] [46<./2_CAPITULO4/IMG/dataloader.png>]
+<2_CAPITULO5/IMG/swinir_generator.png, id=792, 922.44624pt x 165.61874pt>
 File: 2_CAPITULO5/IMG/swinir_generator.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/swinir_generator.png>
 Package luatex.def Info: 2_CAPITULO5/IMG/swinir_generator.png  used on input li
-ne 248.
+ne 261.
 (luatex.def)             Requested size: 452.9679pt x 81.32573pt.
- [46]
-<2_CAPITULO5/IMG/mlp_discriminator.png, id=791, 455.7025pt x 80.3pt>
+ [47]
+<2_CAPITULO5/IMG/mlp_discriminator.png, id=800, 455.7025pt x 80.3pt>
 File: 2_CAPITULO5/IMG/mlp_discriminator.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/mlp_discriminator.png>
 Package luatex.def Info: 2_CAPITULO5/IMG/mlp_discriminator.png  used on input l
-ine 258.
+ine 271.
 (luatex.def)             Requested size: 249.13371pt x 43.90047pt.
- [47<./2_CAPITULO5/IMG/swinir_generator.png><./2_CAPITULO5/IMG/mlp_discriminator
-.png>] [48]
-<2_CAPITULO5/IMG/mss2tm.png, id=808, 747.79375pt x 292.09125pt>
+ [48<./2_CAPITULO5/IMG/swinir_generator.png><./2_CAPITULO5/IMG/mlp_discriminator
+.png>] [49]
+<2_CAPITULO5/IMG/mss2tm.png, id=816, 747.79375pt x 292.09125pt>
 File: 2_CAPITULO5/IMG/mss2tm.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/mss2tm.png>
-Package luatex.def Info: 2_CAPITULO5/IMG/mss2tm.png  used on input line 294.
+Package luatex.def Info: 2_CAPITULO5/IMG/mss2tm.png  used on input line 307.
 (luatex.def)             Requested size: 452.9679pt x 176.9319pt.
-
-[49] [50<./2_CAPITULO5/IMG/mss2tm.png>]
-<2_CAPITULO5/IMG/modelo.png, id=823, 626.34pt x 795.97375pt>
+ [50] [51<./2_CAPITULO5/IMG/mss2tm.png>]
+<2_CAPITULO5/IMG/modelo.png, id=831, 626.34pt x 795.97375pt>
 File: 2_CAPITULO5/IMG/modelo.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/modelo.png>
-Package luatex.def Info: 2_CAPITULO5/IMG/modelo.png  used on input line 324.
+Package luatex.def Info: 2_CAPITULO5/IMG/modelo.png  used on input line 337.
 (luatex.def)             Requested size: 430.31812pt x 546.8784pt.
- [51]
+
+[52]
 Overfull \vbox (16.3242pt too high) has occurred while \output is active []
 
 
-[52<./2_CAPITULO5/IMG/modelo.png>]) (./2_CAPITULO5/Secciones/Resultados.tex
-[53] [54
+[53<./2_CAPITULO5/IMG/modelo.png>]) (./2_CAPITULO5/Secciones/Resultados.tex
+[54] [55
 
 ]
 Capítulo 5.
-<2_CAPITULO0/IMG/tm_mss_rmse.png, id=846, 1317.92375pt x 522.95375pt>
+<2_CAPITULO0/IMG/tm_mss_rmse.png, id=854, 1317.92375pt x 522.95375pt>
 File: 2_CAPITULO0/IMG/tm_mss_rmse.png Graphic file (type png)
 <use 2_CAPITULO0/IMG/tm_mss_rmse.png>
 Package luatex.def Info: 2_CAPITULO0/IMG/tm_mss_rmse.png  used on input line 12
 .
 (luatex.def)             Requested size: 362.37569pt x 143.78479pt.
-<2_CAPITULO5/IMG/espectral.png, id=847, 1051.5285pt x 344.0052pt>
+<2_CAPITULO5/IMG/espectral.png, id=855, 1051.5285pt x 344.0052pt>
 File: 2_CAPITULO5/IMG/espectral.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/espectral.png>
 Package luatex.def Info: 2_CAPITULO5/IMG/espectral.png  used on input line 25.
 (luatex.def)             Requested size: 452.9679pt x 148.18704pt.
-[55
+[56
 
 
 <./2_CAPITULO0/IMG/tm_mss_rmse.png>]
-<2_CAPITULO5/IMG/bandas.png, id=853, 727.7589pt x 193.6836pt>
+<2_CAPITULO5/IMG/bandas.png, id=861, 727.7589pt x 193.6836pt>
 File: 2_CAPITULO5/IMG/bandas.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/bandas.png>
 Package luatex.def Info: 2_CAPITULO5/IMG/bandas.png  used on input line 38.
 (luatex.def)             Requested size: 452.9679pt x 120.55247pt.
-<2_CAPITULO5/IMG/imagenes_peru.png, id=854, 597.432pt x 844.8363pt>
+<2_CAPITULO5/IMG/imagenes_peru.png, id=862, 597.432pt x 844.8363pt>
 File: 2_CAPITULO5/IMG/imagenes_peru.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/imagenes_peru.png>
 Package luatex.def Info: 2_CAPITULO5/IMG/imagenes_peru.png  used on input line 
 51.
 (luatex.def)             Requested size: 271.7835pt x 384.33667pt.
- [56<./2_CAPITULO5/IMG/espectral.png><./2_CAPITULO5/IMG/bandas.png>] [57<./2_CAP
+ [57<./2_CAPITULO5/IMG/espectral.png><./2_CAPITULO5/IMG/bandas.png>] [58<./2_CAP
 ITULO5/IMG/imagenes_peru.png>]
-<2_CAPITULO5/IMG/box_plot.png, id=870, 1293.633pt x 426.393pt>
+<2_CAPITULO5/IMG/box_plot.png, id=878, 1293.633pt x 426.393pt>
 File: 2_CAPITULO5/IMG/box_plot.png Graphic file (type png)
 <use 2_CAPITULO5/IMG/box_plot.png>
 Package luatex.def Info: 2_CAPITULO5/IMG/box_plot.png  used on input line 106.
 (luatex.def)             Requested size: 407.66833pt x 134.36655pt.
- [58])
-(./2_CAPITULO5/Secciones/Discusion.tex [59<./2_CAPITULO5/IMG/box_plot.png>]
-[60]
+ [59])
+(./2_CAPITULO5/Secciones/Discusion.tex [60<./2_CAPITULO5/IMG/box_plot.png>]
+[61]
 Capítulo 6.
-) (./2_CAPITULO5/Secciones/ConclusionesRecomendaciones.tex [61
+) (./2_CAPITULO5/Secciones/ConclusionesRecomendaciones.tex [62
 
 ]
 Capítulo 7.
-) [62
+) [63
 
-] [63]
+] [64]
 \openout2 = 3_3_BIBLIOGRAFIA/Bibliografia.aux
- (./3_3_BIBLIOGRAFIA/Bibliografia.tex [64
+ (./3_3_BIBLIOGRAFIA/Bibliografia.tex [65
 
 
 
@@ -2229,13 +2231,13 @@ A. (2016). \TU/TeXGyreTermesX(0)/m/it/12 Deep Lear-ning \TU/TeXGyreTermesX(1)/m
 /n/12 [[][]$http : / / www . deeplearningbook .
  []
 
-[65] [66]
+[66] [67]
 Overfull \hbox (8.59807pt too wide) in paragraph at lines 10--10
 [][]\TU/TeXGyreTermesX(1)/m/n/12 USGS. (2023b). Spec-tral Cha-rac-te-ris-tics Vi
 e-wer. [][]$https : / / landsat . usgs . gov / spectral - characteristics -
  []
 
-) [67]
+) [68]
 \openout2 = 3_4_ANEXOS/Anexos.aux
  (./3_4_ANEXOS/Anexos.tex (./3_4_ANEXOS/Secciones/1_Anexo_1.1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 35--35
@@ -2278,13 +2280,13 @@ Underfull \hbox (badness 1038) in paragraph at lines 70--70
 y
  []
 
-[68
+[69
 
 
 
 
 
-])) [69] (d:/CURSOS_2022/Repos/TesisLatex/build/TESIS_IG.aux
+])) [70] (d:/CURSOS_2022/Repos/TesisLatex/build/TESIS_IG.aux
 (d:/CURSOS_2022/Repos/TesisLatex/build/1_0_CARATULA/Caratula.aux)
 LaTeX Info: Redefining \sptext on input line 24.
 LaTeX Info: Redefining \. on input line 24.
@@ -2301,7 +2303,7 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `TESIS_IG.out' has not changed.
-(rerunfilecheck)             Checksum: E05E5A93EE32D5B84F4A2BB3A8E9C382;12333.
+(rerunfilecheck)             Checksum: E35C1C251B13D2714D7EE44D21A0DE8C;12333.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                TESIS_IG
@@ -2313,15 +2315,15 @@ Package logreq Info: Writing requests to 'TESIS_IG.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45292 strings out of 477259
+ 45306 strings out of 477259
  125166,2373549 words of node,token memory allocated
  1032 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 56 attribute, 122 glue_spe
 c, 30 attribute_list, 4 write, 3 pdf_action nodes
    avail lists: 1:4,2:2569,3:454,4:113,5:527,6:218,7:7137,8:76,9:1436,10:29,11:1
 110
- 65103 multiletter control sequences out of 65536+600000
- 68 fonts using 22311591 bytes
+ 65112 multiletter control sequences out of 65536+600000
+ 68 fonts using 22311399 bytes
  91i,12n,131p,1447b,5110s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/program files/miktex/fonts/opentype/public/lm/lmmono12-regular.otf><C:/P
 rogram Files/MiKTeX/fonts/opentype/public/lm-math/latinmodern-math.otf><C:/Progr
@@ -2332,9 +2334,9 @@ MiKTeX/fonts/opentype/public/newtx/TeXGyreTermesX-BoldItalic.otf><C:/Program Fil
 es/MiKTeX/fonts/opentype/public/newtx/TeXGyreTermesX-Regular.otf><C:/Program Fil
 es/MiKTeX/fonts/opentype/public/newtx/TeXGyreTermesX-Regular.otf><C:/Program Fil
 es/MiKTeX/fonts/opentype/public/newtx/TeXGyreTermesX-Bold.otf>
-Output written on TESIS_IG.pdf (73 pages, 18841517 bytes).
+Output written on TESIS_IG.pdf (74 pages, 18948566 bytes).
 
-PDF statistics: 1006 PDF objects out of 1200 (max. 8388607)
- 292 named destinations out of 1000 (max. 131072)
+PDF statistics: 1014 PDF objects out of 1200 (max. 8388607)
+ 294 named destinations out of 1000 (max. 131072)
  552 words of extra memory for PDF output out of 10000 (max. 100000000)
 

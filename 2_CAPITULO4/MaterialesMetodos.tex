@@ -1,16 +1,29 @@
 \Chapter{}
 \chapter{METODOLOGÍA}
     \section{Área de estudio}
-        La investigación se enfocó en imágenes Landsat MSS y TM de diversas regiones a nivel mundial. La Antártida se excluye por su homogeneidad espectral, dominada por extensas áreas de hielo y nieve, lo que dificulta la diferenciación de coberturas y complica la armonización satelital \autocite{kokhanovsky2019retrieval}. De manera similar, las regiones oceánicas se descartan debido a su uniformidad espectral, lo que limita la variabilidad en la reflectancia \autocite{estrella2021spectral}. Por lo tanto, el estudio se centra en áreas continentales no homogéneas en términos de reflectancia.
+        La investigación inicialmente se enfocó en la armonización de imágenes Landsat MSS y TM de diversas regiones a nivel mundial, excluyendo la Antártida por su homogeneidad espectral, principalmente dominada por extensas áreas de hielo y nieve, lo que dificulta la diferenciación de coberturas y complica la armonización satelital \autocite{kokhanovsky2019retrieval}. De forma similar, se descartaron las regiones oceánicas debido a su uniformidad espectral, lo que limita la variabilidad en la reflectancia \autocite{estrella2021spectral}. En consecuencia, el estudio se centró en áreas continentales no homogéneas en términos de reflectancia.
         \begin{figure}[H] 
             \caption{\doublespacing \\ \textit{Mapa del área de estudio.}} 
             \centering
             \includegraphics[width=0.6\linewidth]{E_IMAGENES/area_estudio.jpg}
             \begin{justify}
-                \textit{Nota.} Se muestra un mapa satelital global, resaltando las zonas terrestres verdes, omitiendo océanos uniformes y la helada Antártida.
+                \textit{Nota.} Se muestra un mapa satelital global, resaltando las zonas terrestres verdes, omitiendo océanos y la Antártida.
             \end{justify}                    
             \label{area_estudio}
         \end{figure}
+
+        En la siguiente fase del estudio, se seleccionó estratégicamente Perú como área de validación para la aplicación y evaluación del proceso de superresolución de imágenes MSS. Esta elección se justifica por la variada topografía y diversidad de ecosistemas del país, que van desde la costa del Pacífico hasta las alturas de los Andes, ofreciendo un escenario desafiante y representativo para la superresolución satelital. Se identificaron múltiples puntos de muestreo distribuidos a lo largo del país, en los cuales se extrajeron segmentos de imágenes MSS para su transformación a la resolución de imágenes TM. 
+
+        \begin{figure}[H] 
+            \caption{\doublespacing \\ \textit{Mapa del área para la validación de los modelos.}} 
+            \centering
+            \includegraphics[width=0.8\linewidth]{2_CAPITULO4/IMG/mapa_peru.jpg}
+            \begin{justify}
+                \textit{Nota.} Se muestra un mapa de Perú, teniendo en cuenta toda su área, por su diversidad ecosistémica.
+            \end{justify}                    
+            \label{peru}
+        \end{figure}
+
     \section{Diseño de investigación}
         \subsection{Tipo de investigación}
             Aplicada, ya que tiene como objetivo principal utilizar técnicas avanzadas de inteligencia artificial para mejorar la armonización de las imágenes Landsat MSS. La finalidad es proporcionar herramientas más eficientes y precisas para el monitoreo global, beneficiando a investigadores, entidades gubernamentales y organizaciones relacionadas con el estudio de la superficie terrestre.

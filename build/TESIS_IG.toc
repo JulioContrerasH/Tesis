@@ -74,60 +74,60 @@
 \contentsline {section}{\numberline {4.1}Área de estudio}{35}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Diseño de investigación}{36}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Tipo de investigación}{36}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Nivel de investigación}{36}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Enfoque}{36}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Población y muestra}{36}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Población}{36}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.2.2}Nivel de investigación}{37}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Enfoque}{37}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Población y muestra}{37}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Población}{37}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Muestra}{37}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Procedimiento, técnicas e instrumentos de recolección de información}{37}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Obtención de datos de entrada}{37}{subsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.1.1}Selección por localización}{37}{subsubsection.4.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.4.1.2}Selección por tiempo y calidad}{39}{subsubsection.4.4.1.2}%
+\contentsline {section}{\numberline {4.4}Procedimiento, técnicas e instrumentos de recolección de información}{38}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Obtención de datos de entrada}{38}{subsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}Selección por localización}{38}{subsubsection.4.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.2}Selección por tiempo y calidad}{40}{subsubsection.4.4.1.2}%
 \contentsline {subsection}{\numberline {4.4.2}Corrección geométrica de las Imágenes MSS}{40}{subsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.1}Lectura y Preprocesamiento de Imágenes}{40}{subsubsection.4.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.4.2.2}Extracción y Coincidencia de Características}{40}{subsubsection.4.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.3}Determinación del Desplazamiento Espacial}{40}{subsubsection.4.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.4.2.4}Refinamiento Subpíxel y Convolución en 2D}{41}{subsubsection.4.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.4.2.5}Filtro final de los pares de imágenes}{42}{subsubsection.4.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}Lectura y Preprocesamiento de Imágenes}{41}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}Extracción y Coincidencia de Características}{41}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}Determinación del Desplazamiento Espacial}{41}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}Refinamiento Subpíxel y Convolución en 2D}{42}{subsubsection.4.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.4.2.5}Filtro final de los pares de imágenes}{43}{subsubsection.4.4.2.5}%
 \contentsline {subsection}{\numberline {4.4.3}Preparación y Organización de Datos para Deep Learning}{43}{subsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.1}Conversión de formato de datos}{43}{subsubsection.4.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.4.3.2}Estandarización y homogeneización}{43}{subsubsection.4.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.4.3.3}Integración con Hugging Face}{43}{subsubsection.4.4.3.3}%
-\contentsline {paragraph}{Publicación en Hugging Face}{43}{paragraph*.45}%
-\contentsline {paragraph}{Catalogación Efectiva}{43}{paragraph*.46}%
-\contentsline {paragraph}{Acceso y Reproducibilidad}{44}{paragraph*.47}%
-\contentsline {subsubsection}{\numberline {4.4.3.4}Segmentación y Distribución de Datos}{44}{subsubsection.4.4.3.4}%
-\contentsline {subsubsection}{\numberline {4.4.3.5}Procesamiento y Alineación de Imágenes}{44}{subsubsection.4.4.3.5}%
-\contentsline {subsubsection}{\numberline {4.4.3.6}Normalización y Preparación de Datos}{44}{subsubsection.4.4.3.6}%
-\contentsline {subsubsection}{\numberline {4.4.3.7}Optimización y Manejo Eficiente de Datos}{44}{subsubsection.4.4.3.7}%
-\contentsline {subsection}{\numberline {4.4.4}Desarrollo del Modelo MSS2TM}{46}{subsection.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.4.1}Configuración del Entorno de Trabajo}{46}{subsubsection.4.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.4.2}Elección de Arquitecturas para el Generador y Discriminador en GANs}{46}{subsubsection.4.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.4.3}Definición de Parámetros y Funciones de Pérdida}{47}{subsubsection.4.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4.4}Proceso de Entrenamiento}{47}{subsubsection.4.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.4.5}Ajuste y Optimización}{48}{subsubsection.4.4.4.5}%
-\contentsline {subsubsection}{\numberline {4.4.4.6}Configuración de las Funciones de Pérdida}{49}{subsubsection.4.4.4.6}%
-\contentsline {paragraph}{LPIPSLoss}{49}{paragraph*.51}%
-\contentsline {subsection}{\numberline {4.4.5}Generación de Bandas Virtuales en Imágenes MSS}{50}{subsection.4.4.5}%
-\contentsline {subsubsection}{\numberline {4.4.5.1}Adquisición y Procesamiento Inicial de Datos}{50}{subsubsection.4.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.4.5.2}Entrenamiento del Perceptrón Multicapa (MLP)}{50}{subsubsection.4.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.4.5.3}Proceso de Entrenamiento y Ajuste Fino}{51}{subsubsection.4.4.5.3}%
-\contentsline {section}{\numberline {4.5}Análisis estadístico}{53}{section.4.5}%
-\contentsline {subparagraph}{Evaluación de Métricas de Rendimiento}{53}{subparagraph*.54}%
-\contentsline {paragraph}{Comparación Visual}{53}{paragraph*.55}%
-\contentsline {chapter}{CAPÍTULO V}{54}{ChapterRoman.5}%
-\contentsline {chapter}{\numberline {5}RESULTADOS}{55}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluación de la Armonización de Imágenes MSS y TM}{55}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Corrección Geométrica y Alineación Espacial}{55}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Calidad de la Armonización Espectral y Espacial}{55}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Generación de Bandas Virtuales}{56}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Análisis Estadístico de los Resultados}{57}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Validación Cuantitativa}{57}{subsection.5.2.1}%
-\contentsline {chapter}{\numberline {6}DISCUSIÓN}{61}{chapter.6}%
-\contentsline {chapter}{\numberline {7}CONCLUSIONES Y RECOMENDACIONES}{62}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusiones}{62}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Recomendaciones}{62}{section.7.2}%
-\contentsline {chapter}{REFERENCIAS BIBLIOGRÁFICAS}{64}{chapter*.63}%
-\contentsline {chapter}{\bf ANEXOS}{68}{section*.64}%
-\contentsline {section}{Operacionalización de variables}{68}{chapter*.65}%
-\contentsline {section}{Matriz de consistencia}{69}{table.caption.66}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}Conversión de formato de datos}{44}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}Estandarización y homogeneización}{44}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}Integración con Hugging Face}{44}{subsubsection.4.4.3.3}%
+\contentsline {paragraph}{Publicación en Hugging Face}{44}{paragraph*.46}%
+\contentsline {paragraph}{Catalogación Efectiva}{44}{paragraph*.47}%
+\contentsline {paragraph}{Acceso y Reproducibilidad}{44}{paragraph*.48}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}Segmentación y Distribución de Datos}{45}{subsubsection.4.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.4.3.5}Procesamiento y Alineación de Imágenes}{45}{subsubsection.4.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.4.3.6}Normalización y Preparación de Datos}{45}{subsubsection.4.4.3.6}%
+\contentsline {subsubsection}{\numberline {4.4.3.7}Optimización y Manejo Eficiente de Datos}{45}{subsubsection.4.4.3.7}%
+\contentsline {subsection}{\numberline {4.4.4}Desarrollo del Modelo MSS2TM}{47}{subsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.1}Configuración del Entorno de Trabajo}{47}{subsubsection.4.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.4.2}Elección de Arquitecturas para el Generador y Discriminador en GANs}{47}{subsubsection.4.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.4.3}Definición de Parámetros y Funciones de Pérdida}{48}{subsubsection.4.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4.4}Proceso de Entrenamiento}{48}{subsubsection.4.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.5}Ajuste y Optimización}{49}{subsubsection.4.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.4.6}Configuración de las Funciones de Pérdida}{50}{subsubsection.4.4.4.6}%
+\contentsline {paragraph}{LPIPSLoss}{50}{paragraph*.52}%
+\contentsline {subsection}{\numberline {4.4.5}Generación de Bandas Virtuales en Imágenes MSS}{51}{subsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.5.1}Adquisición y Procesamiento Inicial de Datos}{51}{subsubsection.4.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.4.5.2}Entrenamiento del Perceptrón Multicapa (MLP)}{51}{subsubsection.4.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.4.5.3}Proceso de Entrenamiento y Ajuste Fino}{52}{subsubsection.4.4.5.3}%
+\contentsline {section}{\numberline {4.5}Análisis estadístico}{54}{section.4.5}%
+\contentsline {subparagraph}{Evaluación de Métricas de Rendimiento}{54}{subparagraph*.55}%
+\contentsline {paragraph}{Comparación Visual}{54}{paragraph*.56}%
+\contentsline {chapter}{CAPÍTULO V}{55}{ChapterRoman.5}%
+\contentsline {chapter}{\numberline {5}RESULTADOS}{56}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Evaluación de la Armonización de Imágenes MSS y TM}{56}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Corrección Geométrica y Alineación Espacial}{56}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Calidad de la Armonización Espectral y Espacial}{56}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Generación de Bandas Virtuales}{57}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Análisis Estadístico de los Resultados}{58}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Validación Cuantitativa}{58}{subsection.5.2.1}%
+\contentsline {chapter}{\numberline {6}DISCUSIÓN}{62}{chapter.6}%
+\contentsline {chapter}{\numberline {7}CONCLUSIONES Y RECOMENDACIONES}{63}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusiones}{63}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Recomendaciones}{63}{section.7.2}%
+\contentsline {chapter}{REFERENCIAS BIBLIOGRÁFICAS}{65}{chapter*.64}%
+\contentsline {chapter}{\bf ANEXOS}{69}{section*.65}%
+\contentsline {section}{Operacionalización de variables}{69}{chapter*.66}%
+\contentsline {section}{Matriz de consistencia}{70}{table.caption.67}%

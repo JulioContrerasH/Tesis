@@ -1,10 +1,10 @@
 # Fdb version 4
-["bibtex TESIS_IG"] 1706090407 "TESIS_IG.aux" "TESIS_IG.bbl" "TESIS_IG" 1706176644 0
+["bibtex TESIS_IG"] 1706090407 "TESIS_IG.aux" "TESIS_IG.bbl" "TESIS_IG" 1706765837 0
   (generated)
   "TESIS_IG.bbl"
   "TESIS_IG.blg"
   (rewritten before read)
-["lualatex"] 1706176633 "d:/CURSOS_2022/Repos/TesisLatex/TESIS_IG.tex" "build/TESIS_IG.pdf" "TESIS_IG" 1706176644 0
+["lualatex"] 1706765828 "d:/CURSOS_2022/Repos/TesisLatex/TESIS_IG.tex" "build/TESIS_IG.pdf" "TESIS_IG" 1706765837 0
   "//?/c:/program files/miktex/fonts/opentype/public/lm/lmmono12-regular.otf" 1256929440 63012 1fdab367e024aff50d5106788d146f84 ""
   "0_0_PREAMBULO/Preambulo.tex" 1702500716 15075 e1a66e507f9065875d4964bdadc4612e ""
   "1_0_CARATULA/Caratula.tex" 1705201948 3201 55700d674158dbe8269fe50dce931999 ""
@@ -22,10 +22,11 @@
   "2_CAPITULO0/IMG/stride.png" 1699605256 61543 47faae47966718ade7cb52a860952e43 ""
   "2_CAPITULO0/IMG/tm_mss_rmse.png" 1699605256 1626757 5c1faa3e35449530f80376c229a6efc8 ""
   "2_CAPITULO1/Introduccion.tex" 1706164112 11246 7500d27c6e691a9a96efb812bb1263e7 ""
-  "2_CAPITULO2/MarcoTeorico.tex" 1706176622 48872 848ca2852e2f6b4b2d5dc646761c40c1 ""
+  "2_CAPITULO2/MarcoTeorico.tex" 1706735089 48872 7d65095225ba4fbcf3a3bdc52b0bad2e ""
   "2_CAPITULO3/HipotesisVariables.tex" 1706088951 4550 697751f1a37acaa6e92408622072ee28 ""
   "2_CAPITULO4/IMG/dataloader.png" 1705478668 115467 651d63cec66c3eb8da082b1d7945b28d ""
-  "2_CAPITULO4/MaterialesMetodos.tex" 1706091089 40756 efed9e5204545c43a1b7514f714629f5 ""
+  "2_CAPITULO4/IMG/mapa_peru.jpg" 1706764163 104790 a26d4e85fb6415ea5d5245283b8071f1 ""
+  "2_CAPITULO4/MaterialesMetodos.tex" 1706765817 41912 df5c35190fc91823a9dd1ac2c508fc41 ""
   "2_CAPITULO5/IMG/bandas.png" 1706085027 195418 35ce96bfe9a0656dcff646ca2a2f803b ""
   "2_CAPITULO5/IMG/box_plot.png" 1706083357 26802 d81d7be01fc2f9d251c59a0498eedeb1 ""
   "2_CAPITULO5/IMG/espectral.png" 1706085029 570844 b965475060a3069130fd138ba867cf40 ""
@@ -323,16 +324,16 @@
   "E_IMAGENES/0_Caratula/UNMSM_LOGO.png" 1699605256 667575 6d98266fce3e1af43d6d4748269b8cb8 ""
   "E_IMAGENES/area_estudio.jpg" 1702506801 102238 fecb91a3d76f1bef282a87604eb14bdf ""
   "TESIS_IG.bbl" 1706089145 169151 3cc2ccbab4480e692c986adc944c89f3 "bibtex TESIS_IG"
-  "TESIS_IG.tex" 1706088869 2030 af34b091b66ad41fdc98ea859fc308f1 ""
+  "TESIS_IG.tex" 1706176662 2030 af34b091b66ad41fdc98ea859fc308f1 ""
   "TesisUNI.cls" 1699590412 27558 a89c0185cc0c859041e284b3dc733aa9 ""
-  "build/1_0_CARATULA/Caratula.aux" 1706176639 4453 d14022ff2dc26ccbea3dc159e16337f5 "lualatex"
-  "build/3_3_BIBLIOGRAFIA/Bibliografia.aux" 1706176643 4579 00546444d9b0061caefd7a56d818ea1e "lualatex"
-  "build/3_4_ANEXOS/Anexos.aux" 1706176643 5444 0c3e131f6b7cb057277d23f4fe9b2f81 "lualatex"
-  "build/TESIS_IG.aux" 1706176643 43011 3e8edd79e181c3ffb0b0bd6c42631360 "lualatex"
-  "build/TESIS_IG.out" 1706176643 12333 e05e5a93ee32d5b84f4a2bb3a8e9c382 "lualatex"
-  "build/TESIS_IG.run.xml" 1706176643 2570 0a7284ec0b4c2b004decb6b4bf00f36a "lualatex"
-  "build/TESIS_IG.toc" 1706176643 12427 abfa4c799f47ea8c990ea5b42b2ff5df "lualatex"
-  "d:/CURSOS_2022/Repos/TesisLatex/TESIS_IG.tex" 1706088869 2030 af34b091b66ad41fdc98ea859fc308f1 ""
+  "build/1_0_CARATULA/Caratula.aux" 1706765832 4453 d14022ff2dc26ccbea3dc159e16337f5 "lualatex"
+  "build/3_3_BIBLIOGRAFIA/Bibliografia.aux" 1706765836 4579 8db732dd50a0f1adf66511a7223f7bc7 "lualatex"
+  "build/3_4_ANEXOS/Anexos.aux" 1706765836 5444 08f2dbd892c24e399706ed78f3cfa753 "lualatex"
+  "build/TESIS_IG.aux" 1706765836 43484 ab1e6e86f850bfb003d6eba512dc2af4 "lualatex"
+  "build/TESIS_IG.out" 1706765836 12333 e35c1c251b13d2714d7ee44d21a0de8c "lualatex"
+  "build/TESIS_IG.run.xml" 1706765836 2570 0a7284ec0b4c2b004decb6b4bf00f36a "lualatex"
+  "build/TESIS_IG.toc" 1706765836 12427 838b13af5d11a67f4b50912f9fff0c34 "lualatex"
+  "d:/CURSOS_2022/Repos/TesisLatex/TESIS_IG.tex" 1706176662 2030 af34b091b66ad41fdc98ea859fc308f1 ""
   (generated)
   "build/1_0_CARATULA/Caratula.aux"
   "build/3_3_BIBLIOGRAFIA/Bibliografia.aux"
