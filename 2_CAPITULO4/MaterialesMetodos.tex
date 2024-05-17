@@ -1,7 +1,7 @@
 \Chapter{}
 \chapter{METODOLOGÍA}
-    \section{Área de estudio}
-        La investigación inicialmente se enfocó en la armonización de imágenes Landsat MSS y TM de diversas regiones a nivel mundial, excluyendo la Antártida por su homogeneidad espectral, principalmente dominada por extensas áreas de hielo y nieve, lo que dificulta la diferenciación de coberturas y complica la armonización satelital \autocite{kokhanovsky2019retrieval}. De forma similar, se descartaron las regiones oceánicas debido a su uniformidad espectral, lo que limita la variabilidad en la reflectancia \autocite{estrella2021spectral}. En consecuencia, el estudio se centró en áreas continentales no homogéneas en términos de reflectancia.
+    \section{Área de estudio (unidad de análisis)}
+        La investigación inicialmente se enfocó en la armonización y superresolución de imágenes Landsat MSS y TM de diversas regiones a nivel mundial, excluyendo la Antártida por su homogeneidad espectral, principalmente dominada por extensas áreas de hielo y nieve, lo que dificulta la diferenciación de coberturas y complica la armonización satelital \autocite{kokhanovsky2019retrieval}. De forma similar, se descartaron las regiones oceánicas debido a su uniformidad espectral, lo que limita la variabilidad en la reflectancia \autocite{estrella2021spectral}. En consecuencia, el estudio se centró en áreas continentales no homogéneas en términos de reflectancia.
         \begin{figure}[H] 
             \caption{\doublespacing \\ \textit{Mapa del área de estudio.}} 
             \centering
@@ -12,7 +12,7 @@
             \label{area_estudio}
         \end{figure}
 
-        En la siguiente fase del estudio, se seleccionó estratégicamente Perú como área de validación para la aplicación y evaluación del proceso de superresolución de imágenes MSS. Esta elección se justifica por la variada topografía y diversidad de ecosistemas del país, que van desde la costa del Pacífico hasta las alturas de los Andes, ofreciendo un escenario desafiante y representativo para la superresolución satelital. Se identificaron múltiples puntos de muestreo distribuidos a lo largo del país, en los cuales se extrajeron segmentos de imágenes MSS para su transformación a la resolución de imágenes TM. 
+        En la siguiente fase del estudio, se seleccionó estratégicamente Perú como área de la aplicación del autocompletado de bandas o canales que le faltan a las imágenes MSS para parecerse espectralmente a las TM. Esta elección se justifica por la variada topografía y diversidad de ecosistemas del país, que van desde la costa del Pacífico hasta las alturas de los Andes, ofreciendo un escenario desafiante y representativo para la superresolución satelital. Se identificaron múltiples puntos de muestreo distribuidos a lo largo del país, en los cuales se extrajeron segmentos de imágenes MSS para su transformación a la resolución de imágenes TM. 
 
         \begin{figure}[H] 
             \caption{\doublespacing \\ \textit{Mapa del área para la validación de los modelos.}} 
@@ -25,26 +25,28 @@
         \end{figure}
 
     \section{Diseño de investigación}
-        \subsection{Tipo de investigación}
-            Aplicada, ya que tiene como objetivo principal utilizar técnicas avanzadas de inteligencia artificial para mejorar la armonización de las imágenes Landsat MSS. La finalidad es proporcionar herramientas más eficientes y precisas para el monitoreo global, beneficiando a investigadores, entidades gubernamentales y organizaciones relacionadas con el estudio de la superficie terrestre.
-        \subsection{Nivel de investigación}
-            Descriptiva y exploratoria. Es descriptiva porque se analizarán las características y ventajas de las técnicas de aprendizaje profundo en la armonización de imágenes MSS. Es exploratoria, ya que se busca comprender y evaluar cómo estas técnicas pueden mejorar la calidad y precisión de estas imágenes, un área con desafíos y oportunidades para la innovación.
-	\subsection{Enfoque}
-            Cuantitativo. Se utilizarán herramientas y técnicas estadísticas para evaluar la eficacia de las técnicas de aprendizaje profundo en la armonización de las imágenes. Esto implica comparar imágenes antes y después de la armonización, evaluando la calidad de las imágenes resultantes y cotejándolas con métodos tradicionales. Los resultados se expresarán numéricamente, utilizando indicadores como porcentajes de mejora, errores cuadráticos medios, entre otros relevantes.
+        En el marco del diseño de investigación de la tesis que aborda la armonización de imágenes Landsat MSS mediante inteligencia artificial, se adoptan criterios metodológicos que se alinean con los planteamientos de (Sampieri, 2018). Esta estructura metodológica se desglosa en las siguientes categorías:
+        %\autocite{sampieri2018metodologia}
+        \subsection{Tipo}
+            La investigación se clasifica como aplicada, ya que tiene el objetivo de resolver problemas específicos relacionados con la armonización de imágenes satelitales, aplicando teorías y conocimientos de inteligencia artificial. Este tipo de investigación busca generar soluciones prácticas que puedan ser implementadas en el ámbito del monitoreo global y a largo plazo.
 
+        \subsection{Nivel}
+            Corresponde al nivel descriptivo, ya que se centra en describir las características y el comportamiento de un fenómeno o realidad específica, en este caso, la capacidad de la inteligencia artificial para mejorar la armonización de las imágenes Landsat MSS. A través de este nivel, se busca detallar las particularidades, diferencias o modalidades de un fenómeno sin ejercer control sobre las variables de estudio.
+
+        \subsection{Enfoque}
+            El enfoque de la investigación es cuantitativo, dado que se recopilan y analizan datos numéricos para evaluar la eficacia de los métodos de inteligencia artificial en la armonización de imágenes. Este enfoque permite una medición objetiva y estadística de los resultados, facilitando la comparación y el análisis de la efectividad de las técnicas empleadas.  
+
+	    \subsection{Diseño}
+            El diseño de esta investigación es no experimental, transeccional o transversal descriptivo. Esto significa que se observan fenómenos tal como se dan en su contexto natural para luego describirlos, sin manipular las variables de estudio. En este caso, se analiza la efectividad de la inteligencia artificial en la armonización de imágenes Landsat MSS, evaluando los datos existentes en un único momento, o en varios momentos bajo el mismo criterio, sin intervenir o modificar las condiciones bajo las cuales se obtuvieron dichas imágenes.
+
+         
     \section{Población y muestra}
     
         \subsection{Población}
-            La población objeto de este estudio consiste en la totalidad de las imágenes obtenidas por el sensor MSS del satélite Landsat que cubren las regiones continentales globales, excluyendo la Antártida y las regiones oceánicas, durante el período de tiempo comprendido entre 1982 y 1999. Estas imágenes están disponibles a través de las bases de datos de Landsat, las cuales proporcionan un registro histórico completo y accesible para la extracción de los datos necesarios para el presente estudio.
+            La población de este estudio incluye imágenes capturadas por los sensores MSS y TM de los satélites Landsat 4 y 5, enfocándose en regiones continentales globales, excluyendo la Antártida y zonas oceánicas, entre 1982 y 1999. Estas imágenes, accesibles a través de las bases de datos de Landsat, ofrecen un registro histórico integral para la extracción de datos necesarios en esta investigación, permitiendo analizar las características y cambios en las regiones seleccionadas durante el periodo especificado.
 
         \subsection{Muestra}
-            El diseño de muestreo adoptado es de tipo probabilístico. Se seleccionarán unidades de muestreo de manera aleatoria, lo cual es esencial para garantizar la independencia estadística y la representatividad dentro del universo de las imágenes MSS de Landsat. De acuerdo con los principios establecidos por \textcite{hernandez2014recoleccion}, se ha determinado un tamaño de muestra representativo del conjunto total de la población.
-
-            Para la implementación de la superresolución MSS a TM mediante el modelo GAN, se implementaron técnicas de clasificación supervisada, que requieren un conjunto de datos dividido en muestras de entrenamiento y validación.
-            Siguiendo las recomendaciones de \textcite{belgiu2016random}, las muestras de entrenamiento deben ser: 1) estadísticamente independientes de las muestras de validación, 2) equilibradas en términos de distribución de clases, 3) representativas de las variabilidades espectrales objetivo, y 4) suficientemente amplias para cubrir la complejidad de los datos. Con base en estos criterios, para este estudio se destinará el 70\% de las imágenes seleccionadas aleatoriamente para el entrenamiento del modelo y el 30\% restante para la validación del mismo \autocite{nami2018spatial}. La asignación de las imágenes a cada uno de estos conjuntos se realizará mediante un algoritmo de selección aleatoria que asegure la aleatoriedad de la división \autocite{gigovic2019testing}.
-
-            Además, se incorporó la especificación ML-STAC para estructurar y describir los datos de EO de manera óptima para el entrenamiento de modelos de ML. Se utilizó este estándar para convertir los datos en el formato safetensor y cargarlos en la plataforma Hugging Face, permitiendo un acceso eficiente y reproducible a los datos curados. Este enfoque garantiza una mayor coherencia, transparencia y facilita la verificación independiente de los resultados del estudio.
-        
+            El enfoque de muestreo implementado es probabilístico, lo cual implica la selección aleatoria de unidades de muestreo para asegurar la independencia estadística y representatividad de las imágenes MSS y TM de Landsat en la muestra. Estas imágenes son elegidas basándose en criterios específicos, incluyendo un intervalo de tiempo de captura menor a 10 minutos entre ellas y una cobertura de nubosidad inferior al 15\%, además de cumplir con requisitos de concordancia espacial. Siguiendo los lineamientos propuestos por \textcite{hernandez2014recoleccion} sobre recolección de datos, se ha establecido un tamaño de muestra que refleja adecuadamente la totalidad de la población estudiada.
     \section{Procedimiento, técnicas e instrumentos de recolección de información}
 
        \subsection{Obtención de datos de entrada}

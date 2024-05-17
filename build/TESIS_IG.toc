@@ -71,14 +71,15 @@
 \contentsline {section}{\numberline {3.3}Operacionalización de variables}{33}{section.3.3}%
 \contentsline {chapter}{CAPÍTULO IV}{34}{ChapterRoman.4}%
 \contentsline {chapter}{\numberline {4}METODOLOGÍA}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Área de estudio}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.1}Área de estudio (unidad de análisis)}{35}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Diseño de investigación}{36}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Tipo de investigación}{36}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Nivel de investigación}{37}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.1}Tipo}{36}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Nivel}{37}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Enfoque}{37}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Diseño}{37}{subsection.4.2.4}%
 \contentsline {section}{\numberline {4.3}Población y muestra}{37}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Población}{37}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Muestra}{37}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Muestra}{38}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Procedimiento, técnicas e instrumentos de recolección de información}{38}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Obtención de datos de entrada}{38}{subsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.1.1}Selección por localización}{38}{subsubsection.4.4.1.1}%
@@ -116,18 +117,10 @@
 \contentsline {subparagraph}{Evaluación de Métricas de Rendimiento}{54}{subparagraph*.55}%
 \contentsline {paragraph}{Comparación Visual}{54}{paragraph*.56}%
 \contentsline {chapter}{CAPÍTULO V}{55}{ChapterRoman.5}%
-\contentsline {chapter}{\numberline {5}RESULTADOS}{56}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluación de la Armonización de Imágenes MSS y TM}{56}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Corrección Geométrica y Alineación Espacial}{56}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Calidad de la Armonización Espectral y Espacial}{56}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Generación de Bandas Virtuales}{57}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Análisis Estadístico de los Resultados}{58}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Validación Cuantitativa}{58}{subsection.5.2.1}%
-\contentsline {chapter}{\numberline {6}DISCUSIÓN}{62}{chapter.6}%
-\contentsline {chapter}{\numberline {7}CONCLUSIONES Y RECOMENDACIONES}{63}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusiones}{63}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Recomendaciones}{63}{section.7.2}%
-\contentsline {chapter}{REFERENCIAS BIBLIOGRÁFICAS}{65}{chapter*.64}%
-\contentsline {chapter}{\bf ANEXOS}{69}{section*.65}%
-\contentsline {section}{Operacionalización de variables}{69}{chapter*.66}%
-\contentsline {section}{Matriz de consistencia}{70}{table.caption.67}%
+\contentsline {chapter}{\numberline {5}PRESUPUESTO}{56}{chapter.5}%
+\contentsline {chapter}{CAPÍTULO VI}{57}{ChapterRoman.6}%
+\contentsline {chapter}{\numberline {6}CRONOGRAMA DE ACTIVIDADES}{58}{chapter.6}%
+\contentsline {chapter}{REFERENCIAS BIBLIOGRÁFICAS}{59}{chapter*.60}%
+\contentsline {chapter}{\bf ANEXOS}{63}{section*.61}%
+\contentsline {section}{Operacionalización de variables}{63}{chapter*.62}%
+\contentsline {section}{Matriz de consistencia}{64}{table.caption.63}%
