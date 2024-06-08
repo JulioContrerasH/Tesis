@@ -13,11 +13,11 @@
         \subsection{Descripción de la problemática}
             La serie de datos Landsat ha sido una herramienta esencial para la investigación de la superficie terrestre debido a su larga serie temporal. Sin embargo, la armonización de imágenes satelitales de diferentes sensores Landsat, como MSS y TM, representa un desafío en la comunidad de teledetección. Las discrepancias se deben, en gran medida, a las diferencias en las bandas espectrales, resoluciones espaciales y la calidad inherente de las imágenes.
             
-            Aunque se proporcionan productos de Reflectancia de la Superficie Terrestre (LSR) para Landsat TM, ETM+ y OLI, las primeras imágenes MSS de Landsat 1-5 carecen de dicho producto debido a desafíos como la calidad de imagen inferior y diferencias en las bandas \autocite{zhao2022framework}. Las imágenes MSS, adquiridas desde 1972, carecen de ciertas bandas espectrales que están presentes en las imágenes TM, complicando aún más su integración multiespectral.
+            Aunque se proporcionan productos de Reflectancia de la Superficie Terrestre (LSR) para Landsat TM, ETM+ y OLI, las primeras imágenes MSS de Landsat 1-5 carecen de dicho producto debido a desafíos como la calidad de imagen inferior y diferencias en las bandas \citep{zhao2022framework}. Las imágenes MSS, adquiridas desde 1972, carecen de ciertas bandas espectrales que están presentes en las imágenes TM, complicando aún más su integración multiespectral.
             
-            Los métodos basados en regresiones han sido propuestos para mapear las bandas entre sensores Landsat, facilitando la integración de datos de múltiples plataformas satelitales \autocite{roy2016characterization}. Sin embargo, estos enfoques a menudo requieren múltiples pasos de preprocesamiento y pueden no ser óptimos para todas las aplicaciones.
+            Los métodos basados en regresiones han sido propuestos para mapear las bandas entre sensores Landsat, facilitando la integración de datos de múltiples plataformas satelitales \citep{roy2016characterization}. Sin embargo, estos enfoques a menudo requieren múltiples pasos de preprocesamiento y pueden no ser óptimos para todas las aplicaciones.
             
-            Por su parte, algoritmos de deep learning, como U-Net \autocite{ronneberger2015u}, se han presentado como herramientas poderosas para el procesamiento y análisis de imágenes satelitales. Una red neuronal convolucional de super-resolución extendida (ESRCNN) fue desarrollada para fusionar datos de Landsat-8 y Sentinel-2, demostrando su eficacia en la producción de conjuntos de datos coherentes \autocite{shao2019deep}. Sin embargo, la aplicación de estas técnicas para la armonización de imágenes satelitales aún está en sus etapas iniciales.
+            Por su parte, algoritmos de deep learning, como U-Net \citep{ronneberger2015u}, se han presentado como herramientas poderosas para el procesamiento y análisis de imágenes satelitales. Una red neuronal convolucional de super-resolución extendida (ESRCNN) fue desarrollada para fusionar datos de Landsat-8 y Sentinel-2, demostrando su eficacia en la producción de conjuntos de datos coherentes \citep{shao2019deep}. Sin embargo, la aplicación de estas técnicas para la armonización de imágenes satelitales aún está en sus etapas iniciales.
     
             Dentro de este contexto, surge la necesidad de explorar cómo la inteligencia artificial, especialmente el aprendizaje profundo, puede desempeñar un papel crucial en la armonización efectiva de las imágenes Landsat MSS, haciendo viable su uso en monitoreos globales de largo plazo. Esta investigación busca abordar precisamente este desafío, proporcionando soluciones innovadoras para una armonización efectiva de las imágenes MSS y TM.
             
@@ -33,11 +33,11 @@
                     \item[-] ¿Mediante qué técnica de aprendizaje profundo se puede generar bandas faltantes en imágenes MSS que existen en las TM?
                 \end{itemize}
     \section{Objetivos de la investigación}
-        \subsection{Objetivo General}
+        \subsection{Objetivo general}
             \begin{itemize}
                 \item[-]Armonizar las imágenes Landsat MSS utilizando inteligencia artificial para su uso el monitoreo global y a largo plazo.
             \end{itemize}
-            \subsection{Objetivos Específicos}
+            \subsection{Objetivos específicos}
                 \begin{itemize}
                     \item[-] Integrar técnicas de aprendizaje profundo y procesamiento de imágenes para la corrección geométrica de las imágenes Landsat MSS, buscando una alineación precisa con las imágenes TM a niveles de pixel y sub-pixel.
                     \item[-] Desarrollar el modelo de aprendizaje profundo MSS2TM para alinear espectral y espacialmente las imágenes Landsat MSS y TM.

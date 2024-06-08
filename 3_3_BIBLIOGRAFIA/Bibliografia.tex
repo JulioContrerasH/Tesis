@@ -1,10 +1,17 @@
 % \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\bf REFERENCIAS BIBLIOGRÁFICAS}
 % \begingroup
 % \titleformat*{\chapter}{\normalfont\bfseries\normalsize\centering}
-% \bibliography{3_3_BIBLIOGRAFIA/library}
+% \bibliography{3_3_BIBLIOGRAFIA/library.bib}
 % \endgroup
+
+% \clearpage
+% \phantomsection
+% % % \addcontentsline{toc}{chapter}{\bibname}
+% \printbibliography[heading=bibintoc, title={REFERENCIAS BIBLIOGRÁFICAS}] %  
+% % dsgdsgd
 
 \clearpage
 \phantomsection
-% \addcontentsline{toc}{chapter}{\bibname}
-\printbibliography[heading=bibintoc, title={REFERENCIAS BIBLIOGRÁFICAS}]
+\addcontentsline{toc}{chapter}{REFERENCIAS BIBLIOGRÁFICAS}
+\bibliographystyle{apacite}
+\bibliography{3_3_BIBLIOGRAFIA/library} % Ajusta la ruta si es necesario

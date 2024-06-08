@@ -2,6 +2,15 @@
 
 \input{0_0_PREAMBULO/Preambulo}
 
+
+% Configuración de los márgenes
+\geometry{
+  left=3.2cm,    % Margen izquierdo
+  right=3.2cm,   % Margen derecho
+  top=2.5cm,   % Margen superior
+  bottom=2.5cm % Margen inferior
+}
+
 \begin{document}
 
 	% \renewcommand{\BOthers}[1]{et al.\hbox{}} %Agregar et al.
@@ -15,9 +24,9 @@
 	
 	% \include{1_1_PERMISOS/Permisos}
 
-	% \include{1_2_DEDICATORIA/Dedicatoria}
+	\include{1_2_DEDICATORIA/Dedicatoria}
 	
-	% \include{1_3_AGRADECIMIENTOS/Agradecimientos}
+	\include{1_3_AGRADECIMIENTOS/Agradecimientos}
 	
 	
 	%Cambiar nombre y crear ÍNDICE
@@ -57,12 +66,12 @@
 	% PLAN DE TESIS
 	% \include{2_CAPITULO0/Capitulo1}
 	\input{2_CAPITULO1/Introduccion.tex}
-	\input{2_CAPITULO2/MarcoTeorico.tex}
-	\input{2_CAPITULO3/HipotesisVariables.tex}
-	\input{2_CAPITULO4/MaterialesMetodos.tex}
-	\input{2_CAPITULO5/Secciones/Resultados.tex}
-	\input{2_CAPITULO5/Secciones/Discusion.tex}
-	% \input{2_CAPITULO5/Secciones/ConclusionesRecomendaciones.tex}
+	% \include{2_CAPITULO2/MarcoTeorico.tex}
+	% \include{2_CAPITULO3/HipotesisVariables.tex}
+	% \include{2_CAPITULO4/MaterialesMetodos.tex}
+	% \include{2_CAPITULO5/Secciones/Resultados.tex}
+	% \include{2_CAPITULO5/Secciones/Discusion.tex}
+	% \include{2_CAPITULO5/Secciones/ConclusionesRecomendaciones.tex}
 
 	% % FUNDAMENTO TEÓRICO Y CONCEPTUAL
 	% \include{2_CAPITULO2/Capitulo2}	
@@ -85,9 +94,9 @@
 	% \include{3_2_RECOMENDACIONES/Recomendaciones}
 	
 	% REFERENCIAS BIBLIOGRÁFICAS
-	\include{3_3_BIBLIOGRAFIA/Bibliografia}
+	\input{3_3_BIBLIOGRAFIA/Bibliografia.tex}
 	
 	% ANEXOS	
-	\include{3_4_ANEXOS/Anexos}
+	% \include{3_4_ANEXOS/Anexos}
 	
 \end{document}
